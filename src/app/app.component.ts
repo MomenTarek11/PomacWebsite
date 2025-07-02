@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
 
     if (whatsappElement && !whatsappElement.contains(event.target)) {
       // Also make sure we're not clicking the WhatsApp button itself
-      if (!waButton.contains(event.target)) {
+      if (!waButton?.contains(event.target)) {
         this.showWhats = false;
       }
     }
