@@ -1,0 +1,128 @@
+<section class="services" style="padding-top: 100px">
+  <div class="container">
+    <div class="head">
+      <h1 class="fw-bold mt-5">{{ "HOME.services" | translate }}</h1>
+      <p>{{ "HOME.services_description" | translate }}</p>
+    </div>
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-md-4"
+        *ngFor="let item of [].constructor(9); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div>
+            <div class="ph-row">
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8"></div>
+              <div class="ph-col-12"></div>
+
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+          <div class="ph-col-2">
+            <div class="ph-avatar"></div>
+          </div>
+          <div class="ph-col-12">
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8"></div>
+                <div class="ph-col-12"></div>
+
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards row" *ngIf="show">
+      <div
+        class="col-md-4"
+        *ngFor="let service of home"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+        data-aos-once="true"
+      >
+        <div class="card border-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="pl-0 col-3">
+                <img
+                  src="{{ baseURL }}/{{ service.icon }}"
+                  class=""
+                  alt="POMAC"
+                  style="width: 55px; height: 55px"
+                />
+              </div>
+              <div class="col-9 p-0 text-left">
+                <h4>
+                  {{
+                    translate.currentLang == "ar"
+                      ? service.name_AR
+                      : service.name_EN
+                  }}
+                </h4>
+              </div>
+            </div>
+            <div class="mt-3 row">
+              <!-- {{service.short_description_EN}} -->
+              {{
+                translate.currentLang == "ar"
+                  ? service.short_description_AR
+                  : service.short_description_EN
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="idea" *ngIf="home?.length">
+    <div class="container">
+      <h2>
+        {{ translate.currentLang == "ar" ? "عندك" : "You have" }}
+        <!-- -->
+        <label>
+          {{ translate.currentLang == "ar" ? "فكرة مشروع" : "project idea" }}
+        </label>
+
+        <!-- تواصل معنا وأبدأ خطوات تنفيذ فكرتك -->
+        {{
+          translate.currentLang == "ar"
+            ? "تواصل معنا وأبدأ خطوات تنفيذ فكرتك"
+            : "Contact us and start the steps of implementing your idea"
+        }}
+        <!-- {{ translate.currentLang == 'ar' ? home_data.ques_ar : home_data.ques_en }}
+        <label data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">{{
+          translate.currentLang == 'ar' ? home_data.idea_ar : home_data.idea_en }} </label>
+        <label data-aos="zoom-in-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="400">{{
+          translate.currentLang == 'ar' ? home_data.mark_ar : home_data.mark_en }} </label>
+        <br> {{ translate.currentLang == 'ar' ? home_data.talk_ar : home_data.talk_en }} -->
+      </h2>
+      <!-- <p class="text-secondary">
+
+      </p> -->
+      <a
+        aria-labelledby="pomac"
+        aria-label="pomac"
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=201094969284"
+      >
+        <button
+          data-aos="zoom-in-up"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+        >
+          {{
+            translate.currentLang == "ar"
+              ? home_data.contact_ar
+              : home_data.contact_en
+          }}
+        </button>
+      </a>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,107 @@
+section{
+
+  @media (max-width:600px) {
+    .bg-image{
+      height: 380px !important;
+    }
+    .head{
+      padding-top: 60px !important;
+      *{
+        text-align: right !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+    .head{
+        margin-bottom: 50px;
+        text-align: end !important;
+    }
+    .project{
+        .card{
+
+
+            position: relative;
+            border: none;
+            .card-body{
+            }
+            .card-text{
+              height: 50px;
+              @media (max-width: 1200px)and (min-width: 992px){
+                height: 70px !important;
+              }
+              // in mobile
+              @media (max-width: 767px) {
+                height: auto;
+              }
+
+            }
+            .bg-image{
+height: 550px;
+background-size: cover;
+background-repeat: no-repeat;
+              overflow: hidden ;
+              border-radius: 10px;
+
+            }
+            cursor: pointer;
+            .img{
+              overflow: hidden;
+              // height: 380px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position:center center ;
+              transition: .3s ease-in-out;
+            }
+            &:hover{
+              .img{
+                transform: scale(1.1) ;
+              }
+            }
+            // .overlay{
+
+            //     // display: none;
+
+            //     width: 100%;
+            //     height: 100%;
+            //     left: 0;
+            //     bottom: 0;
+            //     text-align: center;
+            //     color: #ffffff;
+            //     padding-top: 80px;
+            //     a{
+            //         color: #ffffff;
+            //         i{
+            //             margin-left: 10px;
+            //         }
+            //     }
+            //     transition: .3s ease-in-out;
+            // }
+            // &:hover{
+            //     .overlay{
+            //        opacity: 1;
+            //     }
+            //     .name{
+            //         position: relative;
+            //         -webkit-animation: bottomToTop 0.3s;
+            //     }
+            //     .description{
+            //         position: relative;
+            //         -webkit-animation: bottomToTop 0.4s;
+            //     }
+            //     a{
+            //         position: relative;
+            //         -webkit-animation: leftToRight 0.3s;
+            //         @-webkit-keyframes leftToRight{
+            //             0%{left:-40px}
+            //             100%{left:0}
+            //         }
+            //     }
+            //     @-webkit-keyframes bottomToTop{
+            //         0%{bottom:-40px}
+            //         100%{bottom:0}
+            //     }
+            // }
+        }
+        margin-bottom: 35px;
+    }
+}

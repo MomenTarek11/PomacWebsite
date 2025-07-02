@@ -1,0 +1,50 @@
+[
+    {
+        "name":"html",
+        "icon":"https://iconarchive.com/download/i73026/cornmanthe3rd/plex/Other-html-5.ico"
+    },
+    {
+        "name":"php",
+        "icon":"https://cdn.iconscout.com/icon/free/png-512/php-2038871-1720084.png"
+    },
+    {
+        "name":"mysql",
+        "icon":"https://cdn.worldvectorlogo.com/logos/mysql.svg"
+    },
+    {
+        "name":"laravel",
+        "icon":"https://iconape.com/wp-content/files/an/76126/svg/laravel-2.svg"
+    },
+    {
+        "name":"angular",
+        "icon":"https://cdn.iconscout.com/icon/free/png-512/angular-2038881-1720094.png"
+    },
+    {
+        "name":"css",
+        "icon":"https://cdn.iconscout.com/icon/free/png-512/css-118-569410.png"
+    },
+    {
+        "name":"android studio",
+        "icon":"https://i.pinimg.com/originals/4e/74/7c/4e747c82368d9681b75d54f56319dae7.png"
+    },
+    {
+        "name":"mysql",
+        "icon":"https://cdn.worldvectorlogo.com/logos/mysql.svg"
+    },
+    {
+        "name":"laravel",
+        "icon":"https://iconape.com/wp-content/files/an/76126/svg/laravel-2.svg"
+    },
+    {
+        "name":"css",
+        "icon":"https://cdn.iconscout.com/icon/free/png-512/css-118-569410.png"
+    },
+    {
+        "name":"android studio",
+        "icon":"https://i.pinimg.com/originals/4e/74/7c/4e747c82368d9681b75d54f56319dae7.png"
+    },
+    {
+        "name":"swift",
+        "icon":"https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png"
+    }
+]

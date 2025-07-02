@@ -1,0 +1,41 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { AppService } from 'src/app/app.service';
+import { environment } from 'src/environments/environment';
+declare var AOS: any;
+@Component({
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss'],
+})
+export class BlogComponent implements OnInit {
+  blogs: any = [];
+  show: boolean = false;
+  baseURL: any = environment.baseURL;
+
+  constructor(private blog: AppService, private router: Router) {}
+
+  ngOnInit(): void {
+    AOS.init();
+    this.getProjects();
+  }
+  getProjects() {
+    this.blog
+      .blogs()
+      .pipe(map((res) => res['data']))
+      .subscribe((projects) => {
+        console.log(projects);
+        this.blogs = projects;
+        this.show = true;
+      });
+  }
+  router_details(item: any) {
+    // النص الأصلي مع المسافات
+    let originalText = item?.id + ' ' + item.title;
+
+    // استخدام replace لإزالة المسافات واستبدالها بـ -
+    let formattedText = originalText.replace(/\s+/g, '-');
+    this.router.navigate(['blog', formattedText]);
+  }
+}

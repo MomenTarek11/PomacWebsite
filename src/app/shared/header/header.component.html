@@ -1,0 +1,305 @@
+<div class="position-relative">
+  <header
+    class="desktop-header navbar-inverse"
+    [ngClass]="{ 'navbar-inverse': isScrolled }"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <!-- assets/images/logo.png -->
+          <!-- src\assets\images\new-logo.webp -->
+          <!-- assets/images/logo-new-logo.png -->
+          <img
+            class="logo cursor-pointer"
+            src="assets/images/logo 120.svg"
+            [routerLink]="['/home']"
+            alt="pomac logo"
+            width="114"
+            height="38"
+          />
+        </div>
+        <div class="col-md-8">
+          <!-- {{route}} -->
+          <ul class="p-0 m-0 list-unstyled d-flex menu-list main-list">
+            <li class="menu-item" [ngClass]="{ active: url == 'home' }">
+              <!-- <a aria-labelledby="pomac" aria-label="pomac" [routerLink]='"."' [fragment]="link">{{link}}</a> -->
+
+              <!-- [routerLink]="'/home'"  -->
+              <!--  [routerLink]="'/home'"  [fragment]="'mainSlider'"  -->
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="['/home']"
+                class="menu-link"
+                >{{ "HOME.home" | translate }}</a
+              >
+            </li>
+            <!-- Services -->
+            <li class="menu-item" [ngClass]="{ active: url == 'our-services' }">
+              <!-- [routerLink]="'/home'" [fragment]="'Services'" -->
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                style="cursor: pointer"
+                [routerLink]="'/our-services'"
+                class="menu-link"
+              >
+                {{ "HOME.services" | translate }}
+              </a>
+            </li>
+            <li class="menu-item" [ngClass]="{ active: url == 'our-work' }">
+              <!--  [routerLink]="'/home'" [fragment]="'projects'"  -->
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/our-work'"
+                class="menu-link"
+              >
+                {{ "HOME.our_work" | translate }}
+              </a>
+            </li>
+
+            <li class="menu-item" [ngClass]="{ active: url == 'faq' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/faq'"
+                class="menu-link"
+              >
+                الأسئلة الشائعة
+              </a>
+            </li>
+            <li class="menu-item" [ngClass]="{ active: url == 'blog' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/blog'"
+                class="menu-link"
+              >
+                المدونة
+                <!-- <span style="font-size: 10px;color: rgb(211, 20, 20);">(قريبا)</span> -->
+              </a>
+            </li>
+            <li class="menu-item">
+              <span
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                class="menu-link fw-bold"
+              >
+                المصطلحات
+                <span style="font-size: 10px; color: rgb(211, 20, 20)"
+                  >(قريبا)</span
+                >
+              </span>
+            </li>
+
+            <li class="menu-item" [ngClass]="{ active: url == 'jobs' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/jobs'"
+                class="menu-link"
+              >
+                الوظائف
+              </a>
+            </li>
+            <!-- <li class="menu-item">
+                        <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/about'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link">{{ 'HOME.about'| translate }}</a>
+                    </li>-->
+            <!-- <li class="menu-item">
+                      <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/our-work'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link">{{ 'HOME.our_work'| translate }}</a>
+                    </li> -->
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <!-- <a aria-labelledby="pomac" aria-label="pomac"  [routerLink]="'/our-work'" (click)="toggle.click()"  href="javascript:void(0)" >
+                <button class="btn btn-primary">
+                                   {{ 'HOME.contact_us'| translate }}
+                                 </button>
+              </a> -->
+          <div class="main">
+            <!-- <a href="https://api.whatsapp.com/send?phone=201094969284"> <img src="assets/images/whatsapp-icon.png" alt="" style="width: 50px; "></a> -->
+            <!-- <a href="https://api.whatsapp.com/send?phone=201094969284" class="botao-wpp">
+
+
+                  whatsapp
+                  <i class="fa fa-whatsapp"></i>
+               </a> -->
+            <a
+              aria-labelledby="pomac"
+              aria-label="pomac"
+              href="https://api.whatsapp.com/send?phone=201094969284"
+              target="_blank"
+            >
+              <button class="float-right cursor-pointer contact-us pointer">
+                استشارة مجانية
+              </button>
+            </a>
+            <!-- <div class="_change-lang" [ngSwitch]="translate.currentLang">
+                <a aria-labelledby="pomac" aria-label="pomac"   *ngSwitchCase="'ar'" class="lang" href="javascript:void(0)" (click)="switchLanguage('en')"><img src="assets/images/us.svg" alt="en"></a>
+                <a aria-labelledby="pomac" aria-label="pomac"  *ngSwitchDefault class="lang" href="javascript:void(0)" (click)="switchLanguage('ar')"><img src="assets/images/sa.svg" alt="ar"></a>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <header class="mobile-header">
+    <nav class="navbar p-0">
+      <div class="container">
+        <div class="brand">
+          <img
+            class="cursor-pointer"
+            [routerLink]="['/home']"
+            src="assets/images/logo 120.svg"
+            alt="logo"
+          />
+        </div>
+        <div id="toggle" class="toggle" #toggle (click)="togglef()">
+          <span class="toggle-btn"></span>
+        </div>
+        <div class="menu">
+          <ul class="main-list">
+            <li class="menu-item" [ngClass]="{ active: url == 'home' }">
+              <!-- <a aria-labelledby="pomac" aria-label="pomac" [routerLink]='"."' [fragment]="link">{{link}}</a> -->
+
+              <!-- [routerLink]="'/home'"  -->
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [ngClass]="{ active: url == 'home' }"
+                (click)="toggle.click()"
+                [routerLink]="'/home'"
+                class="menu-link"
+              >
+                {{ "HOME.home" | translate }}
+                <!-- Home -->
+              </a>
+            </li>
+            <li class="menu-item" [ngClass]="{ active: url == 'our-services' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/our-services'"
+                (click)="toggle.click()"
+                class="menu-link"
+              >
+                {{ "HOME.services" | translate }}
+                <!-- Services -->
+              </a>
+            </li>
+            <li class="menu-item" [ngClass]="{ active: url == 'our-work' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/our-work'"
+                (click)="toggle.click()"
+                class="menu-link"
+              >
+                {{ "HOME.our_work" | translate }}
+                <!-- Our Work -->
+              </a>
+            </li>
+            <li class="menu-item" [ngClass]="{ active: url == 'faq' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/faq'"
+                class="menu-link"
+              >
+                الأسئلة الشائعة
+              </a>
+            </li>
+
+            <li class="menu-item" [ngClass]="{ active: url == 'blog' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/blog'"
+                class="menu-link"
+              >
+                المدونة
+              </a>
+            </li>
+            <li class="menu-item">
+              <span
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                class="menu-link fw-bold"
+              >
+                المصطلحات
+              </span>
+            </li>
+
+            <li class="menu-item" [ngClass]="{ active: url == 'jobs' }">
+              <a
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                [routerLink]="'/jobs'"
+                class="menu-link"
+              >
+                الوظائف
+              </a>
+            </li>
+            <li class="mt-4">
+              <!-- <div class="_change-lang" [ngSwitch]="translate.currentLang">
+                      <a aria-labelledby="pomac" aria-label="pomac"   *ngSwitchCase="'ar'" class="lang" href="javascript:void(0)" (click)="switchLanguage('en')">
+                        <img src="assets/images/us.svg" alt="en">
+                      </a>
+                      <a aria-labelledby="pomac" aria-label="pomac"  *ngSwitchDefault class="lang" href="javascript:void(0)" (click)="switchLanguage('ar')"><img src="assets/images/sa.svg" alt="ar"></a>
+                    </div> -->
+              <!-- <a href="https://api.whatsapp.com/send?phone=201094969284"> <img src="assets/images/whatsapp-icon.png" alt="" style="width: 50px; "></a> -->
+
+              <!-- <div class="_change-lang" [ngSwitch]="translate.currentLang">
+                      <button class="btn btn-success" *ngSwitchCase="'ar'"  (click)="switchLanguage('en')">
+                        <img src="assets/images/us.svg" alt="en"> {{translate.currentLang == 'ar' ? 'الانجليزية' : 'العربية'}}
+                      </button>
+                      <button class="btn btn-success" *ngSwitchCase="'en'" (click)="switchLanguage('ar')">
+                        <img src="assets/images/sa.svg" alt="en"> {{translate.currentLang == 'ar' ? 'English' : 'العربية'}}
+                      </button>
+                                      </div> -->
+
+              <!-- <a href="https://api.whatsapp.com/send?phone=201094969284" class="botao-wpp">
+
+    <i class="fa fa-whatsapp"></i>
+    whatsapp
+
+ </a> -->
+
+              <!-- <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/our-work'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link"> {{ 'HOME.contact_us'| translate }}</a> -->
+
+              <div class="main text-center m-auto">
+                <a
+                  aria-labelledby="pomac"
+                  aria-label="pomac"
+                  href="https://api.whatsapp.com/send?phone=201094969284"
+                  target="_blank"
+                >
+                  <button class="float-right cursor-pointer contact-us pointer">
+                    استشارة مجانية 100%
+                  </button>
+                </a>
+              </div>
+              <!-- <div class="_change-lang" [ngSwitch]="translate.currentLang">
+                      <a aria-labelledby="pomac" aria-label="pomac"   *ngSwitchCase="'ar'" class="lang" href="javascript:void(0)" (click)="switchLanguage('en')"><img src="assets/images/us.svg" alt="en"></a>
+                      <a aria-labelledby="pomac" aria-label="pomac"  *ngSwitchDefault class="lang" href="javascript:void(0)" (click)="switchLanguage('ar')"><img src="assets/images/sa.svg" alt="ar"></a>
+                    </div>
+                    </div> -->
+            </li>
+            <!-- <li class="menu-item">
+                        <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/home'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link">{{ 'HOME.home'| translate }}</a>
+                    </li> -->
+            <!-- <li class="menu-item">
+                        <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/about'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link">{{ 'HOME.about'| translate }}</a>
+                    </li> -->
+            <!-- Our Work -->
+            <!-- <li class="menu-item">
+                        <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/our-work'" (click)="toggle.click()" href="javascript:void(0)"  class="menu-link">{{ 'HOME.our_work'| translate }}</a>
+                    </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+<!-- <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/us.svg" alt=""> -->

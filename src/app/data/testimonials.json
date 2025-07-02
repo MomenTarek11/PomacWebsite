@@ -1,0 +1,75 @@
+[
+    {
+        "name":"Mohamed Ahmed",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"yahoo","logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png"}
+    },
+    {
+        "name":"Alaa Ali ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"zon","logo":"https://zon-website.pomac.info/assets/images/logo.png"}
+    },
+    {
+        "name":"Alaa Ali ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"google","logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/440px-Google_2015_logo.svg.png"}
+    },
+    {
+        "name":"Salah jak  ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"samsung","logo":"https://pngimg.com/uploads/samsung_logo/samsung_logo_PNG14.png"}
+    },
+    {
+        "name":"Alaa youtube",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"youtube","logo":"https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-png-transparent-image-5.png"}
+    },
+    {
+        "name":"Alaa Ali ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"stickpng","logo":"https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"}
+    },
+ 
+    {
+        "name":"Alaa Ali ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"google","logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/440px-Google_2015_logo.svg.png"}
+    },
+    {
+        "name":"Alaa Ali ",
+        "image":"https://static.arageek.com/wp-content/uploads/2018/02/Mohamed-Aboutrika.jpg",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"google","logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/440px-Google_2015_logo.svg.png"}
+    },
+    {
+        "name":"Mohamed Ahmed",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"yahoo","logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png"}
+    },
+    {
+        "name":"Mohamed Ahmed",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"yahoo","logo":"https://www.lever.co/wp-content/uploads/2020/07/1280px-Fanatics_sports_retailer_logo.svg.png"}
+    },
+    {
+        "name":"Mohamed Ahmed",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"yahoo","logo":"https://about.gitlab.com/images/devops-tools/digitalai-logo.png"}
+    },
+    {
+        "name":"Mohamed Ahmed",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1200px-Yahoo%21_%282019%29.svg.png",
+        "comment":"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.",
+        "project": {"name":"yahoo","logo":"https://www.bitsight.com/hs-fs/hubfs/images/bigsight-logo-dark-01.png?width=740&name=bigsight-logo-dark-01.png"}
+    }
+]

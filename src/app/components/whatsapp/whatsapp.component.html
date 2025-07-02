@@ -1,0 +1,29 @@
+<section class="whatsapp" *ngIf="showWhats">
+  <div class="card">
+    <!-- {{showWhats}} -->
+
+    <div class="card-header">
+      <img src="assets/images/logo-new-logo.png" alt="" style="width: 92px" />
+      <h6 class="mt-3">Chat with us on whatsapp</h6>
+      <span aria-hidden="true" (click)="showWhats = !showWhats">&times;</span>
+    </div>
+    <div class="card-body">
+      <div class="default_message d-flex justify-content-start">
+        مرحبا بك .. شكرا لتواصلك
+        <br />كيف نستطيع مساعدتك ؟
+      </div>
+
+      <form class="send_form">
+        <input
+          type="text"
+          placeholder="اكتب رسالتك ..."
+          [(ngModel)]="text"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <a (click)="send()">
+          <img src="assets/images/Send.svg" alt="" />
+        </a>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+[
+    {
+        "title":"Branding",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/Branding.png"
+      },
+      {
+        "title":"UX Design",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/UX-Design.png"
+      },
+      {
+        "title":"UI Design",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/UI-Design.png"
+      },
+      {
+        "title":"Mobile Development",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/Mobile-Development.png"
+      },
+      {
+        "title":"Web Development",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/Web-Development.png"
+      },
+      {
+        "title":"Digital Marketing",
+        "description":"Your brand need to be unique and well presented to your users to make sense.",
+        "icon_path":"assets/services/Digital-Marketing.png"
+      }
+]

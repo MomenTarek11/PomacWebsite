@@ -1,0 +1,51 @@
+section.about{
+    margin-bottom: 100px;
+    margin-top: 88px;
+    h2{
+        font-size: 23px;
+        font-weight: 600;
+        margin-top: 20px;
+        span{
+            display: block;
+            margin-top: 15px;
+            // height: 60px !important;
+            // margin-bottom: 60px;
+        }
+    }
+   
+}
+section.team{
+    margin-bottom: 100px;
+    .card{
+        border: none;
+        &:hover{
+            img{
+                transform: scale(1.1);
+            padding: 0;
+            border-color: transparent;
+            }
+           }
+           @media (max-width: 768px) { 
+               img{
+                   height: 260px !important;
+               }
+           }
+    }
+    .employee{
+       img{
+           border-radius: 60px;
+           padding: 5px;
+           border: 3px solid #2d5ee6;
+           margin: 0 auto;
+           transition: .3s ease-in-out;
+           
+       }
+    }
+}
+section.technologies{
+    .card{
+        background-color: #f5f5f5;
+        border: none;
+        border-radius: 60px;
+    }
+}

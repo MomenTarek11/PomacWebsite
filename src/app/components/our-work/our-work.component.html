@@ -1,0 +1,164 @@
+<section
+  class="projects animate__animated animate__fadeIn"
+  style="padding-top: 150px"
+>
+  <div class="container">
+    <div class="head">
+      <h1 class="fw-bold text-center">
+        {{
+          translate.currentLang == "ar"
+            ? "أعمالنا"
+            : "Beauty is in every pixel,"
+        }}
+      </h1>
+      <p class="text-center">
+        نجح استوديو الشركات الناشئة بوماك في تنفيذ العديد من الشركات في قطاعات
+        تقنية واعدة مثل تقنيات التعليم والتجارة الإلكترونية والبرمجيات كخدمة
+        والخدمة عبر البرمجيات
+      </p>
+    </div>
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-lg-6 project"
+        *ngFor="let item of [].constructor(6); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div class="ph-col-12">
+            <div class="ph-picture" style="min-height: 300px"></div>
+            <div class="ph-row">
+              <div class="ph-col-2 empty big"></div>
+              <div class="ph-col-10 big"></div>
+              <div class="ph-col-8 empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-6"></div>
+
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="show">
+      <div
+        class="col-lg-6 project"
+        *ngFor="let project of projects; let index = index"
+      >
+        <div
+          class="card"
+          [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+          data-aos-offset="120"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+          style="width: 100%; direction: rtl; position: relative"
+          (click)="project.stage != 'coming_soon' ? openProject(project) : null"
+        >
+          <span
+            *ngIf="project.stage == 'coming_soon'"
+            style="position: absolute; top: 20px; right: 20px"
+          >
+            <svg
+              width="88"
+              height="45"
+              viewBox="0 0 88 45"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="88" height="45" rx="8" fill="#FFF3EB" />
+              <path
+                d="M25.6291 11.68L26.2291 10.38L30.4891 9.62L29.8891 10.9L25.6291 11.68ZM25.2891 13.7L25.8891 12.42L30.1691 11.64L29.5691 12.92L25.2891 13.7ZM30.1784 29C29.0184 29 28.1251 28.6267 27.4984 27.88C26.9651 27.24 26.6984 26.4267 26.6984 25.44V17.02L28.4184 16.1V25.38C28.4184 26.7133 29.0718 27.38 30.3784 27.38H31.6984V29H30.1784ZM37.4498 27.38H38.7698V29H37.2498C36.1432 29 35.2698 28.6467 34.6298 27.94C33.9898 28.6467 33.1165 29 32.0098 29H30.4898V27.38H31.8098C33.1165 27.38 33.7698 26.7133 33.7698 25.38V21.24L35.4898 20.32V25.38C35.4898 26.7133 36.1432 27.38 37.4498 27.38ZM34.5098 31C35.1498 31 35.4698 31.3267 35.4698 31.98C35.4698 32.6467 35.1498 32.98 34.5098 32.98C33.8565 32.98 33.5298 32.6467 33.5298 31.98C33.5298 31.3267 33.8565 31 34.5098 31ZM37.5602 29V27.38H38.8802C40.1868 27.38 40.8402 26.7133 40.8402 25.38V21.24L42.5602 20.32V25.44C42.5602 26.5733 42.2202 27.4667 41.5402 28.12C40.9135 28.7067 40.0935 29 39.0802 29H37.5602ZM38.6202 32.98C37.9668 32.98 37.6402 32.6467 37.6402 31.98C37.6402 31.3267 37.9668 31 38.6202 31C39.2602 31 39.5802 31.3267 39.5802 31.98C39.5802 32.6467 39.2602 32.98 38.6202 32.98ZM41.1602 32.98C40.5068 32.98 40.1802 32.6467 40.1802 31.98C40.1802 31.3267 40.5068 31 41.1602 31C41.8002 31 42.1202 31.3267 42.1202 31.98C42.1202 32.6467 41.8002 32.98 41.1602 32.98ZM52.3602 27.38H53.6802V29H52.1602C51.4802 29 50.8935 28.8667 50.4002 28.6C50.2802 29.92 49.8202 30.9733 49.0202 31.76C48.2868 32.48 47.3668 32.84 46.2602 32.84C45.4602 32.84 44.6802 32.64 43.9202 32.24V30.74C44.6002 31.1133 45.2802 31.3 45.9602 31.3C46.8135 31.3 47.4802 31.0133 47.9602 30.44C48.4402 29.8667 48.6802 29.0733 48.6802 28.06V21.24L50.4002 20.32V20.34L50.4202 20.32V25.78C50.5402 26.8467 51.1868 27.38 52.3602 27.38ZM57.702 18.04C57.0487 18.04 56.722 17.7067 56.722 17.04C56.722 16.3867 57.0487 16.06 57.702 16.06C58.342 16.06 58.662 16.3867 58.662 17.04C58.662 17.7067 58.342 18.04 57.702 18.04ZM60.242 18.04C59.5887 18.04 59.262 17.7067 59.262 17.04C59.262 16.3867 59.5887 16.06 60.242 16.06C60.882 16.06 61.202 16.3867 61.202 17.04C61.202 17.7067 60.882 18.04 60.242 18.04ZM52.482 29V27.38H56.082C55.4687 26.7 55.162 25.7533 55.162 24.54C55.162 23.0867 55.542 21.9533 56.302 21.14C56.9687 20.42 57.8554 20.06 58.962 20.06C60.0954 20.06 60.9754 20.4133 61.602 21.12C62.1354 21.7467 62.402 22.5667 62.402 23.58V25.48C62.3887 26.5867 62.062 27.46 61.422 28.1C60.7954 28.7 59.962 29 58.922 29H52.482ZM60.682 23.66C60.682 22.3267 60.1087 21.66 58.962 21.66C58.3087 21.66 57.7954 21.9133 57.422 22.42C57.0487 22.9133 56.862 23.6067 56.862 24.5C56.862 25.38 57.042 26.08 57.402 26.6C57.762 27.12 58.242 27.38 58.842 27.38C60.0687 27.38 60.682 26.74 60.682 25.46V23.66Z"
+                fill="#FF8636"
+              />
+            </svg>
+          </span>
+          <div
+            class="bg-image"
+            [ngStyle]="{
+              'background-image':
+                'url(' + baseURL + '/' + project.path.main_image + ')'
+            }"
+          >
+            <!-- <img  loading="lazy" src="{{baseURL}}/{{project.path.main_image}}"  alt="POMAC" class="card-img-top img " style="width:100%" alt="..."> -->
+          </div>
+          <div class="card-body p-0">
+            <!--
+                <div class="img " style="background-image: url({{baseURL}}/{{project.path.main_image}}) ; " [style.background-color]="project.main_color" ></div>
+
+                </div> -->
+            <h5
+              class="card-title mt-3 name fw-bold text-capitalize"
+              style="text-align: start !important"
+            >
+              {{ project.name_AR }}
+            </h5>
+            <p class="card-text mb-2" style="text-align: start !important">
+              {{
+                project.short_description_AR.length > 50
+                  ? project.short_description_AR.substring(0, 150) + "..."
+                  : project.short_description_AR
+              }}
+            </p>
+            <p style="text-align: start !important; font-weight: 600">
+              بلد التشغيل :
+              <img
+                src="assets/images/project-details/img_country.svg"
+                alt=""
+                style="width: 30px; height: 30px; margin-left: 10px"
+              />
+              <span style="font-weight: 500">المملكه العربية السعودية</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+            <div class="col-md-4 project" *ngFor="let project of projects;let index = index">
+                <div class="card"  *ngIf="!project.zba27" [routerLink]="['/project-details',project.id,project.name_EN]"
+                [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+                data-aos-offset="120" data-aos-easing="ease-in-sine" data-aos-duration="600"
+
+                >
+                    <div class="overlay pl-3 pr-3 " [ngStyle]="{'background-color': project.main_color}">
+                        <h1 class="name fw-bold text-capitalize">
+                            {{ project.name_EN.length > 10 ? project.name_EN.substring(0,10)+"..." : project.name_EN }}
+
+                           </h1>
+                        <p class="mt-3 description">
+                            {{ project.short_description_EN.length > 50 ? project.short_description_EN.substring(0,50)+"..." : project.short_description_EN }}
+                        </p>
+                        <div class="text-right mt-5">
+                            <a aria-labelledby="pomac" aria-label="pomac" *ngIf="!project.zba27"  href="javascript:void(0)" class="text-capitalize">view project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <img src="{{baseURL}}/{{project.path.main_image}}" class="w-100 h-100" alt="POMAC">
+                </div>
+
+
+
+<a aria-labelledby="pomac" aria-label="pomac" href="{{project.path.web}}" target="_blank"  *ngIf="project.zba27">
+  <div class="card"
+  [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+  data-aos-offset="120" data-aos-easing="ease-in-sine" data-aos-duration="600"
+
+  >
+      <div class="overlay pl-3 pr-3 " [ngStyle]="{'background-color': project.main_color}">
+          <h1 class="name fw-bold text-capitalize">
+              {{ project.name_EN.length > 10 ? project.name_EN.substring(0,10)+"..." : project.name_EN }}
+
+             </h1>
+          <p class="mt-3 description">
+              {{ project.short_description_EN.length > 50 ? project.short_description_EN.substring(0,50)+"..." : project.short_description_EN }}
+          </p>
+          <div class="text-right mt-5">
+              <a aria-labelledby="pomac" aria-label="pomac" *ngIf="project.zba27" href="javascript:void(0)" target="_blank" class="text-capitalize">view project <i class="fas fa-arrow-right"></i></a>
+          </div>
+      </div>
+      <img src="{{baseURL}}/{{project.path.main_image}}" class="w-100 h-100" alt="POMAC">
+  </div>
+</a>
+
+
+            </div>
+        </div> -->
+  </div>
+</section>

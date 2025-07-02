@@ -1,0 +1,125 @@
+.faq {
+  @media (max-width: 600px) {
+    .head {
+      padding-top: 60px !important;
+      * {
+        text-align: right !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+  .btn {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  @media (max-width: 500px) and (min-width: 500px) {
+    .overlay {
+      padding: 50px 0px !important;
+      p {
+        padding: 0px 30px !important;
+      }
+    }
+    .banner {
+      margin-bottom: 50px !important;
+    }
+    .idea {
+      padding-top: 50px !important;
+      margin-bottom: 40px !important;
+      h2,
+      label {
+        font-size: 30px !important;
+      }
+      .btn {
+        font-size: 20px !important;
+        margin-top: 20px !important;
+        padding: 10px 30px !important;
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 100px 0px !important;
+      p {
+        padding: 0px 30px !important;
+      }
+    }
+    .banner {
+      margin-bottom: 50px !important;
+    }
+    .idea {
+      padding-top: 50px !important;
+      margin-bottom: 40px !important;
+      h2,
+      label {
+        font-size: 30px !important;
+      }
+      .btn {
+        font-size: 20px !important;
+        margin-top: 20px !important;
+        padding: 10px 30px !important;
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
+  .banner {
+    background-image: url(../../../assets/images/faq_bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 100px;
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 200px 0px 150px;
+    }
+  }
+}
+/* Custom Accordion Styles */
+.custom-accordion {
+  --bs-accordion-border-color: #e0e0e0;
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.custom-accordion .accordion-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-accordion .accordion-button {
+  font-weight: 600;
+  padding: 1.25rem;
+  background-color: white;
+  text-align: right;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: white;
+  box-shadow: none;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease;
+  width: 16px;
+  height: 16px;
+}
+
+.accordion-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.custom-accordion .accordion-body {
+  padding: 1.25rem;
+  border-top: 1px solid #f0f0f0;
+}

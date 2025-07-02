@@ -1,0 +1,146 @@
+[
+    {
+        "id":1,
+        "name":"facebook",
+        "short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "long_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "main_color":"#3b5998",
+        "mockup":"assets/images/mobile mockup.png",
+        "main_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "bg_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "logo":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "vedio":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "google_play_url":"javascript:void(0)",
+        "app_store_url":"javascript:void(0)",
+        "web_url":"javascript:void(0)",
+        "technologies": [
+            {"name":"php", "icon":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"name":"html", "icon":"https://cdn.iconsc2d5ee6out.com/icon/free/png-256/html5-40-1175193.png"}
+        ],
+        "mobile_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ],
+        "web_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ]
+    },
+    {
+        "id":2,
+        "name":"YouTube",
+        "short_description":"Lorem Ipsum is simply dummy text of the printing and orem Ipsum is simply dummy text of the printing and orem Ipsum is simply dummy text of the printing and orem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "long_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "main_color":"#ff0000",
+        "mockup":"assets/images/mobile mockup.png",
+        "main_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "bg_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "logo":"https://cdn.iconscout.com/icon/free/png-256/youtube-85-226402.png",
+        "vedio":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "google_play_url":"javascript:void(0)",
+        "app_store_url":"javascript:void(0)",
+        "web_url":"javascript:void(0)",
+        "technologies": [
+            {"name":"php", "icon":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"name":"html", "icon":"https://cdn.iconsc2d5ee6out.com/icon/free/png-256/html5-40-1175193.png"}
+        ],
+        "mobile_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ],
+        "web_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ]
+    },
+    {
+        "id":3,
+        "name":"Twitter",
+        "short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "long_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "main_color":"#1da1f2",
+        "mockup":"assets/images/mobile mockup.png",
+        "main_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "bg_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "logo":"https://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s1600/Twitter+logo+2012.png",
+        "vedio":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "google_play_url":"javascript:void(0)",
+        "app_store_url":"javascript:void(0)",
+        "web_url":"javascript:void(0)",
+        "technologies": [
+            {"name":"php", "icon":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"name":"html", "icon":"https://cdn.iconsc2d5ee6out.com/icon/free/png-256/html5-40-1175193.png"}
+        ],
+        "mobile_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ],
+        "web_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ]
+    },
+    {
+        "id":4,
+        "name":"Instagram",
+        "short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "long_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "main_color":"#c32aa3",
+        "mockup":"assets/images/mobile mockup.png",
+        "main_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "bg_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "logo":"https://i.pinimg.com/originals/28/be/c9/28bec933c52453d402d92ad5de6a755a.png",
+        "vedio":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "google_play_url":"javascript:void(0)",
+        "app_store_url":"javascript:void(0)",
+        "web_url":"javascript:void(0)",
+        "technologies": [
+            {"name":"php", "icon":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"name":"html", "icon":"https://cdn.iconsc2d5ee6out.com/icon/free/png-256/html5-40-1175193.png"}
+        ],
+        "mobile_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ],
+        "web_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ]
+    },
+    {
+        "name":"Snapchat",
+        "short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "long_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "main_color":"#fffc00",
+        "mockup":"assets/images/mobile mockup.png",
+        "main_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "bg_image":"https://www.thespruce.com/thmb/usIjJG0oLbDLQRIgnnuBzWT2mtI=/3730x3730/smart/filters:no_upscale()/types-of-roses-4069722-hero-17f5468ab53b4622b27e3d96534105db.jpg",
+        "logo":"https://eurosagency.eu/wp-content/uploads/snapchat-logo-transparent.png",
+        "vedio":"https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19749.png",
+        "google_play_url":"javascript:void(0)",
+        "app_store_url":"javascript:void(0)",
+        "web_url":"javascript:void(0)",
+        "technologies": [
+            {"name":"php", "icon":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"name":"html", "icon":"https://cdn.iconsc2d5ee6out.com/icon/free/png-256/html5-40-1175193.png"}
+        ],
+        "mobile_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ],
+        "web_images": [
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"},
+            {"path":"https://images.vexels.com/media/users/3/166470/isolated/preview/73835fa38fba6d35aff9de603dc5044a-php-programming-language-icon-by-vexels.png"}
+        ]
+    }
+]

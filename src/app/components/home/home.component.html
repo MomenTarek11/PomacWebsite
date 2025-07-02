@@ -1,0 +1,1063 @@
+<section
+  class="main-slider animate__animated animate__fadeIn mainSlider"
+  dir="ltr"
+  id="mainSlider"
+>
+  <div class="container">
+    <div class="row">
+      <article
+        class="col-md-6 slider"
+        [ngClass]="{
+          'text-right': translate.currentLang == 'ar',
+          'text-left': translate.currentLang != 'ar'
+        }"
+      >
+        <!-- (completed)="doSmth()" -->
+        <ngx-typed-js
+          dir="rtl"
+          (preStringTyped)="doSmth($event)"
+          [strings]="
+            translate.currentLang == 'ar' ? sliderTextArabic : sliderText
+          "
+          [shuffle]="true"
+          [typeSpeed]="80"
+          [backDelay]="1000"
+          [loop]="true"
+        >
+          <h1 class="fw-bold mt-5">
+            {{
+              translate.currentLang == "ar"
+                ? "    برمجة منتجات تقنية "
+                : "Design Products Sounds"
+            }}
+
+            <!-- {{ translate.currentLang == 'ar' ? sliderTextArabic : sliderText }} -->
+
+            <span
+              class="typing"
+              [style.color]="
+                typedIndex == 0
+                  ? '#ff8636'
+                  : typedIndex == 1
+                  ? '#69BB00'
+                  : typedIndex == 2
+                  ? '#2D5EE6'
+                  : null
+              "
+            ></span>
+          </h1>
+        </ngx-typed-js>
+
+        <!-- <h1 class="fw-bold mt-5">تصميم المنتجات التي تبدو
+
+                      <ngx-typed-js
+                      [strings]="['جميلة', 'قابلة للإستخدام', 'جذابة']"
+                      [shuffle]="true"
+                      [typeSpeed]="80"
+                      [backDelay]="2000"
+                      [loop]="true">
+                      <span class="typing"></span>
+                  </ngx-typed-js>
+
+                     <owl-carousel-o [options]="main_slidder" #homeMainSlider
+                     (change)="isDragging($event,'main')">
+                        <ng-container *ngFor="let text of sliderTextArabic;let index =index">
+                            <ng-template carouselSlide [id]="index">
+                            <span class="active" [style.color]="index == 1 ? '#69BB00' : (index == 2 ? '#2D5EE6' : null)">{{text}}</span>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </h1> -->
+        <p
+          class="mt-4 fw-bold"
+          [ngStyle]="{
+            'padding-left': translate.currentLang == 'ar' ? '80px' : '0px'
+          }"
+        >
+          {{
+            translate.currentLang == "ar"
+              ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
+              : "Because you deserve the best web design company and smart phone applications are keen to save
+          your full rights"
+          }}
+
+          <!-- المستخدمون فقط من يمكنهم إستخدام المنتجات التي تجعلهم يشعرون انها مصممة لهم ، المستخدمين يحبون منتجاتنا. -->
+        </p>
+      </article>
+      <div class="col-md-6 text-center" style="overflow: hidden">
+        <div class="home_imgs">
+          <div class="audio">
+            <svg
+              width="194"
+              height="176"
+              viewBox="0 0 194 176"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M177.139 32.021C168.37 32.021 161.219 24.8327 161.219 16.0843C161.219 7.30525 168.4 0.147461 177.139 0.147461C185.909 0.147461 193.06 7.33584 193.06 16.0843C193.06 24.8327 185.879 32.021 177.139 32.021Z"
+                fill="#007C7C"
+              />
+              <path
+                d="M178.056 28.1053H176.192C175.551 28.1053 175.031 27.5853 175.031 26.9429V5.13308C175.031 4.49071 175.551 3.9707 176.192 3.9707H178.056C178.698 3.9707 179.218 4.49071 179.218 5.13308V26.9429C179.218 27.6159 178.698 28.1053 178.056 28.1053Z"
+                fill="white"
+              />
+              <path
+                d="M166.842 22.3856L165.986 20.7339C165.711 20.1833 165.925 19.4797 166.475 19.2044L185.879 9.29362C186.429 9.01832 187.132 9.23244 187.407 9.78304L188.262 11.4348C188.537 11.9854 188.323 12.689 187.773 12.9643L168.37 22.8751C167.82 23.1504 167.117 22.9362 166.842 22.3856Z"
+                fill="white"
+              />
+              <path
+                d="M187.438 22.3856L188.293 20.7339C188.568 20.1833 188.354 19.4797 187.804 19.2044L168.401 9.29362C167.851 9.01832 167.148 9.23244 166.873 9.78304L166.017 11.4348C165.742 11.9854 165.956 12.689 166.506 12.9643L185.91 22.8751C186.46 23.1504 187.132 22.9362 187.438 22.3856Z"
+                fill="white"
+              />
+              <path
+                d="M62.5818 175.421C62.2762 175.421 62.0012 175.176 62.0012 174.84V103.445C62.0012 103.14 62.2457 102.864 62.5818 102.864C62.8874 102.864 63.1624 103.109 63.1624 103.445V174.84C63.1624 175.146 62.9179 175.421 62.5818 175.421Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M67.2874 170.343C66.9818 170.343 66.7068 170.098 66.7068 169.762V108.492C66.7068 108.186 66.9512 107.911 67.2874 107.911C67.5929 107.911 67.8679 108.156 67.8679 108.492V169.762C67.8679 170.098 67.6235 170.343 67.2874 170.343Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M71.9931 159.943C71.6876 159.943 71.4126 159.698 71.4126 159.362V118.893C71.4126 118.587 71.657 118.312 71.9931 118.312C72.2987 118.312 72.5737 118.556 72.5737 118.893V159.362C72.5737 159.668 72.3293 159.943 71.9931 159.943Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M76.699 150.43C76.3934 150.43 76.1184 150.185 76.1184 149.849V128.437C76.1184 128.131 76.3629 127.855 76.699 127.855C77.0046 127.855 77.2796 128.1 77.2796 128.437V149.849C77.2796 150.155 77.0351 150.43 76.699 150.43Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M81.4353 145.352C81.1298 145.352 80.8547 145.108 80.8547 144.771V133.453C80.8547 133.147 81.0992 132.872 81.4353 132.872C81.7409 132.872 82.0159 133.117 82.0159 133.453V144.771C81.9854 145.108 81.7409 145.352 81.4353 145.352Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M57.8758 170.343C57.5702 170.343 57.2952 170.098 57.2952 169.762V108.492C57.2952 108.186 57.5396 107.911 57.8758 107.911C58.1813 107.911 58.4563 108.156 58.4563 108.492V169.762C58.4563 170.098 58.1813 170.343 57.8758 170.343Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M53.1702 167.377C52.8646 167.377 52.5896 167.132 52.5896 166.795V111.46C52.5896 111.154 52.8341 110.879 53.1702 110.879C53.5063 110.879 53.7508 111.124 53.7508 111.46V166.795C53.7508 167.132 53.4758 167.377 53.1702 167.377Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M48.4643 156.364C48.1588 156.364 47.8838 156.12 47.8838 155.783V122.472C47.8838 122.166 48.1282 121.891 48.4643 121.891C48.7699 121.891 49.0449 122.135 49.0449 122.472V155.783C49.0449 156.12 48.7699 156.364 48.4643 156.364Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M43.7586 150.124C43.453 150.124 43.178 149.88 43.178 149.543V128.712C43.178 128.406 43.4224 128.131 43.7586 128.131C44.0641 128.131 44.3391 128.376 44.3391 128.712V149.543C44.3391 149.88 44.0641 150.124 43.7586 150.124Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M39.053 144.771C38.7474 144.771 38.4724 144.526 38.4724 144.189V134.065C38.4724 133.759 38.7169 133.483 39.053 133.483C39.3891 133.483 39.6336 133.728 39.6336 134.065V144.189C39.603 144.526 39.3586 144.771 39.053 144.771Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M34.3167 142.293C34.0111 142.293 33.7361 142.049 33.7361 141.712V136.573C33.7361 136.267 33.9805 135.992 34.3167 135.992C34.6222 135.992 34.8973 136.237 34.8973 136.573V141.712C34.8973 142.018 34.6528 142.293 34.3167 142.293Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M29.6106 150.919C29.305 150.919 29.03 150.674 29.03 150.338V127.916C29.03 127.61 29.2745 127.335 29.6106 127.335C29.9162 127.335 30.1912 127.58 30.1912 127.916V150.338C30.1912 150.674 29.9467 150.919 29.6106 150.919Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M24.905 154.437C24.5995 154.437 24.3245 154.192 24.3245 153.856V124.399C24.3245 124.093 24.5689 123.817 24.905 123.817C25.2106 123.817 25.4856 124.062 25.4856 124.399V153.856C25.4856 154.192 25.2412 154.437 24.905 154.437Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M20.1992 161.901C19.8937 161.901 19.6187 161.656 19.6187 161.319V116.904C19.6187 116.599 19.8631 116.323 20.1992 116.323C20.5048 116.323 20.7798 116.568 20.7798 116.904V161.319C20.7798 161.656 20.5354 161.901 20.1992 161.901Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M15.4934 162.391C15.1878 162.391 14.9128 162.146 14.9128 161.809V116.477C14.9128 116.171 15.1573 115.896 15.4934 115.896C15.799 115.896 16.074 116.14 16.074 116.477V161.809C16.074 162.115 15.799 162.391 15.4934 162.391Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M10.7879 150.215C10.4823 150.215 10.2073 149.971 10.2073 149.634V128.589C10.2073 128.283 10.4517 128.008 10.7879 128.008C11.0934 128.008 11.3684 128.253 11.3684 128.589V149.634C11.3684 149.971 11.0934 150.215 10.7879 150.215Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M6.08181 147.647C5.77624 147.647 5.50122 147.402 5.50122 147.066V131.159C5.50122 130.853 5.74568 130.578 6.08181 130.578C6.38738 130.578 6.6624 130.823 6.6624 131.159V147.066C6.6624 147.402 6.38738 147.647 6.08181 147.647Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M1.37622 142.996C1.07066 142.996 0.795654 142.752 0.795654 142.415V135.869C0.795654 135.563 1.0401 135.288 1.37622 135.288C1.68179 135.288 1.95681 135.533 1.95681 135.869V142.415C1.95681 142.721 1.68179 142.996 1.37622 142.996Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M119.081 142.293C118.776 142.293 118.501 142.049 118.501 141.712V136.573C118.501 136.267 118.745 135.992 119.081 135.992C119.387 135.992 119.662 136.237 119.662 136.573V141.712C119.662 142.018 119.417 142.293 119.081 142.293Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M114.376 150.919C114.07 150.919 113.795 150.674 113.795 150.338V127.916C113.795 127.61 114.04 127.335 114.376 127.335C114.681 127.335 114.956 127.58 114.956 127.916V150.338C114.956 150.674 114.712 150.919 114.376 150.919Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M109.67 154.437C109.364 154.437 109.089 154.192 109.089 153.856V124.399C109.089 124.093 109.334 123.817 109.67 123.817C109.976 123.817 110.251 124.062 110.251 124.399V153.856C110.251 154.192 110.006 154.437 109.67 154.437Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M104.964 161.901C104.659 161.901 104.384 161.656 104.384 161.319V116.904C104.384 116.599 104.628 116.323 104.964 116.323C105.27 116.323 105.545 116.568 105.545 116.904V161.319C105.545 161.656 105.27 161.901 104.964 161.901Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M100.259 162.391C99.953 162.391 99.678 162.146 99.678 161.809V116.477C99.678 116.171 99.9224 115.896 100.259 115.896C100.564 115.896 100.839 116.14 100.839 116.477V161.809C100.839 162.115 100.564 162.391 100.259 162.391Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M95.5525 150.215C95.2469 150.215 94.9719 149.971 94.9719 149.634V128.589C94.9719 128.283 95.2164 128.008 95.5525 128.008C95.8581 128.008 96.1331 128.253 96.1331 128.589V149.634C96.1331 149.971 95.8581 150.215 95.5525 150.215Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M90.8469 147.647C90.5414 147.647 90.2664 147.402 90.2664 147.066V131.159C90.2664 130.853 90.5108 130.578 90.8469 130.578C91.1525 130.578 91.4275 130.823 91.4275 131.159V147.066C91.4275 147.402 91.1525 147.647 90.8469 147.647Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M86.1409 142.996C85.8353 142.996 85.5603 142.752 85.5603 142.415V135.869C85.5603 135.563 85.8048 135.288 86.1409 135.288C86.4465 135.288 86.7215 135.533 86.7215 135.869V142.415C86.6909 142.721 86.4465 142.996 86.1409 142.996Z"
+                fill="#2D5EE6"
+              />
+            </svg>
+          </div>
+          <div class="circle">
+            <svg
+              width="821"
+              height="521"
+              viewBox="0 0 821 521"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.3425 514.67C5.86447 514.67 0.578125 509.378 0.578125 502.893C0.578125 496.408 5.86447 491.116 12.3425 491.116C18.8206 491.116 24.1069 496.408 24.1069 502.893C24.1375 509.378 18.8511 514.67 12.3425 514.67ZM12.3425 492.707C6.72006 492.707 2.13653 497.295 2.13653 502.893C2.13653 508.521 6.72006 513.11 12.3425 513.11C17.965 513.11 22.5485 508.521 22.5485 502.893C22.5485 497.265 17.965 492.707 12.3425 492.707Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M490.711 24.3298C484.233 24.3298 478.946 19.0379 478.946 12.5531C478.946 6.06824 484.233 0.776367 490.711 0.776367C497.189 0.776367 502.475 6.06824 502.475 12.5531C502.475 19.0379 497.189 24.3298 490.711 24.3298ZM490.711 2.36699C485.088 2.36699 480.505 6.95532 480.505 12.5531C480.505 18.1814 485.088 22.7698 490.711 22.7698C496.333 22.7698 500.917 18.1814 500.917 12.5531C500.886 6.92473 496.333 2.36699 490.711 2.36699Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M809.236 520.298C802.758 520.298 797.471 515.006 797.471 508.521C797.471 502.036 802.758 496.744 809.236 496.744C815.714 496.744 821 502.036 821 508.521C821 515.036 815.744 520.298 809.236 520.298ZM809.236 498.335C803.613 498.335 799.03 502.923 799.03 508.521C799.03 514.149 803.613 518.738 809.236 518.738C814.858 518.738 819.442 514.149 819.442 508.521C819.442 502.923 814.858 498.335 809.236 498.335Z"
+                fill="#2D5EE6"
+              />
+            </svg>
+          </div>
+          <div class="plus">
+            <svg
+              width="823"
+              height="630"
+              viewBox="0 0 823 630"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.9172 352.927H1.06949C0.458353 352.927 0 352.438 0 351.857C0 351.245 0.48891 350.786 1.06949 350.786H11.9172C12.5283 350.786 12.9867 351.276 12.9867 351.857C13.0172 352.438 12.5283 352.927 11.9172 352.927Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M5.40869 357.271V346.412C5.40869 345.801 5.8976 345.342 6.47818 345.342C7.08932 345.342 7.54767 345.831 7.54767 346.412V357.271C7.54767 357.883 7.05876 358.342 6.47818 358.342C5.8976 358.373 5.40869 357.883 5.40869 357.271Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M456.703 624.22H445.856C445.244 624.22 444.786 623.731 444.786 623.15C444.786 622.538 445.275 622.079 445.856 622.079H456.703C457.314 622.079 457.773 622.569 457.773 623.15C457.773 623.731 457.314 624.22 456.703 624.22Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M450.195 628.564V617.705C450.195 617.094 450.684 616.635 451.264 616.635C451.875 616.635 452.334 617.124 452.334 617.705V628.564C452.334 629.176 451.845 629.635 451.264 629.635C450.684 629.666 450.195 629.176 450.195 628.564Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M821.675 526.336H810.827C810.216 526.336 809.758 525.846 809.758 525.265C809.758 524.653 810.247 524.194 810.827 524.194H821.675C822.286 524.194 822.744 524.684 822.744 525.265C822.744 525.846 822.256 526.336 821.675 526.336Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M815.166 530.68V519.821C815.166 519.209 815.655 518.75 816.236 518.75C816.847 518.75 817.305 519.239 817.305 519.821V530.68C817.305 531.291 816.816 531.75 816.236 531.75C815.655 531.781 815.166 531.291 815.166 530.68Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M469.171 8.06895H458.323C457.712 8.06895 457.253 7.57953 457.253 6.99834C457.253 6.38657 457.742 5.92773 458.323 5.92773H469.171C469.782 5.92773 470.24 6.41716 470.24 6.99834C470.271 7.61012 469.782 8.06895 469.171 8.06895Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M462.662 12.4131V1.55401C462.662 0.942231 463.151 0.483398 463.731 0.483398C464.342 0.483398 464.801 0.97282 464.801 1.55401V12.4131C464.801 13.0248 464.312 13.4837 463.731 13.4837C463.151 13.5143 462.662 13.0248 462.662 12.4131Z"
+                fill="#2D5EE6"
+              />
+            </svg>
+          </div>
+          <div class="curve">
+            <svg
+              width="132"
+              height="88"
+              viewBox="0 0 132 88"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41.9957 2.06177H0.927263C0.591138 2.06177 0.34668 1.7865 0.34668 1.48061C0.34668 1.14413 0.621695 0.899414 0.927263 0.899414H41.9957C42.3319 0.899414 42.5763 1.17472 42.5763 1.48061C42.5763 1.7865 42.3319 2.06177 41.9957 2.06177Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M67.3275 8.14868H26.2896C25.9534 8.14868 25.709 7.87338 25.709 7.56749C25.709 7.23101 25.984 6.98633 26.2896 6.98633H67.358C67.6942 6.98633 67.9386 7.2616 67.9386 7.56749C67.9081 7.90396 67.6636 8.14868 67.3275 8.14868Z"
+                fill="#2D5EE6"
+              />
+              <path
+                d="M125.966 87.6792C127.922 87.6792 129.633 86.9757 130.917 85.6909C131.558 85.018 131.558 83.9779 130.886 83.3355C130.214 82.6932 129.175 82.6932 128.533 83.3661C127.647 84.2838 126.455 84.4062 125.6 84.345C123.644 84.192 121.505 82.9379 120.313 81.2555C118.663 78.9308 118.022 76.0248 117.319 72.9659C117.105 71.9565 116.86 70.9164 116.585 69.8764C115.699 66.5422 113.377 60.6998 107.999 59.1703C104.515 58.1915 101.032 59.2927 97.9152 62.321C94.829 65.3493 92.9344 69.4788 92.0788 71.6506C89.6648 77.8601 86.4564 84.2226 81.0784 84.2226C81.0478 84.2226 81.0172 84.2226 80.9867 84.2226C77.7782 84.1921 73.3169 81.7755 70.2612 70.5188L64.0582 47.8524C63.2637 44.9159 61.9192 40.5723 59.6885 36.9934C57.2745 33.078 54.1883 30.7533 50.5215 30.0497C43.9517 28.7956 38.5737 31.6403 34.5097 38.5228C31.2401 44.09 29.2844 51.4313 27.726 57.335C27.0843 59.7515 26.5037 62.0151 25.8926 63.7587C23.8147 69.9376 20.6979 77.3707 15.3505 80.2155C12.5087 81.7143 9.453 82.0814 6.5501 81.2861C5.66395 81.0414 4.74725 81.5614 4.50279 82.4485C4.25833 83.3356 4.7778 84.2532 5.66395 84.4979C9.36134 85.5379 13.3643 85.0791 16.9394 83.1826C23.3258 79.7872 26.7788 71.5894 29.0705 64.8293C29.6817 62.9939 30.3234 60.6692 30.9651 58.1915C32.4623 52.502 34.3263 45.4054 37.382 40.2358C40.7433 34.5463 44.7157 32.3439 49.8798 33.3533C52.6299 33.8734 54.8911 35.6475 56.8467 38.7982C58.8329 42.01 60.0552 46.0171 60.8191 48.7701L67.0222 71.4365C68.2139 75.7495 69.7112 79.2672 71.514 81.8979C74.0808 85.6297 77.2587 87.5568 80.9256 87.618C84.4396 87.6791 87.5564 85.9356 90.1843 82.5096C92.3844 79.6343 94.0039 75.8718 95.1345 72.9353C97.3652 67.1846 101.826 60.9751 107.021 62.4434C108.641 62.9022 111.605 64.5845 113.285 70.7941C113.53 71.7423 113.774 72.7824 113.988 73.7613C114.721 77.0037 115.485 80.3685 117.502 83.2438C119.274 85.7521 122.3 87.4957 125.264 87.7404C125.539 87.6792 125.753 87.6792 125.966 87.6792Z"
+                fill="#2D5EE6"
+              />
+            </svg>
+          </div>
+          <img
+            class="animate__animated animate__zoomIn animate__delay-1s img_1"
+            style="width: 30%; margin: 0px 20px"
+            src="assets/images/profile_avatar_5_.svg"
+            alt=""
+          />
+          <img
+            class="animate__animated animate__zoomIn"
+            style="width: 50%; margin: 0px 20px"
+            src="assets/images/profile_avatar_9_.svg"
+            alt=""
+          />
+          <img
+            class="animate__animated animate__zoomIn animate__delay-4s img_3"
+            style="width: 21%; position: relative; top: -102px"
+            src="assets/images/profile_avatar_6_.svg"
+            alt=""
+          />
+          <img
+            class="animate__animated animate__zoomIn animate__delay-3s img_2"
+            style="width: 26%; margin: 0px 20px; position: relative; top: -50px"
+            src="assets/images/profile_avatar_7_.svg"
+            alt=""
+          />
+          <img
+            class="animate__animated animate__zoomIn animate__delay-2s"
+            style="width: 43%"
+            src="assets/images/profile_avatar_8_.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <article class="col-md-6 stock-container d-none">
+        <img
+          class="path path-1"
+          src="assets/images/home/main-slider/path-1.svg"
+          alt="POMAC"
+        />
+        <img
+          class="path path-2"
+          src="assets/images/home/main-slider/path-2.svg"
+          alt="POMAC"
+        />
+        <ul class="stock list-unstyled">
+          <li
+            *ngFor="let slide of sliderText; let index = index"
+            [ngClass]="{ active: typedIndex == index }"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100"
+              height="21"
+              viewBox="0 0 210 41"
+            >
+              <g>
+                <g>
+                  <path
+                    fill="#dfdfdf"
+                    [style.fill]="
+                      typedIndex == index && typedIndex == 0
+                        ? '#ff8636'
+                        : typedIndex == index && typedIndex == 1
+                        ? '#69BB00'
+                        : typedIndex == index && typedIndex == 2
+                        ? '#2D5EE6'
+                        : null
+                    "
+                    d="M.264 40.888V.538h209.328v40.35z"
+                  />
+                </g>
+                <g>
+                  <path
+                    fill="#f3f3f3"
+                    d="M187.486 15.646a7.075 7.075 0 1 1 14.15 0 7.075 7.075 0 0 1-14.15 0z"
+                  />
+                </g>
+                <g>
+                  <path
+                    fill="none"
+                    stroke="#f3f3f3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="20"
+                    stroke-width="4"
+                    d="M72.548 15.646H181.53"
+                  />
+                </g>
+              </g>
+            </svg>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="main-slider animate__animated animate__fadeIn">
+    <div class="container">
+        <div class="row">
+            <article class="col-md-6 pt-5 slider">
+                <h1 class="fw-bold mt-5">Design Products Sounds
+                    <owl-carousel-o [options]="main_slidder" #homeMainSlider
+                     (change)="isDragging($event,'main')">
+                        <ng-container *ngFor="let text of sliderText;let index =index">
+                            <ng-template carouselSlide [id]="index">
+                            <span class="active">{{text}}</span>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </h1>
+                <p class="mt-4 fw-bold">Users only use the products which make them feel it's designed for them, users love our products.</p>
+            </article>
+            <article class="col-md-6 stock-container">
+                <img class="path path-1" src="assets/images/home/main-slider/path-1.svg">
+                <img class="path path-2" src="assets/images/home/main-slider/path-2.svg">
+                <ul class="stock list-unstyled">
+                    <li *ngFor="let slide of sliderText;let index = index" (click)="jumpTo(index,'main')" [ngClass]="{'active': mainSlidersStartPosition == index}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="21" viewBox="0 0 210 41"><g><g><path fill="#dfdfdf" d="M.264 40.888V.538h209.328v40.35z"/></g><g><path fill="#f3f3f3" d="M187.486 15.646a7.075 7.075 0 1 1 14.15 0 7.075 7.075 0 0 1-14.15 0z"/></g><g><path fill="none" stroke="#f3f3f3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="4" d="M72.548 15.646H181.53"/></g></g></svg>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section> -->
+<br />
+<section class="services Services" id="Services">
+  <div class="container">
+    <div class="head">
+      <h1 class="fw-bold">{{ "HOME.services" | translate }}</h1>
+      <!-- <p>{{ 'HOME.services_description'| translate }}</p> -->
+    </div>
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-md-4"
+        *ngFor="let item of [].constructor(6); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div>
+            <div class="ph-row">
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8"></div>
+              <div class="ph-col-12"></div>
+
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+          <div class="ph-col-2">
+            <div class="ph-avatar"></div>
+          </div>
+          <div class="ph-col-12">
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8"></div>
+                <div class="ph-col-12"></div>
+
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards row" *ngIf="show">
+      <div
+        class="col-md-4"
+        *ngFor="let service of home?.services.slice(0, 6)"
+        data-aos="fade-up"
+        data-aos-offset="120"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
+        <div class="card border-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="pl-0 col-3">
+                <img
+                  src="{{ baseURL }}/{{ service.icon }}"
+                  class=""
+                  alt="POMAC"
+                  style="width: 55px; height: 55px; object-fit: contain"
+                />
+              </div>
+              <div class="col-9 p-0 text-left">
+                <h4>
+                  {{
+                    translate.currentLang == "ar"
+                      ? service.name_AR
+                      : service.name_EN
+                  }}
+                </h4>
+              </div>
+            </div>
+            <div class="mt-3 row">
+              <!-- {{service.short_description_EN}} -->
+              {{
+                translate.currentLang == "ar"
+                  ? service.short_description_AR
+                  : service.short_description_EN
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5" *ngIf="home?.services.length > 0">
+      <a
+        aria-labelledby="pomac"
+        aria-label="pomac"
+        [routerLink]="'/our-services'"
+      >
+        <button
+          data-aos="zoom-in-up"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #0f0f0f;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            padding: 10px 80px;
+            margin: auto;
+            font-size: 25px;
+          "
+        >
+          عرض المزيد
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="home">
+    <div class="container">
+        <section class="main-slider">
+            <div class="row">
+                <article class="col-md-6">
+                    <h1 class="fw-bold">Design Products Sounds <span class="active">Attractive</span> </h1>
+                    <p class="mt-4 fw-bold">Users only use the products which make them feel it's designed for them, users love our products.</p>
+
+                </article>
+                <article class="col-md-6">
+                    <img src="assets/images/main-slider.svg" class="w-100">
+                    <ul class="stock list-unstyled">
+                        <li class="active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="21" viewBox="0 0 210 41"><g><g><path fill="#dfdfdf" d="M.264 40.888V.538h209.328v40.35z"/></g><g><path fill="#f3f3f3" d="M187.486 15.646a7.075 7.075 0 1 1 14.15 0 7.075 7.075 0 0 1-14.15 0z"/></g><g><path fill="none" stroke="#f3f3f3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="4" d="M72.548 15.646H181.53"/></g></g></svg>
+                        </li>
+                        <li *ngFor="let item of [].constructor(5)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="21" viewBox="0 0 210 41"><g><g><path fill="#dfdfdf" d="M.264 40.888V.538h209.328v40.35z"/></g><g><path fill="#f3f3f3" d="M187.486 15.646a7.075 7.075 0 1 1 14.15 0 7.075 7.075 0 0 1-14.15 0z"/></g><g><path fill="none" stroke="#f3f3f3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="4" d="M72.548 15.646H181.53"/></g></g></svg>
+                        </li>
+                    </ul>
+
+                </article>
+            </div>
+        </section>
+        <section class="services">
+            <div class="head">
+                <h2>Services</h2>
+                <p>We help your business to scale and transform through our services.</p>
+            </div>
+            <div class="cards row" >
+                <div class="col-md-4" *ngFor="let service of services" data-aos="fade-up" data-aos-offset="120" data-aos-easing="ease-in-sine" data-aos-duration="600">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="pl-0 col-3">
+                                    <img src="{{service.icon_path}}" class="w-100">
+                                </div>
+                                <div class="col-9 p-0 text-left">
+                                    <h4>{{service.title}}</h4>
+                                </div>
+                            </div>
+                            <div class="mt-3 row">
+                                {{service.description}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section> -->
+<section
+  class="new_section"
+  style="background: #f9f9f9"
+  data-aos="fade-up"
+  data-aos-offset="200"
+  data-aos-easing="ease-in-sine"
+  data-aos-duration="400"
+>
+  <div class="container">
+    <div class="head">
+      <h1 class="fw-bold">
+        {{ translate.currentLang == "ar" ? "القطاعات  المستهدفة" : "Process" }}
+      </h1>
+      <!-- <p>نحن نساعد عملك على التوسع والتحول من خلال خدماتنا.</p> -->
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-lg-4 project"
+        *ngFor="let item of [].constructor(3); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div class="ph-col-12">
+            <div class="ph-picture" style="min-height: 200px"></div>
+            <div class="ph-row">
+              <div class="ph-col-2 empty big"></div>
+              <div class="ph-col-10 big"></div>
+              <div class="ph-col-8 empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-6"></div>
+
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="show">
+      <div class="col-md-6 col-lg-4 col-sm-6" *ngFor="let item of sections">
+        <div
+          class="card"
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
+          <img
+            [src]="'https://pomac.info/api/backend/public/' + item.image"
+            alt=""
+            style="object-fit: cover"
+          />
+          <h4 class="mt-4 mb-2">
+            {{ item.title }}
+          </h4>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+
+      <!-- <div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_1.svg" alt="">
+      <h4>
+        المناقشة</h4>
+
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_2.svg" alt="">
+      <h4>
+        تحديد العمليات </h4>
+
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_3.svg" alt="">
+      <h4>
+        التصميم الأولى</h4>
+
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_4.svg" alt="">
+      <h4>
+        التطوير</h4>
+
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_5.svg" alt="">
+      <h4>
+         الإطلاق</h4>
+
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card">
+      <img src="assets/images/step_6.svg" alt="">
+      <h4>
+       التحسين </h4>
+
+</div>
+</div> -->
+    </div>
+    <div class="text-center" *ngIf="home?.sections?.length != section_count">
+      <button
+        (click)="addsections()"
+        class="mt-4"
+        data-aos="zoom-in-up"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="400"
+        style="
+          cursor: pointer;
+          border-radius: 10px;
+          border: 1px solid #0f0f0f;
+          background-color: #0f0f0f;
+          color: #ffffff;
+          padding: 10px 80px;
+          margin: auto;
+          font-size: 25px;
+        "
+      >
+        عرض المزيد
+      </button>
+    </div>
+  </div>
+</section>
+<section
+  class="projects projects__"
+  style="overflow: hidden !important"
+  id="projects"
+>
+  <div class="head">
+    <h1 class="fw-bold">
+      <!-- {{ translate.currentLang == 'ar' ? 'المشاريع' : 'Projects' }} -->
+      <!-- projects02 : remove  the text under projects title from "We help your business to scale and transform through our services. " & change the title to be "Our work " > أعمالنا  -->
+      {{ translate.currentLang == "ar" ? "أعمالنا" : "Our work" }}
+    </h1>
+    <!-- <p>
+      نجح استوديو الشركات الناشئة بوماك في  تنفيذ العديد من الشركات في قطاعات  تقنية واعدة مثل تقنيات التعليم والتجارة الإلكترونية والبرمجيات كخدمة والخدمة عبر البرمجيات
+    </p> -->
+  </div>
+  <!-- src/assets/zabah.mp4 -->
+
+  <!-- <a aria-labelledby="pomac" aria-label="pomac"  href="javascript:void(0)" target="_blank" class="">
+        <video class="w-100 inner"   id="video_player">
+            <source src="assets/zabah.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </a> -->
+
+  <div class="container">
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-lg-6 project"
+        *ngFor="let item of [].constructor(4); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div class="ph-col-12">
+            <div class="ph-picture" style="min-height: 300px"></div>
+            <div class="ph-row">
+              <div class="ph-col-2 empty big"></div>
+              <div class="ph-col-10 big"></div>
+              <div class="ph-col-8 empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-6"></div>
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="show">
+      <div
+        class="col-lg-6 project"
+        *ngFor="let project of home?.projects.slice(0, 4); let index = index"
+      >
+        <div
+          class="card mb-4"
+          [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+          data-aos-offset="120"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+          style="width: 100%; direction: rtl; position: relative"
+          [routerLink]="['/our-work', project.id, project.name_EN]"
+        >
+          <span
+            *ngIf="project.stage == 'coming_soon'"
+            style="position: absolute; top: 20px; right: 20px"
+          >
+            <svg
+              width="88"
+              height="45"
+              viewBox="0 0 88 45"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="88" height="45" rx="8" fill="#FFF3EB" />
+              <path
+                d="M25.6291 11.68L26.2291 10.38L30.4891 9.62L29.8891 10.9L25.6291 11.68ZM25.2891 13.7L25.8891 12.42L30.1691 11.64L29.5691 12.92L25.2891 13.7ZM30.1784 29C29.0184 29 28.1251 28.6267 27.4984 27.88C26.9651 27.24 26.6984 26.4267 26.6984 25.44V17.02L28.4184 16.1V25.38C28.4184 26.7133 29.0718 27.38 30.3784 27.38H31.6984V29H30.1784ZM37.4498 27.38H38.7698V29H37.2498C36.1432 29 35.2698 28.6467 34.6298 27.94C33.9898 28.6467 33.1165 29 32.0098 29H30.4898V27.38H31.8098C33.1165 27.38 33.7698 26.7133 33.7698 25.38V21.24L35.4898 20.32V25.38C35.4898 26.7133 36.1432 27.38 37.4498 27.38ZM34.5098 31C35.1498 31 35.4698 31.3267 35.4698 31.98C35.4698 32.6467 35.1498 32.98 34.5098 32.98C33.8565 32.98 33.5298 32.6467 33.5298 31.98C33.5298 31.3267 33.8565 31 34.5098 31ZM37.5602 29V27.38H38.8802C40.1868 27.38 40.8402 26.7133 40.8402 25.38V21.24L42.5602 20.32V25.44C42.5602 26.5733 42.2202 27.4667 41.5402 28.12C40.9135 28.7067 40.0935 29 39.0802 29H37.5602ZM38.6202 32.98C37.9668 32.98 37.6402 32.6467 37.6402 31.98C37.6402 31.3267 37.9668 31 38.6202 31C39.2602 31 39.5802 31.3267 39.5802 31.98C39.5802 32.6467 39.2602 32.98 38.6202 32.98ZM41.1602 32.98C40.5068 32.98 40.1802 32.6467 40.1802 31.98C40.1802 31.3267 40.5068 31 41.1602 31C41.8002 31 42.1202 31.3267 42.1202 31.98C42.1202 32.6467 41.8002 32.98 41.1602 32.98ZM52.3602 27.38H53.6802V29H52.1602C51.4802 29 50.8935 28.8667 50.4002 28.6C50.2802 29.92 49.8202 30.9733 49.0202 31.76C48.2868 32.48 47.3668 32.84 46.2602 32.84C45.4602 32.84 44.6802 32.64 43.9202 32.24V30.74C44.6002 31.1133 45.2802 31.3 45.9602 31.3C46.8135 31.3 47.4802 31.0133 47.9602 30.44C48.4402 29.8667 48.6802 29.0733 48.6802 28.06V21.24L50.4002 20.32V20.34L50.4202 20.32V25.78C50.5402 26.8467 51.1868 27.38 52.3602 27.38ZM57.702 18.04C57.0487 18.04 56.722 17.7067 56.722 17.04C56.722 16.3867 57.0487 16.06 57.702 16.06C58.342 16.06 58.662 16.3867 58.662 17.04C58.662 17.7067 58.342 18.04 57.702 18.04ZM60.242 18.04C59.5887 18.04 59.262 17.7067 59.262 17.04C59.262 16.3867 59.5887 16.06 60.242 16.06C60.882 16.06 61.202 16.3867 61.202 17.04C61.202 17.7067 60.882 18.04 60.242 18.04ZM52.482 29V27.38H56.082C55.4687 26.7 55.162 25.7533 55.162 24.54C55.162 23.0867 55.542 21.9533 56.302 21.14C56.9687 20.42 57.8554 20.06 58.962 20.06C60.0954 20.06 60.9754 20.4133 61.602 21.12C62.1354 21.7467 62.402 22.5667 62.402 23.58V25.48C62.3887 26.5867 62.062 27.46 61.422 28.1C60.7954 28.7 59.962 29 58.922 29H52.482ZM60.682 23.66C60.682 22.3267 60.1087 21.66 58.962 21.66C58.3087 21.66 57.7954 21.9133 57.422 22.42C57.0487 22.9133 56.862 23.6067 56.862 24.5C56.862 25.38 57.042 26.08 57.402 26.6C57.762 27.12 58.242 27.38 58.842 27.38C60.0687 27.38 60.682 26.74 60.682 25.46V23.66Z"
+                fill="#FF8636"
+              />
+            </svg>
+          </span>
+          <div class="bg-image">
+            <img
+              loading="lazy"
+              src="{{ baseURL }}/{{ project.path.main_image }}"
+              alt="POMAC"
+              class="card-img-top img"
+              style="width: 100%"
+              alt="..."
+            />
+          </div>
+          <div class="card-body p-3">
+            <!--
+            <div class="img " style="background-image: url({{baseURL}}/{{project.path.main_image}}) ; " [style.background-color]="project.main_color" ></div>
+
+            </div> -->
+            <h5
+              class="card-title mt-3 name fw-bold text-capitalize"
+              style="text-align: start !important"
+            >
+              {{ project.name_AR }}
+            </h5>
+            <p class="card-text mb-2" style="text-align: start !important">
+              {{
+                project.short_description_AR.length > 50
+                  ? project.short_description_AR.substring(0, 200) + "..."
+                  : project.short_description_AR
+              }}
+            </p>
+            <p style="text-align: start !important; font-weight: 600">
+              بلد التشغيل :
+              <img
+                src="assets/images/project-details/img_country.svg"
+                alt=""
+                style="width: 30px; height: 30px; margin-left: 10px"
+              />
+              <span style="font-weight: 500">المملكه العربية السعودية</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mb-4 mt-3" *ngIf="home?.projects.length > 0">
+      <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/our-work'">
+        <button
+          data-aos="zoom-in-up"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #0f0f0f;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            padding: 10px 80px;
+            margin: auto;
+            font-size: 25px;
+          "
+        >
+          عرض المزيد
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+<section
+  class="contact-us animate__animated animate__fadeIn"
+  style="text-align: start; padding-top: 50px"
+>
+  <div class="container my-5">
+    <div class="head">
+      <h1
+        class="fw-bold mb-3"
+        style="text-align: center"
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
+        الأسئلة الشائعة
+      </h1>
+      <!-- <p>
+  في هذا القسم تم حصر أكثر الأسئلة التي يحتاجها رواد الأعمال معرفتها  عن استوديو الشركات الناشئة بوماك وإذا لم تتمكن من العثور على السؤال، استخدم  نموذج اتصل بنا أسفل الصفحة ، ونحن مستعدون للمساعدة.
+ </p> -->
+    </div>
+    <div *ngIf="!show">
+      <div
+        class="ph-item"
+        *ngFor="let item of [].constructor(5); let i = index"
+      >
+        <div class="ph-col-12">
+          <div class="ph-row">
+            <div class="ph-col-12 big"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Loading Skeleton (unchanged) -->
+      <div *ngIf="!show">
+        <div class="ph-item" *ngFor="let item of [].constructor(5)">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated Bootstrap 5 Accordion -->
+      <div class="accordion my-5" id="faqAccordion" *ngIf="show">
+        <div
+          class="accordion-item mb-3"
+          *ngFor="let item of home?.faqs; let i = index"
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
+          <h2 class="accordion-header" id="heading{{ i }}">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#collapse' + i"
+              aria-expanded="false"
+              [attr.aria-controls]="'collapse' + i"
+            >
+              <span
+                class="d-flex justify-content-between align-items-center w-100"
+              >
+                {{ item.question }}
+              </span>
+            </button>
+          </h2>
+
+          <div
+            [id]="'collapse' + i"
+            class="accordion-collapse collapse"
+            [attr.aria-labelledby]="'heading' + i"
+            data-bs-parent="#faqAccordion"
+            (shown.bs.collapse)="item.show = true"
+            (hidden.bs.collapse)="item.show = false"
+          >
+            <div class="accordion-body">
+              <p [innerHTML]="item.answer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unchanged button -->
+    </div>
+    <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/faq'">
+      <button
+        data-aos="zoom-in-up"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="400"
+        style="
+          cursor: pointer;
+          border-radius: 10px;
+          border: 1px solid #0f0f0f;
+          background-color: #0f0f0f;
+          color: #ffffff;
+          padding: 10px 80px;
+          margin: auto;
+          font-size: 25px;
+          display: block !important;
+        "
+      >
+        عرض المزيد
+      </button>
+    </a>
+  </div>
+</section>
+<!-- <section class="testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="head text-left ">
+          <h5 class="fw-bold">Our Clients Testimonials</h5>
+          <p class="m-0">The satisfaction of our customers is one of our most important concerns.</p>
+        </div>
+
+        <owl-carousel-o [options]="testimonial_slidder" #testimonialsSlider
+          (dragging)="isDragging($event,'testimonials')">
+          <ng-container *ngFor="let client of home.testimonials;let index =index">
+            <ng-template carouselSlide [id]="index">
+              <div class="row">
+                <div class="col-auto">
+                  <img src="{{baseURL}}/{{client.logo}}" class="rounded-circle" style="width: 50px;height: 50px;">
+                </div>
+                <div class="col">
+                  <h5 class="fw-bold text-capitalize">{{client.name}}</h5>
+                  <h6 class="fw-bold text-capitalize">{{client.company}}</h6>
+                  <p class="mt-3 comment text-capitalize">{{client.review}}</p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <div class="col-md-6 logos p-4">
+        <div class="row">
+          <div class="image-preview col-md-4 mb-5" *ngFor="let image of home.testimonials;let index = index"
+            (click)="jumpTo(index,'testimonials')" [ngClass]="{'active': testimonialsStartPosition == index}">
+            <img src="{{baseURL}}/{{image.logo}}" class="w-100 ">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+<section class="idea">
+  <div class="container">
+    <h2>
+      {{ translate.currentLang == "ar" ? "عندك" : "You have" }}
+      <!-- -->
+      <label
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
+        {{ translate.currentLang == "ar" ? "فكرة مشروع" : "project idea" }}
+      </label>
+
+      <!-- تواصل معنا وأبدأ خطوات تنفيذ فكرتك -->
+      {{
+        translate.currentLang == "ar"
+          ? "تواصل معنا وأبدأ خطوات تنفيذ فكرتك"
+          : "Contact us and start the steps of implementing your idea"
+      }}
+      <!-- {{ translate.currentLang == 'ar' ? home_data.ques_ar : home_data.ques_en }}
+      <label data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">{{
+        translate.currentLang == 'ar' ? home_data.idea_ar : home_data.idea_en }} </label>
+      <label data-aos="zoom-in-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="400">{{
+        translate.currentLang == 'ar' ? home_data.mark_ar : home_data.mark_en }} </label>
+      <br> {{ translate.currentLang == 'ar' ? home_data.talk_ar : home_data.talk_en }} -->
+    </h2>
+    <!-- <p class="text-secondary">
+
+    </p> -->
+    <a
+      aria-labelledby="pomac"
+      aria-label="pomac"
+      target="_blank"
+      href="https://api.whatsapp.com/send?phone=201094969284"
+    >
+      <button
+        data-aos="zoom-in-up"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="400"
+      >
+        {{
+          translate.currentLang == "ar"
+            ? home_data.contact_ar
+            : home_data.contact_en
+        }}
+      </button>
+    </a>
+  </div>
+</section>

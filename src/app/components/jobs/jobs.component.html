@@ -1,0 +1,90 @@
+<section class="m-0 blogs">
+  <div class="words">
+    <div class="row m-0">
+      <div class="col-md-7 text-center m-auto">
+        <h1 class="mb-5 fw-bold" data-aos="fade-up">الوظائف</h1>
+        <p data-aos="zoom-out-down" class="mb-5 fw-bold">
+          نحن نؤمن بشدة بأن الشركات العظيمة تصنعها أشخاص عظماء. ولهذا السبب
+          نساعد آلاف الشركات على جذب المزيد من المرشحين وإدارتهم بكفاءة أكبر من
+          خلال بناء برامج قوية وممتعة وسهلة الاستخدام.
+        </p>
+      </div>
+    </div>
+  </div>
+  <section dir="rtl">
+    <div class="container">
+      <div class="row m-0" *ngIf="!show">
+        <div
+          class="col-lg-12 project"
+          *ngFor="let item of [].constructor(6); let i = index"
+        >
+          <div class="ph-item" style="border: none">
+            <div class="ph-col-12">
+              <div class="ph-row">
+                <div class="ph-col-2 empty big"></div>
+                <div class="ph-col-10 big"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-4"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-6"></div>
+
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5" *ngIf="show">
+        <div class="col-lg-12" *ngFor="let project of items; let index = index">
+          <div
+            (click)="router_details(project)"
+            class="card mb-4"
+            data-aos="zoom-in"
+            data-aos-offset="120"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+            data-aos-once="true"
+            style="
+              width: 100%;
+              direction: rtl;
+              position: relative;
+              cursor: pointer;
+            "
+          >
+            <div class="row d-flex align-items-center m-0">
+              <div class="col-md-10">
+                <div class="card-body p-4">
+                  <!--
+      <div class="img " style="background-image: url({{baseURL}}/{{project.path.main_image}}) ; " [style.background-color]="project.main_color" ></div>
+
+      </div> -->
+                  <h5
+                    class="card-title mt-3 name fw-bold text-capitalize"
+                    style="text-align: start !important"
+                  >
+                    {{ project.title }}
+                  </h5>
+                  <p
+                    class="card-text mb-2"
+                    style="text-align: start !important"
+                  >
+                    {{ project?.location }} - {{ project.type }}
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button
+                  type="button"
+                  class="btn btn-primary w-100"
+                  (click)="router_details(project)"
+                >
+                  سجل الآن
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

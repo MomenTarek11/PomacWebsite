@@ -1,0 +1,141 @@
+<section class="about animate__animated animate__fadeIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="assets/images/logo.png" class="w-25" />
+        <h2>
+          We Create a beautiful, easy, usefull products
+          <span
+            >And we provide more than one service,<br />
+            here's our services</span
+          >
+        </h2>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/images/about/pomac-office.svg" class="w-100" />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="services">
+  <div class="container">
+    <div class="head">
+      <h2>Services</h2>
+      <p>We help your business to scale and transform through our services.</p>
+    </div>
+    <div class="cards row">
+      <div
+        class="col-md-6"
+        *ngFor="let service of services"
+        data-aos="fade-up"
+        data-aos-offset="150"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
+        <div class="card border-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="pl-0 col-2">
+                <img
+                  src="{{ baseURL }}/{{ service.icon }}"
+                  class="w-100"
+                  alt="POMAC"
+                />
+              </div>
+              <div class="col-10 p-0 text-left">
+                <h4 class="mt-4">{{ service.name_EN }}</h4>
+              </div>
+            </div>
+            <div class="mt-3 row">
+              {{ service.short_description_EN }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  class="process"
+  data-aos="fade-up"
+  data-aos-offset="200"
+  data-aos-easing="ease-in-sine"
+  data-aos-duration="600"
+>
+  <div class="container">
+    <h2 class="text-center mb-5">Process</h2>
+  </div>
+  <div class="container">
+    <img src="assets/images/process.gif" alt="POMAC" class="w-100" />
+  </div>
+</section>
+<section class="team">
+  <div class="container">
+    <div class="head">
+      <h2>Our team</h2>
+      <p>
+        here's the family of the company, every one of us have a magical skill,
+        and all of us love what we do.
+      </p>
+    </div>
+    <div class="employees row">
+      <div
+        class="col-md-3 employee mb-4"
+        *ngFor="let employee of team"
+        data-aos="fade-up"
+        data-aos-offset="150"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
+        <div class="card text-center">
+          <img
+            src="{{ baseURL }}/{{ employee.image }}"
+            class="w-75"
+            style="height: 190px"
+            alt="POMAC"
+          />
+          <h5 class="name fw-bold mt-4 mb-1 text-capitalize">
+            {{ employee.name_EN }}
+          </h5>
+          <h6 class="name fw-bold text-capitalize">{{ employee.role }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="technologies">
+  <div class="container">
+    <div class="head">
+      <h2>Technologies</h2>
+      <p>
+        here's the family of the company, every one of us have a magical skill,
+        and all of us love what we do.
+      </p>
+    </div>
+    <div class="card p-5">
+      <div class="card-body">
+        <div class="row">
+          <div
+            class="col-md-1 mb-2 mt-2"
+            *ngFor="let technology of technologies; let index = index"
+          >
+            <img
+              src="{{ baseURL }}/{{ technology.icon }}"
+              class="w-100"
+              alt="{{ technology.name }}"
+              title="{{ technology.name }}"
+              alt="POMAC"
+              [attr.data-aos]="
+                index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'
+              "
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="900"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="idea"></section>

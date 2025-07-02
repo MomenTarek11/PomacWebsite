@@ -1,0 +1,415 @@
+<section style="height: 100vh" *ngIf="!project">
+  <div class="ph-item">
+    <div class="ph-col-12">
+      <div class="ph-picture" style="height: 100vh"></div>
+    </div>
+  </div>
+</section>
+<section id="details" class="m-0" *ngIf="project">
+  <section class="project-details mt-0">
+    <!-- <div class="main-bg position-relative">
+            <div class="overlay"></div>
+            <div class=" words">
+                <div class="row" [ngStyle]="{'background-image': 'url('+baseURL+'/' + project?.path?.mockup + ')'}">
+                    <div class="col text-center">
+                        <h1 class="mb-5" data-aos="fade-up">
+                          {{translate.currentLang == 'ar' ? project.name_AR : project.name_EN}}
+                        </h1>
+                        <p data-aos="zoom-out-down">
+
+                            {{translate.currentLang == 'ar' ? project.short_description_AR : project.short_description_EN}}
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <div class="under-slider pt-5 pb-5">
+      <div class="container">
+        <div class="row mt-2">
+          <div class="col-md-7">
+            <div class="challenge">
+              <h1 class="mb-4" data-aos="fade-up" style="text-align: start">
+                {{
+                  translate.currentLang == "ar"
+                    ? project.name_AR
+                    : project.name_EN
+                }}
+              </h1>
+              <div
+                class="col-md-12 long_description_AR"
+                data-aos="fade-left"
+                style="
+                  margin: 0 auto;
+                  text-align: start;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 7;
+                  -webkit-box-orient: vertical;
+
+                  overflow: hidden;
+                "
+              >
+                {{
+                  translate.currentLang == "ar"
+                    ? project.long_description_AR
+                    : project.long_description_EN
+                }}
+              </div>
+              <div
+                class="country_details mt-3 mb-3"
+                style="display: flex; align-items: center; flex-wrap: wrap"
+              >
+                <div class="mb-1 details">
+                  <img
+                    src="assets/images/project-details/img_country.svg"
+                    alt=""
+                  />
+                  <span>المملكه العربية السعودية</span>
+                </div>
+                <div class="mb-1 details" *ngIf="project?.section != null">
+                  <img src="assets/images/project-details/categ.svg" alt="" />
+                  <span> {{ project?.section.title }}</span>
+                </div>
+              </div>
+              <div class="project_download mb-4" style="text-align: start">
+                <a
+                  *ngIf="project?.path?.google_play != '#'"
+                  href="{{ project?.path?.google_play }}"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/images/project-details/google_play.svg"
+                    alt=""
+                    style="width: 110px; margin-left: 10px"
+                /></a>
+
+                <a
+                  href="{{ project?.path?.app_store }}"
+                  target="_blank"
+                  *ngIf="project?.path?.app_store != '#'"
+                  ><img
+                    src="assets/images/project-details/apple_store.svg"
+                    alt=""
+                    style="width: 110px"
+                /></a>
+
+                <div
+                  style="
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-left: 5px;
+                    margin-top: 20px !important;
+                  "
+                  *ngIf="project?.path?.web != '#'"
+                >
+                  رابط الموقع
+                  <a
+                    style="
+                      font-size: 18px;
+                      font-weight: 500;
+                      text-decoration: none;
+                    "
+                    href="{{ project?.path?.web }}"
+                    target="_blank"
+                  >
+                    <!-- EXPLORE -->
+                    {{ project?.path?.web }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div
+              data-aos="zoom-in"
+              style="
+                border-radius: 8px;
+                width: 100%;
+                height: 350px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+              "
+              [ngStyle]="{
+                'background-image':
+                  'url(' + baseURL + '/' + project?.path?.mockup + ')'
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="web-slider mb-5 position-relative"
+    *ngIf="project.web_images.length > 0"
+  >
+    <!-- {{project.web_images.length}} -->
+    <!-- <div div *ngIf="project.web_images.length == 1" class="text-center">
+          <img  src="{{baseURL}}/{{project.web_images[0].image}}" alt="POMAC">
+        </div> -->
+    <!-- <div class="text-center frame">
+              <img class="w-100" src="assets/images/project-details/frame.png">
+          </div> -->
+    <div *ngIf="project.web_images.length == 1" class="text-center web-image">
+      <img src="{{ baseURL }}/{{ project.web_images[0].image }}" alt="POMAC" />
+    </div>
+
+    <owl-carousel-o [options]="labtop" *ngIf="project.web_images.length != 1">
+      <ng-template carouselSlide *ngFor="let image of project.web_images">
+        <img src="{{ baseURL }}/{{ image.image }}" alt="POMAC" />
+      </ng-template>
+    </owl-carousel-o>
+  </section>
+
+  <section
+    class="mobile-slider mb-5 position-relative"
+    *ngIf="project.mobile_images.length > 0"
+  >
+    <div class="container">
+      <!-- <div class="text-center frame">
+                <img class="w-100" src="assets/images/project-details/mob frame.png">
+            </div> -->
+      <div *ngIf="project.mobile_images.length == 1" class="text-center">
+        <img
+          src="{{ baseURL }}/{{ project.mobile_images[0].image }}"
+          alt="POMAC"
+          class="w-100"
+        />
+      </div>
+
+      <owl-carousel-o
+        [options]="mobile"
+        *ngIf="project.mobile_images.length != 1"
+      >
+        <ng-template carouselSlide *ngFor="let image of project.mobile_images">
+          <img src="{{ baseURL }}/{{ image.image }}" alt="POMAC" />
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+
+  <section class="technologies" style="padding-top: 100px">
+    <div class="under-slider p-5 ml-0 pl-0 mr-0 pr-0">
+      <div class="container">
+        <div class="row challenge">
+          <div class="col-md-12 text-center" data-aos="zoom-out-right">
+            <h2>
+              <!-- Technologies -->
+              <b>{{
+                translate.currentLang == "ar" ? "التقنيات" : "Technologies"
+              }}</b>
+            </h2>
+            <p>
+              <!-- here's the family of the company, every one of us <br> have a magical skill, and all of us love what we do. -->
+
+              <!-- {{translate.currentLang == 'ar' ? 'هنا عائلة الشركة، كل واحد منا لديه مهارة سحرية، ونحن نحب كل ما نفعله.' : 'here the family of the company, every one of us have a magical skill, and all of us love what we do.'}} -->
+              <!--
+                            projectDetails02 : change technologies section description from "here the family of the company, every one of us have a magical skill, and all of us love what we do." To be "We use the latest technology to achieve the best quality" > "نحن نستخدم أحدث التقنيات للوصول للأفضل جودة"
+                           -->
+              {{
+                translate.currentLang == "ar"
+                  ? "نحن نستخدم أحدث التقنيات للوصول للأفضل جودة"
+                  : "We use the latest technology to achieve the best quality"
+              }}
+            </p>
+          </div>
+          <div class="col-md-12 mt-5">
+            <div class="row">
+              <div
+                class="text-center col-md-2 col-lg-1 col-4 mb-2 mt-2"
+                *ngFor="
+                  let technology of project.selected_technologies;
+                  let index = index
+                "
+              >
+                <img
+                  src="{{ baseURL }}/{{ technology.icon }}"
+                  class="w-100"
+                  alt="POMAC"
+                  [attr.data-aos]="
+                    index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'
+                  "
+                  data-aos-offset="150"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="800"
+                />
+              </div>
+              <!-- <div class="col-md-1 mb-2 mt-2" *ngFor="let technology of project.technologies;let index = index" >
+                                    <img src="{{baseURL}}/{{technology.icon}}" class="w-100"
+                                    [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+                                    data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="1600"
+                                    >
+                                </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video" *ngIf="project?.path?.vedio != '#'">
+    <div class="text-center">
+      <!-- {{project?.path?.vedio}} -->
+      <iframe
+        width="820"
+        height="440"
+        frameborder="0"
+        allowfullscreen
+        [src]="url"
+      >
+      </iframe
+      ><br />
+      <!-- <button type="button" class="btn btn-outline-dark ml-1 mr-1 mt-4">Google Play</button> -->
+      <!-- <button type="button" class="btn btn-253px-dark ml-1 mr-1 mt-4">EXPLORE</button> -->
+      <!-- <button type="button" class="btn btn-outline-dark ml-1 mr-1 mt-4">App Store</button> -->
+    </div>
+  </section>
+  <section class="download">
+    <h2 class="text-center mb-5">
+      <b>
+        {{
+          project?.path?.web != "#"
+            ? "تصفح الموقع من خلال"
+            : "حمل التطبيق من خلال"
+        }}
+      </b>
+    </h2>
+    <div class="container">
+      <div class="flexIcon">
+        <div *ngIf="project?.path?.google_play != '#'" class="text-center">
+          <a
+            aria-labelledby="pomac"
+            aria-label="pomac"
+            href="{{ project?.path?.google_play }}"
+            target="_blank"
+            ><img alt="POMAC" src="assets/images/google play.png" width="250"
+          /></a>
+        </div>
+        <div *ngIf="project?.path?.web != '#'" class="text-center explore_p">
+          <a
+            aria-labelledby="pomac"
+            aria-label="pomac"
+            class="explore"
+            style="display: block; width: 253px; margin: 0 auto"
+            href="{{ project?.path?.web }}"
+            target="_blank"
+          >
+            <!-- EXPLORE -->
+            {{ translate.currentLang == "ar" ? "رابط الموقع" : "Website Link" }}
+          </a>
+        </div>
+        <div *ngIf="project?.path?.app_store != '#'" class="text-center">
+          <a
+            aria-labelledby="pomac"
+            aria-label="pomac"
+            href="{{ project?.path?.app_store }}"
+            target="_blank"
+            ><img alt="POMAC" src="assets/images/apple store.png" width="250"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects __projects mb-0">
+    <div class="container">
+      <h2 class="text-center mb-4">
+        <b>
+          {{ translate.currentLang == "ar" ? "أهم أعمالنا" : "Projects" }}
+        </b>
+      </h2>
+      <p class="text-center mb-5">
+        نتأكد من ان كل قطعه من البرامج التى نطورها تطابق تماما مع اهداف عملك
+        لاننا نقيس نجاحنا من خلال نجاح عملائنا
+      </p>
+
+      <div class="row">
+        <div
+          class="col-md-6"
+          *ngFor="let project__ of projects | slice : 0 : 4; let index = index"
+        >
+          <div
+            class="card"
+            (click)="viewProject(project__.id, project__?.name_EN)"
+            [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+            data-aos-offset="120"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
+            <img
+              src="{{ baseURL }}/{{ project__.path?.main_image }}"
+              alt=""
+              style="width: 100%"
+            />
+            <!--  -->
+            <div
+              class="overlay pl-3 pr-3"
+              [ngStyle]="{ 'background-color': project__.main_color }"
+            >
+              <h1 class="name fw-bold text-capitalize">
+                <!-- {{project__?.name_EN}} -->
+                {{
+                  translate.currentLang == "ar"
+                    ? project__.name_AR
+                    : project__?.name_EN
+                }}
+              </h1>
+              <p class="mt-3 description text-capitalize">
+                <!-- {{ project__.short_description_EN.length > 50 ? project__.short_description_EN.substring(0,50)+"..." : project__.short_description_EN }} -->
+                {{
+                  translate.currentLang == "ar"
+                    ? project__.short_description_AR.length > 50
+                      ? project__.short_description_AR.substring(0, 50) + "..."
+                      : project__.short_description_AR
+                    : project__.short_description_EN.length > 50
+                    ? project__.short_description_EN.substring(0, 50) + "..."
+                    : project__.short_description_EN
+                }}
+              </p>
+              <!-- <div class="text-left mt-5" *ngIf="index == '0'">
+                                    <a aria-labelledby="pomac" aria-label="pomac" href="javascript:void(0)" class="text-capitalize" ><i class="fas fa-arrow-left"></i>
+                                      Previous project
+                                      {{translate.currentLang == 'ar' ? 'المشروع السابق' : 'Previous project'}}
+                                    </a>
+                                </div>
+                                <div class="text-right mt-5" *ngIf="index == '1'">
+                                    <a aria-labelledby="pomac" aria-label="pomac"   href="javascript:void(0)" class="text-capitalize" >
+                                      Next project
+                                      {{translate.currentLang == 'ar' ? 'المشروع التالي' : 'Next project'}}
+                                      <i class="fas fa-arrow-right"></i></a>
+                                </div> -->
+            </div>
+            <!-- <img src="{{baseURL}}/{{project__.path?.main_image}}" class="w-100 h-100" alt="POMAC"> -->
+          </div>
+        </div>
+
+        <button
+          class=""
+          data-aos="zoom-in-up"
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #0f0f0f;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            margin: 0 auto !important;
+            align-items: center;
+            display: flex !important;
+            justify-content: center !important;
+            padding: 10px 30px;
+            margin-top: 60px;
+            font-size: 20px;
+          "
+          [routerLink]="['/our-work']"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+        >
+          عرض المزيد
+        </button>
+      </div>
+    </div>
+  </section>
+</section>

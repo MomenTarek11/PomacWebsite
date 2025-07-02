@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+html {
+  &[dir="rtl"] {
+    // html rtl direction
+
+    *:not(i) {
+      font-family: "Tajawal", sans-serif !important;
+    }
+    header.desktop-header {
+      ul {
+        li {
+          &:not(:last-child) {
+            // padding-right: 40px;
+            padding-right: 0 !important;
+            padding-left: 40px;
+          }
+        }
+      }
+    }
+
+    header.desktop-header img.logo {
+      // text-align: righ
+      float: right;
+    }
+
+    header.desktop-header ul li:not(:last-child) {
+      padding-right: 0;
+      padding-left: 35px;
+    }
+    section.services {
+      @media (max-width: 375px) {
+        // padding-bottom: 80px;
+      }
+      padding-bottom: 150px;
+      .cards {
+        .pl-0 {
+          padding-left: 16px !important;
+          display: flex !important;
+          justify-content: flex-start !important;
+          margin-right: -20px;
+        }
+        .text-left {
+          text-align: right !important;
+          margin-right: 13px;
+        }
+        h4 {
+          margin-top: 17px;
+        }
+        .mt-3 {
+          text-align: right !important;
+        }
+      }
+    }
+
+    .mobile-header {
+      ul {
+        text-align: right;
+      }
+      #toggle {
+        direction: ltr !important;
+        transform: rotate(0) !important;
+      }
+      .main-list {
+        left: 5px;
+        right: auto;
+      }
+    }
+  }
+  header {
+    a.lang {
+      img {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+  section#details {
+    overflow-x: hidden;
+    .web-slider,
+    .mobile-slider {
+      direction: ltr;
+    }
+  }
+  section.projects {
+    direction: ltr;
+  }
+}
+
+// section.main-slider:dir(ltr) h1 {
+//   padding-left: 60px !important;
+//  }
