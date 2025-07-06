@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  endpoint: 'https://pomac.info/api/backend/public/api',
-  // endpoint: 'https://pomac.info/beta-backend/backend/public/api',
+  // endpoint: 'https://pomac.info/api/backend/public/api',
+  endpoint: 'https://pomac.info/beta-backend/backend/public/api',
   baseURL: 'https://pomac.info/api/backend/public',
 };
 

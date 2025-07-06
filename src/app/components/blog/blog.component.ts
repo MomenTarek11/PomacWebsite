@@ -13,7 +13,29 @@ export class BlogComponent implements OnInit {
   blogs: any = [];
   show: boolean = false;
   baseURL: any = environment.baseURL;
-
+  color: any = '#FDFFD0';
+  categories: any = [
+    {
+      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
+      name: 'جميع المقالات',
+    },
+    {
+      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
+      name: 'التجارة الكترونية',
+    },
+    {
+      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
+      name: 'التسويق و التقنية',
+    },
+    {
+      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
+      name: 'ريادة الأعمال',
+    },
+    {
+      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
+      name: 'المالية',
+    },
+  ];
   constructor(private blog: AppService, private router: Router) {}
 
   ngOnInit(): void {
@@ -36,6 +58,8 @@ export class BlogComponent implements OnInit {
 
     // استخدام replace لإزالة المسافات واستبدالها بـ -
     let formattedText = originalText.replace(/\s+/g, '-');
-    this.router.navigate(['blog', formattedText]);
+    this.router.navigate(['blog', formattedText], {
+      state: { page: 'detail' },
+    });
   }
 }

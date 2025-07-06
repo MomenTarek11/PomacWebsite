@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
 import { environment } from 'src/environments/environment';
@@ -14,9 +14,16 @@ export class BlogDatailsComponent implements OnInit {
   id = '';
   show: boolean = false;
   blog_details: any;
-  constructor(private route: ActivatedRoute, private blog: AppService) {
+  constructor(
+    private route: ActivatedRoute,
+    private blog: AppService,
+    private router: Router
+  ) {
     const number = this.route.snapshot.params.blog_id.match(/\d+/);
     this.id = number[0];
+    const nav = this.router.getCurrentNavigation();
+    const state = nav?.extras?.state;
+    console.log('Passed state:', state);
   }
 
   ngOnInit(): void {
