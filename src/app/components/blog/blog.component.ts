@@ -58,6 +58,8 @@ export class BlogComponent implements OnInit {
 
     // استخدام replace لإزالة المسافات واستبدالها بـ -
     let formattedText = originalText.replace(/\s+/g, '-');
-    this.router.navigate(['blog', formattedText]);
+    this.router.navigate(['blog', formattedText], {
+      state: { page: 'detail' },
+    });
   }
 }

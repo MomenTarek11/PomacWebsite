@@ -12,8 +12,30 @@
           'text-left': translate.currentLang != 'ar'
         }"
       >
-        <!-- (completed)="doSmth()" -->
+        <!-- ✅ Static H1 to improve LCP -->
+        <h1 class="fw-bold mt-5" *ngIf="!typedStarted">
+          {{
+            translate.currentLang == "ar"
+              ? "برمجة منتجات تقنية"
+              : "Design Products Sounds"
+          }}
+          <span
+            class="typing"
+            [style.color]="
+              typedIndex == 0
+                ? '#ff8636'
+                : typedIndex == 1
+                ? '#69BB00'
+                : typedIndex == 2
+                ? '#2D5EE6'
+                : null
+            "
+          ></span>
+        </h1>
+
+        <!-- ✅ Animated version using ngx-typed-js -->
         <ngx-typed-js
+          *ngIf="typedStarted"
           dir="rtl"
           (preStringTyped)="doSmth($event)"
           [strings]="
@@ -27,12 +49,9 @@
           <h1 class="fw-bold mt-5">
             {{
               translate.currentLang == "ar"
-                ? "    برمجة منتجات تقنية "
+                ? "برمجة منتجات تقنية"
                 : "Design Products Sounds"
             }}
-
-            <!-- {{ translate.currentLang == 'ar' ? sliderTextArabic : sliderText }} -->
-
             <span
               class="typing"
               [style.color]="
@@ -48,42 +67,33 @@
           </h1>
         </ngx-typed-js>
 
-        <!-- <h1 class="fw-bold mt-5">تصميم المنتجات التي تبدو
-
-                      <ngx-typed-js
-                      [strings]="['جميلة', 'قابلة للإستخدام', 'جذابة']"
-                      [shuffle]="true"
-                      [typeSpeed]="80"
-                      [backDelay]="2000"
-                      [loop]="true">
-                      <span class="typing"></span>
-                  </ngx-typed-js>
-
-                     <owl-carousel-o [options]="main_slidder" #homeMainSlider
-                     (change)="isDragging($event,'main')">
-                        <ng-container *ngFor="let text of sliderTextArabic;let index =index">
-                            <ng-template carouselSlide [id]="index">
-                            <span class="active" [style.color]="index == 1 ? '#69BB00' : (index == 2 ? '#2D5EE6' : null)">{{text}}</span>
-                            </ng-template>
-                        </ng-container>
-                    </owl-carousel-o>
-                </h1> -->
+        <!-- ✅ Static Paragraph for LCP -->
         <p
           class="mt-4 fw-bold"
-          [ngStyle]="{
-            'padding-left': translate.currentLang == 'ar' ? '80px' : '0px'
-          }"
+          *ngIf="!typedStarted"
+          [style.paddingLeft]="translate.currentLang == 'ar' ? '80px' : '0px'"
         >
           {{
             translate.currentLang == "ar"
               ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
-              : "Because you deserve the best web design company and smart phone applications are keen to save
-          your full rights"
+              : "Because you deserve the best web design company and smart phone applications are keen to save your full rights"
           }}
+        </p>
 
-          <!-- المستخدمون فقط من يمكنهم إستخدام المنتجات التي تجعلهم يشعرون انها مصممة لهم ، المستخدمين يحبون منتجاتنا. -->
+        <!-- ✅ Dynamic version after delay -->
+        <p
+          class="mt-4 fw-bold"
+          *ngIf="typedStarted"
+          [style.paddingLeft]="translate.currentLang == 'ar' ? '80px' : '0px'"
+        >
+          {{
+            translate.currentLang == "ar"
+              ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
+              : "Because you deserve the best web design company and smart phone applications are keen to save your full rights"
+          }}
         </p>
       </article>
+
       <div class="col-md-6 text-center" style="overflow: hidden">
         <div class="home_imgs">
           <div class="audio">

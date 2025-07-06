@@ -33,6 +33,8 @@ export class HomeComponent implements OnInit {
   show: boolean = false;
   public home;
   public services;
+  typedStarted = false;
+  typedIndex = 0;
   public projects;
   public testimonials: any = [];
   public sliderText = ['Attractive', 'Usable', 'Pretty'];
@@ -56,7 +58,7 @@ export class HomeComponent implements OnInit {
   };
 
   @ViewChild(NgxTypedJsComponent) typed: NgxTypedJsComponent;
-  typedIndex = 0;
+  // typedIndex = 0;
   dir: any;
   sections: any = [];
   doSmth(index) {
@@ -133,6 +135,10 @@ export class HomeComponent implements OnInit {
     // this.testimonials = testimonials;
     this.getTestimonials();
     // this.getTestimonials()
+    // نأخر الأنيميشن البسيط عشان نحسن LCP
+    setTimeout(() => {
+      this.typedStarted = true;
+    }, 200); // تقدر تزود حسب تجربتك
   }
   public testimonial_slidder: OwlOptions = {
     loop: true,

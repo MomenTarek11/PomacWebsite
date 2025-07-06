@@ -28,23 +28,34 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     const accepted = localStorage.getItem('trackingAccepted');
+
     if (accepted === 'true') {
       this.trackingAccepted = true;
-      this.pushTrackingEvent(); // لو كان وافق قبل كده
+      this.pushTrackingEvent(); // وافق قبل كده
+    } else if (accepted === 'false') {
+      this.trackingAccepted = true; // رفض قبل كده، نخفي البانر
     }
+
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile);
   }
+
   acceptTracking() {
     localStorage.setItem('trackingAccepted', 'true');
     this.trackingAccepted = true;
 
-    // 👇 تشغيل Google Tag Manager
     if (typeof window.deferGTM === 'function') {
       window.deferGTM();
     }
 
-    this.pushTrackingEvent(); // إرسال حدث التتبع
+    this.pushTrackingEvent();
+  }
+
+  rejectTracking() {
+    localStorage.setItem('trackingAccepted', 'false');
+    this.trackingAccepted = true;
+
+    // ❌ بدون تفعيل أي تتبع
   }
 
   pushTrackingEvent() {

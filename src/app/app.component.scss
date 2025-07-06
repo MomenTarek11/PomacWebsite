@@ -461,3 +461,43 @@ img {
     display: none !important;
   }
 }
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  text-align: center;
+  z-index: 9999;
+}
+
+.cookie-banner .button-group {
+  margin-top: 10px;
+}
+
+.cookie-banner button {
+  margin: 0 5px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cookie-banner button.reject {
+  background-color: #ddd;
+  color: #333;
+}
+
+.cookie-banner button.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
