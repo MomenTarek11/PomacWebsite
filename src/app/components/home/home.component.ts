@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import {
+  ChangeDetectionStrategy,
   Component,
   Input,
   OnInit,
@@ -43,6 +44,8 @@ export class HomeComponent implements OnInit {
     '  قابلة للتطوير ',
     'عالية الجودة',
   ];
+
+  langIsArabic = false;
   public baseURL = environment.baseURL;
   home_data = {
     ques_en: 'Do you have an',
@@ -91,6 +94,7 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+    this.langIsArabic = this.translate.currentLang === 'ar';
   }
 
   ngOnInit(): void {
