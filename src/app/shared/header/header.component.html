@@ -18,9 +18,12 @@
                 : 'assets/images/logo 120.svg'
             "
             [routerLink]="['/home']"
-            alt="pomac logo"
+            alt="POMAC logo"
             width="114"
             height="38"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
           />
         </div>
         <div class="col-md-8">
@@ -89,6 +92,9 @@
                 المدونة
                 <!-- <span style="font-size: 10px;color: rgb(211, 20, 20);">(قريبا)</span> -->
               </a>
+              <span style="font-size: 10px; color: rgb(211, 20, 20)"
+                >(قريبا)</span
+              >
             </li>
             <li class="menu-item">
               <span

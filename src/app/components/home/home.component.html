@@ -46,7 +46,7 @@
           [backDelay]="1000"
           [loop]="true"
         >
-          <h1 class="fw-bold mt-5">
+          <h1 class="fw-bold mt-5" style="height: 60px">
             {{
               translate.currentLang == "ar"
                 ? "برمجة منتجات تقنية"
@@ -69,31 +69,23 @@
 
         <!-- ✅ Static Paragraph for LCP -->
         <p
-          class="mt-4 fw-bold"
-          *ngIf="!typedStarted"
-          [style.paddingLeft]="translate.currentLang == 'ar' ? '80px' : '0px'"
+          class="mt-4 fw-semibold pt-4 text-right"
+          [ngClass]="{
+            'ps-5': translate.currentLang == 'ar',
+            'ps-0': translate.currentLang != 'ar'
+          }"
         >
           {{
             translate.currentLang == "ar"
-              ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
-              : "Because you deserve the best web design company and smart phone applications are keen to save your full rights"
-          }}
-        </p>
-
-        <!-- ✅ Dynamic version after delay -->
-        <p
-          class="mt-4 fw-bold"
-          *ngIf="typedStarted"
-          [style.paddingLeft]="translate.currentLang == 'ar' ? '80px' : '0px'"
-        >
-          {{
-            translate.currentLang == "ar"
-              ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
+              ? typedStarted
+                ? "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
+                : "نعمل على تحويل الأفكار إلى شركات ناجحة من خلال مجموعة كبيرة من الخدمات المحترفة"
+              : typedStarted
+              ? "Because you deserve the best web design company and smart phone applications are keen to save your full rights"
               : "Because you deserve the best web design company and smart phone applications are keen to save your full rights"
           }}
         </p>
       </article>
-
       <div class="col-md-6 text-center" style="overflow: hidden">
         <div class="home_imgs">
           <div class="audio">
