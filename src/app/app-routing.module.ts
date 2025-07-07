@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: 'jobs/:job_id', component: JobDetailsComponent },
   { path: 'our-work', component: OurWorkComponent },
   { path: 'our-services', component: ServicesComponent },
-  // {path:'contact-us', component:ContactUsComponent},
   { path: 'faq', component: FaqComponent },
   {
     path: 'our-work/:project-id/:project-name',

@@ -124,31 +124,50 @@ img {
     width: 280px;
   }
 }
-.whatsapp .card-header {
-  background-image: url(../assets/images/whats_bg.svg);
-  background-size: cover;
-  height: 180px;
-  color: #fff;
-  padding: 60px;
-  padding-top: 50px;
-  padding-bottom: 40px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-align: center;
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 320px; // أو حسب الحجم
+  max-width: 90%;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none; // يمنع التفاعل وهو مخفي
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
+
+.whatsapp .card-header {
+  background-image: url("../assets/images/whats_bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  height: 180px;
+  padding: 50px 60px 40px;
+  color: #fff;
+}
+
 .whatsapp .card-header img {
   width: 60px;
-  margin: auto;
-  margin-bottom: 20px !important;
+  margin: 0 auto 20px auto !important;
+  display: block;
 }
+
 .whatsapp .card-header p {
   font-size: 14px;
-  margin-top: 0.5em;
-  line-height: initial;
+  margin: 0.5em 0 0;
+  line-height: 1.5;
+  padding: 0 20px;
   color: #fff;
-  margin-bottom: 0;
-  padding: 0px 20px;
 }
+
 .container-wa .card-whats .banner-body {
   flex-grow: 1;
   background-color: #eaeaea;
@@ -460,4 +479,44 @@ img {
   .whatsapp .card {
     display: none !important;
   }
+}
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  text-align: center;
+  z-index: 9999;
+}
+
+.cookie-banner .button-group {
+  margin-top: 10px;
+}
+
+.cookie-banner button {
+  margin: 0 5px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cookie-banner button.reject {
+  background-color: #ddd;
+  color: #333;
+}
+
+.cookie-banner button.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
 }

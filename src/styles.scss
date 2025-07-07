@@ -335,6 +335,7 @@ section.idea {
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 992px) {
   section.services {
     img {
@@ -353,6 +354,7 @@ section.idea {
   section {
     padding-top: 50px !important;
   }
+
   section.projects,
   section.services {
     padding-top: 90px !important;
@@ -380,3 +382,14 @@ section.idea {
   border-radius: 4px;
   cursor: pointer;
 }
+#Services {
+  min-height: 10vh !important ;
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
+}
+
+// @media only screen and (max-width: 320px) {
+//   #Services {
+//     min-height: 80vh !important;
+//   }
+// }
