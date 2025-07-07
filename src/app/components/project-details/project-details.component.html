@@ -62,12 +62,17 @@
                 <div class="mb-1 details">
                   <img
                     src="assets/images/project-details/img_country.svg"
-                    alt=""
+                    alt="img_country"
+                    loading="lazy"
                   />
                   <span>المملكه العربية السعودية</span>
                 </div>
                 <div class="mb-1 details" *ngIf="project?.section != null">
-                  <img src="assets/images/project-details/categ.svg" alt="" />
+                  <img
+                    src="assets/images/project-details/categ.svg"
+                    alt="categ"
+                    loading="lazy"
+                  />
                   <span> {{ project?.section.title }}</span>
                 </div>
               </div>
@@ -79,8 +84,10 @@
                 >
                   <img
                     src="assets/images/project-details/google_play.svg"
-                    alt=""
-                    style="width: 110px; margin-left: 10px"
+                    alt="google_play"
+                    loading="lazy"
+                    width="110px"
+                    style="margin-left: 10px"
                 /></a>
 
                 <a
@@ -89,8 +96,9 @@
                   *ngIf="project?.path?.app_store != '#'"
                   ><img
                     src="assets/images/project-details/apple_store.svg"
-                    alt=""
-                    style="width: 110px"
+                    alt="apple_store"
+                    width="110px"
+                    loading="lazy"
                 /></a>
 
                 <div
@@ -153,12 +161,17 @@
               <img class="w-100" src="assets/images/project-details/frame.png">
           </div> -->
     <div *ngIf="project.web_images.length == 1" class="text-center web-image">
-      <img src="{{ baseURL }}/{{ project.web_images[0].image }}" alt="POMAC" />
+      <img
+        src="{{ baseURL }}/{{ project.web_images[0].image }}"
+        alt="POMAC"
+        class="w-100"
+        loading="lazy"
+      />
     </div>
 
     <owl-carousel-o [options]="labtop" *ngIf="project.web_images.length != 1">
       <ng-template carouselSlide *ngFor="let image of project.web_images">
-        <img src="{{ baseURL }}/{{ image.image }}" alt="POMAC" />
+        <img src="{{ baseURL }}/{{ image.image }}" alt="POMAC" loading="lazy" />
       </ng-template>
     </owl-carousel-o>
   </section>
@@ -176,6 +189,7 @@
           src="{{ baseURL }}/{{ project.mobile_images[0].image }}"
           alt="POMAC"
           class="w-100"
+          loading="lazy"
         />
       </div>
 
@@ -184,7 +198,11 @@
         *ngIf="project.mobile_images.length != 1"
       >
         <ng-template carouselSlide *ngFor="let image of project.mobile_images">
-          <img src="{{ baseURL }}/{{ image.image }}" alt="POMAC" />
+          <img
+            src="{{ baseURL }}/{{ image.image }}"
+            alt="POMAC"
+            loading="lazy"
+          />
         </ng-template>
       </owl-carousel-o>
     </div>
@@ -234,6 +252,7 @@
                   data-aos-offset="150"
                   data-aos-easing="ease-in-sine"
                   data-aos-duration="800"
+                  loading="lazy"
                 />
               </div>
               <!-- <div class="col-md-1 mb-2 mt-2" *ngFor="let technology of project.technologies;let index = index" >
@@ -284,7 +303,11 @@
             aria-label="pomac"
             href="{{ project?.path?.google_play }}"
             target="_blank"
-            ><img alt="POMAC" src="assets/images/google play.png" width="250"
+            ><img
+              alt="POMAC"
+              src="assets/images/google play.png"
+              width="250"
+              loading="lazy"
           /></a>
         </div>
         <div *ngIf="project?.path?.web != '#'" class="text-center explore_p">
@@ -307,6 +330,7 @@
             href="{{ project?.path?.app_store }}"
             target="_blank"
             ><img alt="POMAC" src="assets/images/apple store.png" width="250"
+              loading="lazy"
           /></a>
         </div>
       </div>
@@ -340,7 +364,7 @@
           >
             <img
               src="{{ baseURL }}/{{ project__.path?.main_image }}"
-              alt=""
+              alt="card"
               style="width: 100%"
             />
             <!--  -->

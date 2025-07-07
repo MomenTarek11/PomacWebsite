@@ -18,7 +18,10 @@
       </div>
       <div class="col-12">
         <button class="btn category-btn" *ngFor="let item of categories">
-          <img src="{{ item.icon }}" alt="" />{{ item.name }}
+          <img src="{{ item.icon }}" alt="{{ item.name }}" loading="lazy" />{{
+            item.name
+          }}
+          ({{ item.count }})
         </button>
       </div>
     </div>
@@ -85,7 +88,7 @@
               alt="POMAC"
               class="card-img-top img"
               style="width: 100%"
-              alt="..."
+              
             />
             <div class="overlay w-100 h-100 position-absolute">
               <button class="btn bg-white text-primary">اقرأ المزيد</button>

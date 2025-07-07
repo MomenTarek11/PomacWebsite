@@ -53,11 +53,17 @@ export class BlogComponent implements OnInit {
       });
   }
   router_details(item: any) {
-    // النص الأصلي مع المسافات
-    let originalText = item?.id + ' ' + item.title;
+    const id = item?.id;
+    const title = item?.title || '';
 
-    // استخدام replace لإزالة المسافات واستبدالها بـ -
-    let formattedText = originalText.replace(/\s+/g, '-');
+    // 🧼 تنظيف العنوان: حذف الرموز الخاصة والمسافات المكررة وتحويلها إلى lowercase
+    const slug = title
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9\u0600-\u06FF]+/g, '-') // يدعم الحروف العربية
+      .replace(/^-+|-+$/g, ''); // يشيل - من البداية أو النهاية
+
+    const formattedText = `${id}-${slug}`;
+
     this.router.navigate(['blog', formattedText], {
       state: { page: 'detail' },
     });
