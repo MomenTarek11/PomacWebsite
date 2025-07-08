@@ -6,7 +6,9 @@ import { ServicesComponent } from 'src/app/components/our-services/services.comp
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [ServicesComponent],
+
+  declarations: [],
+
   imports: [CommonModule, ServicesRoutingModule, TranslateModule],
 })
 export class ServicesModule {}
