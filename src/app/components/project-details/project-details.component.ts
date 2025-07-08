@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-//import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
@@ -25,7 +25,7 @@ export class ProjectDetailsComponent implements OnInit {
   projects;
   public technologies;
   url;
-  project_id: any = this.route.snapshot.paramMap.get('project-id');
+  project_id = this.route.snapshot.paramMap.get('project-id');
   product_name = this.route.snapshot.paramMap.get('project-name');
   project;
   public baseURL = environment.baseURL;
@@ -49,7 +49,6 @@ export class ProjectDetailsComponent implements OnInit {
   //     flipVertical: false,
   //   }
   // };
-
   constructor(
     public translate: TranslateService,
     private service: AppService,
@@ -61,20 +60,9 @@ export class ProjectDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-
-    this.route.params.subscribe((params) => {
-      const id = +params['projectId']; // 👈 ده اللي جاي من الراوت: ':projectId'
-
-      if (!id || isNaN(id)) {
-        console.error('❌ Invalid or missing projectId');
-        return;
-      }
-
-      this.project_id = id; // ✅ خزناه هنا
-
-      this.getProject(this.project_id);
-      this.getProjects(this.project_id);
-    });
+    this.getProject(this.project_id);
+    this.getProjects(this.project_id);
+    console.log(services);
   }
 
   labtop: any = {

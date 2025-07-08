@@ -2,7 +2,7 @@
   <header
     class="desktop-header navbar-inverse"
     [ngClass]="{ 'navbar-inverse': isScrolled }"
-    [ngStyle]="{ 'background-color': onBlogDetailsPage ? 'transparent' : '' , }"
+    [ngStyle]="{ 'background-color': onBlogDetailsPage ? 'transparent' : '' }"
   >
     <div class="container">
       <div class="row">
@@ -14,20 +14,28 @@
             class="logo cursor-pointer"
             [src]="
               onBlogDetailsPage
-                ? 'assets/images/logo 120 1.svg'
+                ? 'assets/images/secondLogo.svg'
                 : 'assets/images/logo 120.svg'
             "
             [routerLink]="['/home']"
-            alt="pomac logo"
+            alt="POMAC logo"
             width="114"
             height="38"
-            loading="lazy"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
           />
         </div>
         <div class="col-md-8">
           <!-- {{route}} -->
           <ul class="p-0 m-0 list-unstyled d-flex menu-list main-list">
-            <li class="menu-item" [ngClass]="{ active: url == 'home' }">
+            <li
+              class="menu-item"
+              [ngClass]="{
+                active: url == 'home',
+                blogActive: onBlogDetailsPage
+              }"
+            >
               <!-- <a aria-labelledby="pomac" aria-label="pomac" [routerLink]='"."' [fragment]="link">{{link}}</a> -->
 
               <!-- [routerLink]="'/home'"  -->
@@ -42,7 +50,13 @@
               >
             </li>
             <!-- Services -->
-            <li class="menu-item" [ngClass]="{ active: url == 'our-services' }">
+            <li
+              class="menu-item"
+              [ngClass]="{
+                active: url == 'our-services',
+                blogActive: onBlogDetailsPage
+              }"
+            >
               <!-- [routerLink]="'/home'" [fragment]="'Services'" -->
               <a
                 aria-labelledby="pomac"
@@ -79,7 +93,13 @@
                 الأسئلة الشائعة
               </a>
             </li>
-            <li class="menu-item" [ngClass]="{ active: url == 'blog' }">
+            <li
+              class="menu-item"
+              [ngClass]="{
+                active: url == 'blog',
+                blogActive: onBlogDetailsPage
+              }"
+            >
               <a
                 aria-labelledby="pomac"
                 aria-label="pomac"
@@ -90,6 +110,14 @@
                 المدونة
                 <!-- <span style="font-size: 10px;color: rgb(211, 20, 20);">(قريبا)</span> -->
               </a>
+              <span
+                style="
+                  font-size: 10px;
+                  color: rgb(211, 20, 20);
+                  margin-right: 10px;
+                "
+                >(قريبا)</span
+              >
             </li>
             <li class="menu-item">
               <span
@@ -144,7 +172,10 @@
               href="https://api.whatsapp.com/send?phone=201094969284"
               target="_blank"
             >
-              <button class="float-right cursor-pointer contact-us pointer">
+              <button
+                class="float-right cursor-pointer contact-us pointer"
+                [ngClass]="{ blog: onBlogDetailsPage }"
+              >
                 استشارة مجانية
               </button>
             </a>
@@ -166,7 +197,6 @@
             [routerLink]="['/home']"
             src="assets/images/logo 120.svg"
             alt="logo"
-            loading="lazy"
           />
         </div>
         <div id="toggle" class="toggle" #toggle (click)="togglef()">

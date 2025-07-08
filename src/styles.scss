@@ -394,5 +394,7 @@ section.idea {
 //   }
 // }
 .menu-item {
-  min-height: 20px; /* أو أي قيمة مناسبة */
+  min-height: 48px; /* أو حسب التصميم */
+  display: flex;
+  align-items: center;
 }

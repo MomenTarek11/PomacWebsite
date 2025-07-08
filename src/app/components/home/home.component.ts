@@ -1,12 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
@@ -44,8 +36,6 @@ export class HomeComponent implements OnInit {
     '  قابلة للتطوير ',
     'عالية الجودة',
   ];
-
-  langIsArabic = false;
   public baseURL = environment.baseURL;
   home_data = {
     ques_en: 'Do you have an',
@@ -94,7 +84,6 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    this.langIsArabic = this.translate.currentLang === 'ar';
   }
 
   ngOnInit(): void {

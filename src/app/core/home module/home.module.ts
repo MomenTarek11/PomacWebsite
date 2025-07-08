@@ -7,7 +7,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [],
   imports: [CommonModule, HomeRoutingModule, NgxTypedJsModule, TranslateModule],
 })
 export class HomeModule {}

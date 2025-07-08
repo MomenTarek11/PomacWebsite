@@ -12,60 +12,62 @@ declare var AOS: any;
 export class BlogComponent implements OnInit {
   blogs: any = [];
   show: boolean = false;
-  baseURL: any = environment.baseURL;
+  // endpoint: '',
+  baseURL: any = 'https://backend-beta-dev.pomac.info/public';
   color: any = '#FDFFD0';
-  categories: any = [
-    {
-      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
-      name: 'جميع المقالات',
-    },
-    {
-      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
-      name: 'التجارة الكترونية',
-    },
-    {
-      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
-      name: 'التسويق و التقنية',
-    },
-    {
-      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
-      name: 'ريادة الأعمال',
-    },
-    {
-      icon: 'assets/images/fluent_document-one-page-multiple-16-regular.svg',
-      name: 'المالية',
-    },
-  ];
+  currentPage: number = 1;
+  lastPage: number = 1;
+  total: number = 1;
+  categories: any = [];
   constructor(private blog: AppService, private router: Router) {}
 
   ngOnInit(): void {
     AOS.init();
-    this.getProjects();
+    this.getProjects(1);
+    this.getCategories();
   }
-  getProjects() {
+  getProjects(page?: number) {
     this.blog
-      .blogs()
+      .blogs(page)
       .pipe(map((res) => res['data']))
       .subscribe((projects) => {
-        console.log(projects);
-        this.blogs = projects;
+        // console.log(projects);
+        this.blogs.push(...projects?.data); // projects?.data;
         this.show = true;
+        // console.log(projects);
+        this.currentPage = projects.current_page;
+        this.lastPage = projects.last_page;
+        this.total = projects.total;
+        console.log(this.currentPage, this.lastPage, this.total);
       });
   }
+  onError(event: any) {
+    event.target.src = 'assets/No-Image-Placeholder.svg';
+  }
+  onErrorSvg(event: any) {
+    event.target.src =
+      'assets/images/error-placeholder-image-2e1q6z01rfep95v0.svg';
+  }
   router_details(item: any) {
-    const id = item?.id;
-    const title = item?.title || '';
+    // النص الأصلي مع المسافات
+    let originalText = item?.id + ' ' + item.title;
 
-    // 🧼 تنظيف العنوان: حذف الرموز الخاصة والمسافات المكررة وتحويلها إلى lowercase
-    const slug = title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9\u0600-\u06FF]+/g, '-') // يدعم الحروف العربية
-      .replace(/^-+|-+$/g, ''); // يشيل - من البداية أو النهاية
-
-    const formattedText = `${id}-${slug}`;
-
+    // استخدام replace لإزالة المسافات واستبدالها بـ -
+    let formattedText = originalText.replace(/\s+/g, '-');
     this.router.navigate(['blog', formattedText], {
       state: { page: 'detail' },
+    });
+  }
+  loadMore() {
+    if (this.currentPage < this.lastPage) {
+      this.currentPage += 1;
+      this.getProjects(this.currentPage);
+    }
+  }
+  getCategories() {
+    this.blog.getCategories().subscribe((res: any) => {
+      console.log(res);
+      this.categories = res?.data;
     });
   }
 }

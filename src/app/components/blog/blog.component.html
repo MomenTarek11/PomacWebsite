@@ -1,16 +1,4 @@
 <section class="mt-5 blogs">
-  <!-- <div class="words">
-    <div class="row m-0">
-      <div class="col-md-7 m-auto text-center">
-        <h1 class="mb-5" data-aos="fade-up">المدونة</h1>
-        <p data-aos="zoom-out-down" class="fw-bold">
-          مدونة بوماك هي بمثابة المدونات التخصصية التقنية التي تتناول آخر
-          التطورات في عالم التكنولوجيا والبرمجة، و التي تتناول تبسيط لبعض
-          المفاهيم التقنيه المعقده , و الافكار الرياديه الهدافه
-        </p>
-      </div>
-    </div>
-  </div> -->
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -18,10 +6,12 @@
       </div>
       <div class="col-12">
         <button class="btn category-btn" *ngFor="let item of categories">
-          <img src="{{ item.icon }}" alt="{{ item.name }}" loading="lazy" />{{
-            item.name
-          }}
-          ({{ item.count }})
+          <img
+            src="{{ baseURL }}/{{ item.icon }}"
+            alt=""
+            class="ms-2 rounded-circle"
+            (error)="onErrorSvg($event)"
+          />{{ item.name_AR }}
         </button>
       </div>
     </div>
@@ -88,23 +78,21 @@
               alt="POMAC"
               class="card-img-top img"
               style="width: 100%"
-              
+              (error)="onError($event)"
             />
             <div class="overlay w-100 h-100 position-absolute">
               <button class="btn bg-white text-primary">اقرأ المزيد</button>
             </div>
           </div>
           <div class="card-body p-0">
-            <!--
-                      <div class="img " style="background-image: url({{baseURL}}/{{project.path.main_image}}) ; " [style.background-color]="project.main_color" ></div>
-
-                      </div> -->
             <p
               class="category badge"
               style="text-align: start !important"
-              [style]="{ 'background-color': color }"
+              [style]="{
+                'background-color': project?.category?.color || '#d2ffff'
+              }"
             >
-              التجارة الالكترونية
+              {{ project?.category?.name_AR }}
             </p>
             <h5
               class="card-title name fw-bold text-capitalize"
@@ -115,22 +103,23 @@
             <span class="date my-2 text-muted">
               {{ project.created_at | date : "mediumDate" }}
             </span>
-            <!-- <p class="card-text mb-2" style="text-align: start !important">
-              {{
-                project.summary > 50
-                  ? project.summary.substring(0, 200) + "..."
-                  : project.summary
-              }}
-            </p> -->
-            <!-- <button
-              class="btn w-100 bg-primary text-white"
-              (click)="router_details(project)"
-            >
-              اقرأ المزيد
-            </button> -->
           </div>
         </div>
       </div>
+    </div>
+    <div class="text-center my-5" *ngIf="currentPage < lastPage">
+      <a aria-labelledby="pomac" aria-label="pomac">
+        <button
+          (click)="loadMore()"
+          data-aos="zoom-in-up"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+          class="button"
+        >
+          عرض المزيد
+        </button>
+      </a>
     </div>
   </div>
 </section>

@@ -107,7 +107,6 @@ export class AppComponent implements OnInit {
       this.sendDirect(); // open WhatsApp directly
       return;
     }
-
     this.showWhats = !this.showWhats;
   }
   ngOnDestroy() {

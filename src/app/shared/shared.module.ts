@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [
-    CommonModule,
+   CommonModule,
     RouterModule.forRoot([], {
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',

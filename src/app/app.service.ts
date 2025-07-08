@@ -52,8 +52,8 @@ export class AppService {
       `${environment.endpoint}/projects/importance?status=show`
     );
   }
-  blogs() {
-    return this.http.get(`${environment.endpoint}/blogs`);
+  blogs(page?: number) {
+    return this.http.get(`${environment.endpoint}/blogs?page=${page}`);
   }
   blog_details(id: any) {
     return this.http.get(`${environment.endpoint}/blog/show?blog_id=${id}`);
@@ -81,5 +81,8 @@ export class AppService {
   }
   contact(form) {
     return this.http.post(`${environment.endpoint}/contact`, form);
+  }
+  getCategories() {
+    return this.http.get(`${environment.endpoint}/blogs-categories`);
   }
 }

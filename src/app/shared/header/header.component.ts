@@ -66,7 +66,6 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
-
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -80,6 +79,7 @@ export class HeaderComponent implements OnInit {
     this.toggleBtn();
     console.log('momen', this.onBlogDetailsPage);
   }
+
   toggleBtn() {
     // this.toggle
 

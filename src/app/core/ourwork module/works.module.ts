@@ -9,8 +9,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from 'src/app/helper/error.interceptor';
 
 @NgModule({
-  declarations: [OurWorkComponent, ProjectDetailsComponent],
-  imports: [CommonModule, WorksRoutingModule, CommonModule, CarouselModule],
+  declarations: [OurWorkComponent,ProjectDetailsComponent],
+  imports: [CommonModule, WorksRoutingModule, CarouselModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: LOCALE_ID, useValue: 'ar' },

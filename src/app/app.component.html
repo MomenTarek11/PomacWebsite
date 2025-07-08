@@ -21,7 +21,11 @@
   ><p style="color: white"></p
 ></ngx-spinner> -->
 
-<section class="whatsapp" *ngIf="showWhats" (click)="$event.stopPropagation()">
+<section
+  class="whatsapp"
+  [class.show]="showWhats"
+  (click)="$event.stopPropagation()"
+>
   <div class="card">
     <div class="card-header">
       <svg
@@ -108,17 +112,12 @@
 </section>
 
 <div class="container-wa" [ngClass]="{ '!is-opened': is_opened }">
-  <span
-    aria-labelledby="pomac"
-    aria-label="pomac"
-    (click)="toggleWhatsapp(); $event.stopPropagation()"
-  >
+  <span (click)="toggleWhatsapp(); $event.stopPropagation()">
     <div class="floating-button">
       <img
         src="assets/images/whatsapp.svg"
-        alt="whatsapp"
-        width="50px"
-        style="margin-bottom: 5px"
+        alt=""
+        style="width: 50px; margin-bottom: 5px"
       />
     </div>
   </span>

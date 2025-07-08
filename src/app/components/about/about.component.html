@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <img src="assets/images/logo.png" class="w-25" alt="logo" loading="lazy"/>
+        <img src="assets/images/logo.png" class="w-25" />
         <h2>
           We Create a beautiful, easy, usefull products
           <span
@@ -12,7 +12,7 @@
         </h2>
       </div>
       <div class="col-md-4">
-        <img src="assets/images/about/pomac-office.svg" class="w-100"  alt="office" loading="lazy"/>
+        <img src="assets/images/about/pomac-office.svg" class="w-100" />
       </div>
     </div>
   </div>
@@ -40,7 +40,6 @@
                   src="{{ baseURL }}/{{ service.icon }}"
                   class="w-100"
                   alt="POMAC"
-                  loading="lazy"
                 />
               </div>
               <div class="col-10 p-0 text-left">
@@ -66,8 +65,8 @@
   <div class="container">
     <h2 class="text-center mb-5">Process</h2>
   </div>
-  <div class="container"> 
-    <img src="assets/images/process.gif" alt="POMAC" class="w-100" loading="lazy" />
+  <div class="container">
+    <img src="assets/images/process.gif" alt="POMAC" class="w-100" />
   </div>
 </section>
 <section class="team">
@@ -94,7 +93,6 @@
             class="w-75"
             style="height: 190px"
             alt="POMAC"
-            loading="lazy"
           />
           <h5 class="name fw-bold mt-4 mb-1 text-capitalize">
             {{ employee.name_EN }}
@@ -126,14 +124,13 @@
               class="w-100"
               alt="{{ technology.name }}"
               title="{{ technology.name }}"
-           
+              alt="POMAC"
               [attr.data-aos]="
                 index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'
               "
               data-aos-offset="200"
               data-aos-easing="ease-in-sine"
               data-aos-duration="900"
-              loading="lazy"
             />
           </div>
         </div>

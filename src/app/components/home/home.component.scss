@@ -29,7 +29,7 @@ section.main-slider {
     .home_imgs::-webkit-scrollbar {
       display: none;
     }
-    .audio img {
+    .audio svg {
       width: 16% !important;
       position: absolute;
       top: 19% !important;
@@ -37,7 +37,7 @@ section.main-slider {
     }
   }
   @media (max-width: 450px) {
-    .audio img {
+    .audio svg {
       width: 7% !important;
       position: absolute;
       top: 18% !important;
@@ -165,7 +165,7 @@ section.main-slider {
       position: absolute;
       top: 0;
     }
-    .audio img {
+    .audio svg {
       width: 21% !important;
       position: absolute;
       top: 28%;
@@ -244,9 +244,6 @@ section.main-slider {
           svg {
             g {
               & > g:first-child {
-                path {
-                  // fill: #ff8636;
-                }
               }
             }
           }
@@ -358,7 +355,7 @@ html[dir="rtl"] {
     min-height: 120px !important;
     font-size: 30px !important;
   }
-  section.main-slider .audio img {
+  section.main-slider .audio svg {
     width: 7% !important;
     position: absolute;
     top: 8% !important;
@@ -465,9 +462,8 @@ section.projects {
     }
   }
   @media only screen and (min-width: 770px) {
-    .owl-dots {
-      // display: none;
-    }
+    // .owl-dots {
+    // }
   }
 }
 section.services {
@@ -552,30 +548,4 @@ section.idea {
 .accordion-body {
   padding: 1.25rem;
   border-top: 1px solid #f0f0f0;
-}
-img {
-  object-fit: contain;
-}
-.typing.color-0 {
-  color: #ff8636;
-}
-.typing.color-1 {
-  color: #69bb00;
-}
-.typing.color-2 {
-  color: #2d5ee6;
-}
-
-.rtl-padding {
-  padding-left: 80px;
-}
-.addSectionBtn {
-  cursor: pointer;
-  border-radius: 10px;
-  border: 1px solid #0f0f0f;
-  background-color: #0f0f0f;
-  color: #ffffff;
-  padding: 10px 80px;
-  margin: auto;
-  font-size: 25px;
 }

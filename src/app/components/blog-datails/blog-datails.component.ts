@@ -10,10 +10,12 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./blog-datails.component.scss'],
 })
 export class BlogDatailsComponent implements OnInit {
-  baseurl = environment.baseURL;
+  baseURL: any = 'https://backend-beta-dev.pomac.info/public';
+
   id = '';
   show: boolean = false;
   blog_details: any;
+  blogs: any;
   constructor(
     private route: ActivatedRoute,
     private blog: AppService,
@@ -36,7 +38,6 @@ export class BlogDatailsComponent implements OnInit {
       .subscribe((project) => {
         this.blog_details = project;
         console.log(this.blog_details);
-
         this.show = true;
       });
   }

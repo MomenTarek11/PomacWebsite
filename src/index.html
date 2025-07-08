@@ -54,7 +54,20 @@
       property="twitter:image"
       content="https://opengraph.b-cdn.net/production/images/5fe72193-f5b3-4ef4-bb7d-54d24ed23e5d.png?token=IJIj75z7xjN0SKgh5mHM2jyrzq-QbpudXGbsTyJSnzk&height=1080&width=1200&expires=33259990531"
     />
-    <link rel="preload" href="styles.css" as="style" />
+    <!-- ✅ Preload Tajawal font to improve LCP -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      />
+    </noscript>
+
     <!-- Meta Tags Generated with https://metatags.io -->
     <!-- <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Pomac" />

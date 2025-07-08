@@ -6,7 +6,7 @@ import { BlogComponent } from 'src/app/components/blog/blog.component';
 import { BlogDatailsComponent } from 'src/app/components/blog-datails/blog-datails.component';
 
 @NgModule({
-  declarations: [BlogComponent, BlogDatailsComponent],
+  declarations: [],
   imports: [CommonModule, BlogRoutingModule, DatePipe],
 })
 export class BlogModule {}
