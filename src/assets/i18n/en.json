@@ -1,0 +1,25 @@
+{
+    "HOME": {
+        "contact_us": "Contact us",
+        "home": "Home",
+        "main_header": "Design Products Sounds ",
+        "about": "About",
+        "our_work" : "Our Work",
+        "services": "Services",
+        "projects" :  "Projects",
+
+        "services_description": "We Enable Leading Companies From Idea To Growth, As We Offer a Range Of Professional  Services"
+    },
+    "Contact":{
+        "info_one":"Do you have an idea?",
+        "info_two":"Fill contact info",
+        "info_three":"and Let's Talk",
+        "name":"Name",
+        "email":"Email",
+        "country":"Country",
+        "mob":"Mobile Number",
+        "brief":"Brief of your project",
+        "submit":"Submit",
+        "dir":"ltr"
+    }
+}
