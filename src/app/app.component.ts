@@ -43,11 +43,9 @@ export class AppComponent implements OnInit {
   acceptTracking() {
     localStorage.setItem('trackingAccepted', 'true');
     this.trackingAccepted = true;
-
     if (typeof window.deferGTM === 'function') {
       window.deferGTM();
     }
-
     this.pushTrackingEvent();
   }
 
@@ -114,6 +112,9 @@ export class AppComponent implements OnInit {
   }
 
   checkMobile = () => {
-    this.isMobile = window.innerWidth <= 768;
+    this.isMobile = window.innerWidth <= 1024;
+    if (this.isMobile) {
+      this.showWhats = false;
+    }
   };
 }

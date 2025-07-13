@@ -54,7 +54,6 @@ export class BlogComponent implements OnInit {
   router_details(item: any) {
     // النص الأصلي مع المسافات
     let originalText = item?.id + ' ' + item.title;
-
     // استخدام replace لإزالة المسافات واستبدالها بـ -
     let formattedText = originalText.replace(/\s+/g, '-');
     this.router.navigate(['blog', formattedText], {

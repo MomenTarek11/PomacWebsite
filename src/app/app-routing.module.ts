@@ -13,7 +13,7 @@ import { BlogDatailsComponent } from './components/blog-datails/blog-datails.com
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'jobs', component: JobsComponent },

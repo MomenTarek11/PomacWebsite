@@ -11,6 +11,7 @@ import { filter } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService } from 'src/app/app.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+// import { on } from 'events';
 
 @Component({
   selector: 'app-header',
@@ -27,11 +28,12 @@ export class HeaderComponent implements OnInit {
     { text: 'About', path: '/about' },
     // { text:'Our Work', path:'/our-work' },
   ];
+  onHomePage: boolean = true;
   isScrolled: boolean = false;
   routerPage: any;
   url: string;
   onBlogDetailsPage: boolean = false;
-
+  isDesktop: boolean = false;
   constructor(
     public translate: TranslateService,
     private router: Router,
@@ -40,6 +42,8 @@ export class HeaderComponent implements OnInit {
     private spinner: NgxSpinnerService
   ) {
     // this.switchLanguage('ar')
+    console.log(this.onHomePage, 'haram');
+
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -69,17 +73,33 @@ export class HeaderComponent implements OnInit {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        // Adjust this to match your detail route
-        this.onBlogDetailsPage = event.url.startsWith('/blog/');
-        console.log(this.onBlogDetailsPage, 'momen');
+        const url = event.urlAfterRedirects || event.url;
+
+        // Check if you're on the home page
+        this.onHomePage =
+          url === '/home' || url === '/home#' || url.startsWith('/blog/');
+
+        // Set blog detail flag
+        this.onBlogDetailsPage = url.startsWith('/blog/');
+
+        // Store just the third segment if needed
+        const urll = window.location.href.split('/');
+        this.url = urll[3];
+
+        console.log('onHomePage:', this.onHomePage);
+        console.log('onBlogDetailsPage:', this.onBlogDetailsPage);
       });
   }
 
   ngOnInit(): void {
     this.toggleBtn();
     console.log('momen', this.onBlogDetailsPage);
+    this.checkScreenSize();
+    window.addEventListener('resize', () => this.checkScreenSize());
   }
-
+  checkScreenSize() {
+    this.isDesktop = window.innerWidth > 1024;
+  }
   toggleBtn() {
     // this.toggle
 
@@ -158,48 +178,32 @@ export class HeaderComponent implements OnInit {
     window.location.reload();
   }
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-    // this.toggleBtn()
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const element = document.querySelector('header');
 
-    // document.getElementById('toggle').click()
-    let element = document.querySelector('header');
-    if (window.pageYOffset > element.clientHeight) {
-      // this.route = null
-      // this.router.navigate([], { fragment: null });
-      // set timeout to remove last fragment
-      // setTimeout(() => {
-      //   this.router.navigate([], { fragment: null });
-      // }, 1000);
-
-      //   setTimeout(function(){
-      //     // history.replaceState("", document.title, window.location.pathname);
-      //     // angular router remove last fragment
-
-      // }, 1);
+    // 1. Close menu when scrolling past header height
+    if (scrollY > element.clientHeight) {
       if (this.showMenu) {
-        // this.togglef()
         this.toggle.nativeElement.click();
         this.showMenu = false;
-        // window.location.href=window.location.href.slice(0, -1);
       }
+    }
 
-      // element.classList.add('sticky');
-      // document.body.classList.add('auto-padding')
-    } else {
-      // element.classList.remove('sticky');
-      // document.body.classList.remove('auto-padding')
+    // 2. Toggle isScrolled (e.g. for sticky header effect)
+    this.isScrolled = scrollY >= 80;
+
+    // 3. Toggle onHomePage class based on scroll, only on home route
+    if (this.router.url === '/home') {
+      this.onHomePage = scrollY <= 270;
     }
   }
+
   scrollToClassName(className: string) {
     // this.route = className
     // this.service.setScroll(className)
     this.router.navigate([], { fragment: className });
-  }
-  @HostListener('window:scroll')
-  scrollEvent() {
-    window.pageYOffset >= 80
-      ? (this.isScrolled = true)
-      : (this.isScrolled = false);
   }
 
   goToHome() {

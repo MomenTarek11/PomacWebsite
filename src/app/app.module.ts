@@ -36,6 +36,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { HeroComponent } from './components/hero/hero.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,6 +58,7 @@ registerLocaleData(localeAr);
     BlogDatailsComponent,
     JobsComponent,
     JobDetailsComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,

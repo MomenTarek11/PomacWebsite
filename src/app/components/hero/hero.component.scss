@@ -1,0 +1,631 @@
+.hero {
+  height: 100vh;
+  width: 100%;
+  //   position: relative;
+  background-image: url("../../../assets/images/home/main-slider/e0d5598c9209219057d2bdda9d2268acc23fb2a5 (1).jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  background-attachment: fixed;
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      359.68deg,
+      #000000 13.58%,
+      rgba(0, 0, 0, 0.600683) 60.53%,
+      rgba(0, 0, 0, 0) 97.98%
+    );
+  }
+  .titles {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    h1 {
+      color: #fff;
+      font-size: 90px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 36px;
+      color: #fff;
+      font-weight: 700;
+      width: 75%;
+      margin: 0 auto;
+      span {
+        color: rgba(148, 249, 249, 1);
+      }
+    }
+    .scroll {
+      position: relative;
+      top: 50px;
+      p {
+        color: rgba(153, 153, 153, 1);
+        font-size: 18px;
+      }
+
+      svg {
+        margin-top: 20px;
+        cursor: pointer;
+        rect {
+          transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out; /* إضافة transition للـ fill */
+          fill: transparent; /* تأكد أن الخلفية شفافة بالافتراضي */
+        }
+
+        path {
+          animation: arrowPointing 1.5s infinite ease-in-out;
+          transform-origin: center 60%;
+          transition: fill 0.3s ease-in-out;
+        }
+
+        &:hover {
+          rect {
+            stroke: #94f9f9;
+            fill: #94f9f943; /* لون شبه شفاف */
+          }
+          path {
+            fill: #94f9f9;
+          }
+        }
+      }
+      .heroBtn {
+        width: 162px;
+        height: 56px;
+        opacity: 1;
+        border-radius: 16px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@keyframes bounceScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes arrowPointing {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(5px); /* حركة تشبه الإشارة */
+  }
+}
+.draw-arrow path {
+  stroke: #94f9f9;
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: -500; /* لاحظ السالب هنا */
+  animation: drawGrowth 3s ease-out forwards;
+}
+@keyframes drawGrowth {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .hero {
+    .titles {
+      top: 60%;
+      h1 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 20px;
+      }
+      .scroll {
+        top: 20px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .heroBtn {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .hero {
+    .titles {
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 425px) {
+  .hero {
+    background-position: -750px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 20px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (max-width: 424px) and (min-width: 376px) {
+  .hero {
+    background-position: -1050px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 40px;
+        svg {
+          width: 90px;
+        }
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (max-width: 376px) and (min-width: 321px) {
+  .hero {
+    background-position: -780px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 17px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 414px) {
+  .hero {
+    background-position: -800px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 10px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 390px) {
+  .hero {
+    background-position: -770px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 15px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 430px) {
+  .hero {
+    background-position: -850px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 15px;
+        }
+        svg {
+          width: 35px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 412px) {
+  .hero {
+    background-position: -850px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 13px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 360px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 13px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 375px) {
+  .hero {
+    background-position: -750px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 13px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 344px) {
+  .hero {
+    background-position: -830px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 13px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}
+@media only screen and (width: 820px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 60px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 25px;
+      }
+      .scroll {
+        p {
+          font-size: 20px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+    width: 50% !important;
+    height: 90px !important;
+  }
+}
+@media only screen and (width: 912px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 70px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 25px;
+      }
+      .scroll {
+        p {
+          font-size: 20px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+    width: 50% !important;
+    height: 90px !important;
+  }
+}
+@media only screen and (width: 540px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 40px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 17px;
+      }
+      .scroll {
+        top: 20px;
+        p {
+          font-size: 15px;
+        }
+        svg {
+          margin-top: 0;
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (width: 853px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 70px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 25px;
+      }
+      .scroll {
+        p {
+          font-size: 20px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+    width: 50% !important;
+    height: 90px !important;
+  }
+}
+@media only screen and (width: 853px) {
+  .hero {
+    background-position: -680px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 70px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 25px;
+      }
+      .scroll {
+        p {
+          font-size: 20px;
+        }
+        svg {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+    width: 50% !important;
+    height: 90px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .hero {
+    background-position: -800px -30px;
+    .titles {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        svg {
+          width: 90px;
+          height: auto;
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .scroll {
+        p {
+          font-size: 13px;
+        }
+        svg {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
+  .heroBtn {
+    margin-bottom: 30px !important;
+  }
+}

@@ -29,11 +29,9 @@ ul.main-list {
 }
 .navbar-inverse {
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.253);
-
-
 }
 header {
-  box-shadow: 0 3px 60px #0000000f;
+  box-shadow: 0 3px 60px rgba(0, 0, 0, 0.06);
   background-color: #ffffff;
   position: fixed;
   width: 100%;
@@ -90,7 +88,7 @@ header.desktop-header {
     }
   }
   img.logo {
-    width: 65%;
+    width: 60%;
     // filter: brightness(0) saturate(100%) invert(0%) sepia(15%) saturate(708%)
     //   hue-rotate(323deg) brightness(93%) contrast(77%);
     position: relative;
@@ -101,9 +99,8 @@ header.desktop-header {
     height: 100%;
     .active {
       .menu-link {
-        color: #2d5ee6 !important;
+        color: #2d5ee6;
       }
-
       &::before {
         content: " ";
         width: 40%;
@@ -334,7 +331,7 @@ header.mobile-header {
   .main-list {
     .active {
       .menu-link {
-        color: #2d5ee6 !important;
+        color: #2d5ee6;
         padding-bottom: 6px;
         margin-bottom: 10px;
         position: relative;
@@ -360,12 +357,17 @@ header.mobile-header {
 }
 
 // responsive //
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .desktop-header {
     display: block !important;
   }
   .mobile-header {
     display: none;
+  }
+  .soon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
 }
 .sticky {
@@ -506,4 +508,42 @@ header.mobile-header {
 .blog {
   color: #fff !important;
   border-color: #eee !important;
+}
+
+.onHome {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: #fff !important;
+  .active {
+    .menu-link {
+      color: #fff;
+    }
+  }
+  li {
+    a {
+      color: #fff !important;
+    }
+  }
+
+  .logo {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(42%) saturate(0%)
+      hue-rotate(163deg) brightness(104%) contrast(101%);
+    background-color: transparent !important;
+  }
+  .contact-us {
+    background-color: rgba(45, 94, 230, 1) !important;
+    color: #fff !important;
+    border: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .onHome {
+    padding-block: 50px !important;
+    .toggle-btn {
+      background-color: #fff !important;
+    }
+    .toggle {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(42%) saturate(0%)
+        hue-rotate(163deg) brightness(104%) contrast(101%);
+    }
+  }
 }
