@@ -2,19 +2,19 @@
   height: 100vh;
   width: 100%;
   //   position: relative;
-  background-image: url("../../../assets/images/home/main-slider/e0d5598c9209219057d2bdda9d2268acc23fb2a5 (1).jpg");
+  // background-image: url("../../../assets/images/home/main-slider/e0d5598c9209219057d2bdda9d2268acc23fb2a5 (1).jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-clip: border-box;
-  background-attachment: fixed;
+  // background-attachment: fixed;
+  will-change: transform;
   .overlay {
     height: 100%;
     width: 100%;
     background: linear-gradient(
       359.68deg,
       #000000 13.58%,
-      rgba(0, 0, 0, 0.600683) 60.53%,
+      rgba(0, 0, 0, 0.600683) 50.53%,
       rgba(0, 0, 0, 0) 97.98%
     );
   }
@@ -154,7 +154,6 @@
 }
 @media only screen and (max-width: 767px) and (min-width: 425px) {
   .hero {
-    background-position: -750px -30px;
     .titles {
       width: 100%;
       h1 {
@@ -177,40 +176,30 @@
         }
       }
     }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (max-width: 424px) and (min-width: 376px) {
-  .hero {
-    background-position: -1050px -30px;
-    .titles {
+    .overlay {
+      height: 100%;
       width: 100%;
-      h1 {
-        font-size: 40px;
-        svg {
-          width: 90px;
-        }
-      }
-      p {
-        font-size: 20px;
-      }
+      background: linear-gradient(
+        359.68deg,
+        #000 13.58%,
+        rgba(0, 0, 0, 0.600683) 30.53%,
+        rgba(0, 0, 0, 0) 97.98%
+      );
     }
   }
   .heroBtn {
     margin-bottom: 30px !important;
   }
 }
-@media only screen and (max-width: 376px) and (min-width: 321px) {
+@media only screen and (max-width: 425px) {
   .hero {
-    background-position: -780px -30px;
     .titles {
-      width: 100%;
+      top: 70%;
       h1 {
-        font-size: 30px;
+        width: 100%;
+        font-size: 35px;
         svg {
-          width: 90px;
+          width: 50px;
           height: auto;
         }
       }
@@ -219,97 +208,7 @@
       }
       .scroll {
         p {
-          font-size: 17px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 414px) {
-  .hero {
-    background-position: -800px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 10px;
-        }
-        svg {
-          width: 40px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 390px) {
-  .hero {
-    background-position: -770px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 15px;
-        }
-        svg {
-          width: 40px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 430px) {
-  .hero {
-    background-position: -850px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 15px;
+          font-size: 12px;
         }
         svg {
           width: 35px;
@@ -317,315 +216,82 @@
         }
       }
     }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 412px) {
-  .hero {
-    background-position: -850px -30px;
-    .titles {
+    .overlay {
+      height: 100%;
       width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 13px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
-      }
+      background: linear-gradient(
+        359.68deg,
+        #000000 13.58%,
+        rgba(0, 0, 0, 0.600683) 40.53%,
+        rgba(254, 254, 254, 0) 100.98%
+      );
     }
   }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
 }
-@media only screen and (width: 360px) {
+@media only screen and (max-width: 375px) {
   .hero {
-    background-position: -680px -30px;
     .titles {
-      width: 100%;
+      top: 67%;
       h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 13px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 375px) {
-  .hero {
-    background-position: -750px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 13px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 344px) {
-  .hero {
-    background-position: -830px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 30px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 13px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-  }
-}
-@media only screen and (width: 820px) {
-  .hero {
-    background-position: -680px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 60px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
+        width: 100%;
         font-size: 25px;
-      }
-      .scroll {
-        p {
-          font-size: 20px;
-        }
         svg {
-          width: 40px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-    width: 50% !important;
-    height: 90px !important;
-  }
-}
-@media only screen and (width: 912px) {
-  .hero {
-    background-position: -680px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 70px;
-        svg {
-          width: 90px;
+          width: 20px;
           height: auto;
         }
       }
       p {
-        font-size: 25px;
-      }
-      .scroll {
-        p {
-          font-size: 20px;
-        }
-        svg {
-          width: 40px;
-          height: auto;
-        }
+        font-size: 10px;
       }
     }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-    width: 50% !important;
-    height: 90px !important;
-  }
-}
-@media only screen and (width: 540px) {
-  .hero {
-    background-position: -680px -30px;
-    .titles {
+    .overlay {
+      height: 100%;
       width: 100%;
-      h1 {
-        font-size: 40px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 17px;
-      }
-      .scroll {
-        top: 20px;
-        p {
-          font-size: 15px;
-        }
-        svg {
-          margin-top: 0;
-          width: 30px;
-          height: auto;
-        }
-      }
+      background: linear-gradient(
+        359.68deg,
+        #000000 13.58%,
+        rgba(0, 0, 0, 0.600683) 20.53%,
+        rgba(0, 0, 0, 0) 97.98%
+      );
     }
-  }
-}
-@media only screen and (width: 853px) {
-  .hero {
-    background-position: -680px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 70px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 25px;
-      }
-      .scroll {
-        p {
-          font-size: 20px;
-        }
-        svg {
-          width: 40px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-    width: 50% !important;
-    height: 90px !important;
-  }
-}
-@media only screen and (width: 853px) {
-  .hero {
-    background-position: -680px -30px;
-    .titles {
-      width: 100%;
-      h1 {
-        font-size: 70px;
-        svg {
-          width: 90px;
-          height: auto;
-        }
-      }
-      p {
-        font-size: 25px;
-      }
-      .scroll {
-        p {
-          font-size: 20px;
-        }
-        svg {
-          width: 40px;
-          height: auto;
-        }
-      }
-    }
-  }
-  .heroBtn {
-    margin-bottom: 30px !important;
-    width: 50% !important;
-    height: 90px !important;
   }
 }
 @media only screen and (max-width: 320px) {
   .hero {
-    background-position: -800px -30px;
     .titles {
-      width: 100%;
+      top: 70%;
       h1 {
-        font-size: 30px;
+        font-size: 20px;
         svg {
-          width: 90px;
+          width: 20px;
           height: auto;
         }
       }
       p {
-        font-size: 15px;
-      }
-      .scroll {
-        p {
-          font-size: 13px;
-        }
-        svg {
-          width: 30px;
-          height: auto;
-        }
+        font-size: 10px;
       }
     }
   }
-  .heroBtn {
-    margin-bottom: 30px !important;
+}
+// .fade-in-title {
+//   opacity: 0;
+//   transform: translateY(20px);
+//   animation: fadeUp 0.4s ease-out forwards;
+// }
+// .fade-in-p {
+//   opacity: 0;
+//   transform: translateY(20px);
+//   animation: fadeUp 0.6s ease-out forwards;
+// }
+// .fade-in-section {
+//   opacity: 0;
+//   transform: translateY(20px);
+//   animation: fadeUp 1s ease-out forwards;
+// }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

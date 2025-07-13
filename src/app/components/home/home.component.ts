@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   section_count = 3;
   show: boolean = false;
   public faqs: any = [];
-  public services=[];
+  public services = [];
   typedStarted = false;
   typedIndex = 0;
   public projects = [];
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   // typedIndex = 0;
   dir: any;
   sections: any = [];
-  totalSections: any=[];
+  totalSections: any = [];
   doSmth(index) {
     this.typedIndex = index;
     // console.log(index)
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllHomeData()
+    this.getAllHomeData();
     this.route.queryParams.subscribe((params) => {
       this.dir = params['dir'];
     });
@@ -124,7 +124,9 @@ export class HomeComponent implements OnInit {
     //     });
     // })
 
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
     // this.services = services;
     // this.projects = projects;
     // this.testimonials  =  [];
@@ -136,171 +138,175 @@ export class HomeComponent implements OnInit {
       this.typedStarted = true;
     }, 200); // تقدر تزود حسب تجربتك
   }
-  public testimonial_slidder: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      740: {
-        items: 1,
-      },
-      940: {
-        items: 1,
-      },
-    },
-    nav: false,
-  };
+  // public testimonial_slidder: OwlOptions = {
+  //   loop: true,
+  //   mouseDrag: false,
+  //   touchDrag: false,
+  //   pullDrag: false,
+  //   dots: false,
+  //   navSpeed: 700,
+  //   navText: ['', ''],
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     400: {
+  //       items: 1,
+  //     },
+  //     740: {
+  //       items: 1,
+  //     },
+  //     940: {
+  //       items: 1,
+  //     },
+  //   },
+  //   nav: false,
+  // };
   hexToRgb(color, opacity) {
     return hexToRgb(color, opacity);
   }
 
   // custom owl-carousel-o slider
-  testimonialsStartPosition: number = 0;
-  mainSlidersStartPosition = 0;
-  @ViewChild('testimonialsSlider') testimonialsSliderOwlCarousel;
-  @ViewChild('homeMainSlider') homeMainSliderOwlCarousel;
-  jumpTo(index: number, sliderName) {
-    switch (sliderName) {
-      case 'testimonials':
-        this.testimonialsStartPosition = index;
-        this.testimonialsSliderOwlCarousel.to(index.toString());
-        break;
-      default:
-        this.mainSlidersStartPosition = index;
-        this.homeMainSliderOwlCarousel.to(index.toString());
-        break;
-    }
-  }
-  isDragging(e, sliderName) {
-    switch (sliderName) {
-      case 'testimonials':
-        this.testimonialsStartPosition = e.startPosition;
-        break;
-      default:
-        this.mainSlidersStartPosition = e.startPosition;
-        break;
-    }
-  }
-  main_slidder: any = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    autoplay: true,
-    slideTransition: 'linear',
-    smartSpeed: 500,
-    navText: ['', ''],
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-    },
-  };
-  projects333Options: OwlOptions = {
-    rtl: true,
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: false,
-    dots: true,
-    navSpeed: 700,
-    center: true,
-    autoplay: true,
+  // testimonialsStartPosition: number = 0;
+  // mainSlidersStartPosition = 0;
+  // @ViewChild('testimonialsSlider') testimonialsSliderOwlCarousel;
+  // @ViewChild('homeMainSlider') homeMainSliderOwlCarousel;
+  // jumpTo(index: number, sliderName) {
+  //   switch (sliderName) {
+  //     case 'testimonials':
+  //       this.testimonialsStartPosition = index;
+  //       this.testimonialsSliderOwlCarousel.to(index.toString());
+  //       break;
+  //     default:
+  //       this.mainSlidersStartPosition = index;
+  //       this.homeMainSliderOwlCarousel.to(index.toString());
+  //       break;
+  //   }
+  // }
+  // isDragging(e, sliderName) {
+  //   switch (sliderName) {
+  //     case 'testimonials':
+  //       this.testimonialsStartPosition = e.startPosition;
+  //       break;
+  //     default:
+  //       this.mainSlidersStartPosition = e.startPosition;
+  //       break;
+  //   }
+  // }
+  // main_slidder: any = {
+  //   loop: true,
+  //   mouseDrag: false,
+  //   touchDrag: false,
+  //   pullDrag: false,
+  //   dots: false,
+  //   autoplay: true,
+  //   slideTransition: 'linear',
+  //   smartSpeed: 500,
+  //   navText: ['', ''],
+  //   nav: false,
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //   },
+  // };
+  // projects333Options: OwlOptions = {
+  //   rtl: true,
+  //   loop: true,
+  //   mouseDrag: true,
+  //   touchDrag: true,
+  //   pullDrag: false,
+  //   dots: true,
+  //   navSpeed: 700,
+  //   center: true,
+  //   autoplay: true,
 
-    slideTransition: 'ease-in-out',
-    smartSpeed: 1000,
+  //   slideTransition: 'ease-in-out',
+  //   smartSpeed: 1000,
 
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 2,
-      },
-      1200: {
-        items: 2,
-      },
-      1400: {
-        items: 2,
-      },
-      1600: {
-        items: 2,
-      },
-      1800: {
-        items: 2,
-      },
-    },
-  };
-  newprojectsOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-  };
+  //   nav: false,
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     600: {
+  //       items: 1,
+  //     },
+  //     1000: {
+  //       items: 2,
+  //     },
+  //     1200: {
+  //       items: 2,
+  //     },
+  //     1400: {
+  //       items: 2,
+  //     },
+  //     1600: {
+  //       items: 2,
+  //     },
+  //     1800: {
+  //       items: 2,
+  //     },
+  //   },
+  // };
+  // newprojectsOptions = {
+  //   loop: true,
+  //   mouseDrag: true,
+  //   touchDrag: true,
+  //   pullDrag: true,
+  //   dots: false,
+  // };
   // servesss
- getAllHomeData() {
-  this.spinner.show();
+  getAllHomeData() {
+    this.spinner.show();
+    forkJoin({
+      projects: this.service.homeProjects(),
+      services: this.service.homeServices(),
+      // testimonials: this.service.homeTestimonials(),
+      sections: this.service.homeSections(),
+      faqs: this.service.homeFaqs(),
+    })
+      .pipe(
+        map((res: any) => {
+          return {
+            projects: res.projects['data'],
+            services: res.services['data'],
+            // testimonials: res.testimonials['data'],
+            sections: res.sections['data'],
+            faqs: res.faqs['data'],
+          };
+        })
+      )
+      .subscribe(
+        (result) => {
+          this.projects = result.projects;
+          this.services = result.services;
+          // this.testimonials = result.testimonials;
+          this.sections = result.sections.slice(0, this.section_count);
+          this.totalSections = result.sections;
+          this.faqs = result.faqs.slice(0, 5);
+          this.faqs.forEach((faq) => (faq.show = false));
 
-  forkJoin({
+          this.show = true;
+          this.spinner.hide();
 
-    projects: this.service.homeProjects(),
-    services: this.service.homeServices(),
-    // testimonials: this.service.homeTestimonials(),
-    sections: this.service.homeSections(),
-    faqs: this.service.homeFaqs()
-  })
-  .pipe(map((res: any) => {
-    return {
-
-      projects: res.projects['data'],
-      services: res.services['data'],
-      // testimonials: res.testimonials['data'],
-      sections: res.sections['data'],
-      faqs: res.faqs['data']
-    };
-  }))
-  .subscribe((result) => {
-
-    this.projects = result.projects;
-    this.services = result.services;
-    // this.testimonials = result.testimonials;
-    this.sections = result.sections.slice(0, this.section_count);
-this.totalSections = result.sections;
-    this.faqs = result.faqs.slice(0, 5);
-    this.faqs.forEach((faq) => faq.show = false);
-
-    this.show = true;
-    this.spinner.hide();
-
-    console.log('كل البيانات:', result);
-  }, (err) => {
-    this.spinner.hide();
-    console.error('حدث خطأ أثناء جلب البيانات:', err);
-  });
-}
+          console.log('كل البيانات:', result);
+        },
+        (err) => {
+          this.spinner.hide();
+          console.error('حدث خطأ أثناء جلب البيانات:', err);
+        }
+      );
+  }
   addsections() {
-
- console.log('add sections' , this.sections , this.section_count ,this.totalSections);
+    console.log(
+      'add sections',
+      this.sections,
+      this.section_count,
+      this.totalSections
+    );
     this.section_count = this.totalSections.length;
     this.sections = this.totalSections?.slice(0, this.section_count);
-
   }
   //
   goToProject(event, project) {
@@ -324,12 +330,18 @@ this.totalSections = result.sections;
     element.scrollIntoView({ behavior: 'smooth' });
   }
 
-  scrollToService() {
-    // alert('done')
-    setTimeout(() => {
-      document.getElementById('Services')?.scrollIntoView();
-    }, 1000);
+  scrollToService(offset: number = 100) {
+    const element = document.getElementById('Services');
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth',
+      });
+    }
   }
+
   toggl(item: any) {
     console.log(item.show, item);
     if (item.show == true) {

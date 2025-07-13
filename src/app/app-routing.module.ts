@@ -26,6 +26,8 @@ const routes: Routes = [
     path: 'our-work/:project-id/:project-name',
     component: ProjectDetailsComponent,
   },
+  // 👇 هذا يجب أن يكون في النهاية
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

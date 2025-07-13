@@ -29,6 +29,8 @@ ul.main-list {
 }
 .navbar-inverse {
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.253);
+
+  // background-color: white !important;
 }
 header {
   box-shadow: 0 3px 60px rgba(0, 0, 0, 0.06);
@@ -502,13 +504,13 @@ header.mobile-header {
 .botao-wpp:focus {
   background-color: darken(#25d366, 15%);
 }
-.blogActive a {
-  color: #fff !important;
-}
-.blog {
-  color: #fff !important;
-  border-color: #eee !important;
-}
+// .blogActive a {
+//   color: #fff !important;
+// }
+// .blog {
+//   color: #fff !important;
+//   border-color: #eee !important;
+// }
 
 .onHome {
   background-color: rgba(0, 0, 0, 0.1) !important;
@@ -546,4 +548,7 @@ header.mobile-header {
         hue-rotate(163deg) brightness(104%) contrast(101%);
     }
   }
+}
+.onBlogDetails {
+  background-color: #000000;
 }

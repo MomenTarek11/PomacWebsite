@@ -8,30 +8,36 @@ import { AppService } from 'src/app/app.service';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class FooterComponent implements OnInit {
-  setting :any;
-show:boolean=false;
+  setting: any;
+  show: boolean = false;
   url: string;
-  constructor(private service:AppService,public translate: TranslateService,
-    private router:Router
-    ) {
-      router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
+  constructor(
+    private service: AppService,
+    public translate: TranslateService,
+    private router: Router
+  ) {
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
         var url = window.location.href;
-
-        var urll = url.split( '/' );
-        this.url=urll[3]
-      })
-     }
+        var urll = url.split('/');
+        this.url = urll[3];
+      });
+  }
 
   ngOnInit(): void {
-  setTimeout(() => {
-    this.service.setting().pipe(map(res=>res['data'])).subscribe(setting=>{
-      this.setting = setting
-      this.show=true
-    })
-  }, 3000);
+    setTimeout(() => {
+      this.service
+        .setting()
+        .pipe(map((res) => res['data']))
+        .subscribe((setting) => {
+          this.setting = setting;
+          this.show = true;
+        });
+    });
   }
   // scrollToClassName(className: string) {
 
@@ -47,27 +53,24 @@ show:boolean=false;
     // if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  goToHome() {
+    let dir = location.pathname.split('/');
+    console.log(dir[1]);
 
-
-
-    goToHome(){
-      let dir = location.pathname.split( '/' );
-      console.log(dir[1]);
-
-      if(dir[1] == 'our-work' ){
-         this.router.navigate(['/home'],{queryParams:{
-        dir:'service'
-       }})
-
-      } else if(dir[1] == 'project-details'){
-        this.router.navigate(['/home'],{queryParams:{
-          dir:'service'
-         }})
-      }else{
-        document.getElementById('Services')?.scrollIntoView()
-      }
-
+    if (dir[1] == 'our-work') {
+      this.router.navigate(['/home'], {
+        queryParams: {
+          dir: 'service',
+        },
+      });
+    } else if (dir[1] == 'project-details') {
+      this.router.navigate(['/home'], {
+        queryParams: {
+          dir: 'service',
+        },
+      });
+    } else {
+      document.getElementById('Services')?.scrollIntoView();
     }
-
-
+  }
 }

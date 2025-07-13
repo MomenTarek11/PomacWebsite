@@ -1,7 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+/* tajawal-regular - arabic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/tajawal-v11-arabic-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+// /* tajawal-500 - arabic */
+// @font-face {
+//   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+//   font-family: "Tajawal";
+//   font-style: normal;
+//   font-weight: 500;
+//   src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-500.woff2")
+//     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+// }
+
+/* tajawal-700 - arabic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* tajawal-800 - arabic */
+// @font-face {
+//   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+//   font-family: "Tajawal";
+//   font-style: normal;
+//   font-weight: 800;
+//   src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-800.woff2")
+//     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+// }
+
+/* tajawal-900 - arabic */
+// @font-face {
+//   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+//   font-family: "Tajawal";
+//   font-style: normal;
+//   font-weight: 900;
+//   src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-900.woff2")
+//     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+// }
 
 html {
-  *{
+  * {
     font-display: swap !important;
   }
   &[dir="rtl"] {
@@ -21,7 +70,6 @@ html {
         }
       }
     }
-
     header.desktop-header img.logo {
       // text-align: righ
       float: right;

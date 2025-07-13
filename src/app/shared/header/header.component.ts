@@ -74,25 +74,17 @@ export class HeaderComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects || event.url;
-
-        // Check if you're on the home page
         this.onHomePage =
           url === '/home' || url === '/home#' || url.startsWith('/blog/');
-
-        // Set blog detail flag
         this.onBlogDetailsPage = url.startsWith('/blog/');
-
-        // Store just the third segment if needed
         const urll = window.location.href.split('/');
         this.url = urll[3];
-
         console.log('onHomePage:', this.onHomePage);
         console.log('onBlogDetailsPage:', this.onBlogDetailsPage);
       });
   }
-
   ngOnInit(): void {
-    this.toggleBtn();
+    // this.toggleBtn();
     console.log('momen', this.onBlogDetailsPage);
     this.checkScreenSize();
     window.addEventListener('resize', () => this.checkScreenSize());
@@ -102,14 +94,12 @@ export class HeaderComponent implements OnInit {
   }
   toggleBtn() {
     // this.toggle
-
     // alert('toggleBtn')
     const toggle = document.querySelector('.toggle');
     const toggleBtn = document.querySelector('.toggle-btn');
     const menu = document.querySelector('.menu');
     const menuList = document.querySelector('.menu-list');
     const menuItems = document.querySelectorAll('.menu-item');
-
     let showMenu = false;
     menuItems.forEach((e: any) => {
       e.addEventListener('click', toggleMenu);
@@ -141,18 +131,18 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
-  togglef() {
-    // this.showMenu = !this.showMenu
-    this.showMenu = !this.showMenu;
-    // toggle menu add click event
-    if (this.showMenu) {
-      // this.toggle.nativeElement.classList.add('open')
-    } else {
-      // this.toggle.nativeElement.classList.remove('open')
-    }
+  // togglef() {
+  //   // this.showMenu = !this.showMenu
+  //   this.showMenu = !this.showMenu;
+  //   // toggle menu add click event
+  //   if (this.showMenu) {
+  //     // this.toggle.nativeElement.classList.add('open')
+  //   } else {
+  //     // this.toggle.nativeElement.classList.remove('open')
+  //   }
 
-    // this.toggle.nativeElement.addEventListener('click', this.togglef)
-  }
+  //   // this.toggle.nativeElement.addEventListener('click', this.togglef)
+  // }
   switchLanguage(language: string) {
     this.spinner.show();
     this.translate.use(language);
@@ -177,26 +167,23 @@ export class HeaderComponent implements OnInit {
     // });
     window.location.reload();
   }
-  @HostListener('window:scroll', ['$event'])
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollY = window.scrollY || window.pageYOffset;
-    const element = document.querySelector('header');
-
-    // 1. Close menu when scrolling past header height
-    if (scrollY > element.clientHeight) {
-      if (this.showMenu) {
-        this.toggle.nativeElement.click();
-        this.showMenu = false;
-      }
+    const headerSelector = this.isDesktop
+      ? '.desktop-header'
+      : '.mobile-header';
+    const header = document.querySelector(headerSelector);
+    if (header && scrollY > header.clientHeight && this.showMenu) {
+      console.log('Closing menu due to scroll on', headerSelector);
+      this.closeMenu();
     }
-
-    // 2. Toggle isScrolled (e.g. for sticky header effect)
     this.isScrolled = scrollY >= 80;
-
-    // 3. Toggle onHomePage class based on scroll, only on home route
     if (this.router.url === '/home') {
       this.onHomePage = scrollY <= 270;
+    }
+    if (this.router.url.startsWith('/blog/')) {
+      this.onHomePage = scrollY <= 90;
     }
   }
 
@@ -225,5 +212,14 @@ export class HeaderComponent implements OnInit {
     } else {
       document.getElementById('Services')?.scrollIntoView();
     }
+  }
+  // showMenu = false;
+
+  Toggle() {
+    this.showMenu = !this.showMenu;
+  }
+
+  closeMenu() {
+    this.showMenu = false;
   }
 }

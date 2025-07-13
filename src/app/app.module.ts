@@ -37,6 +37,8 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroComponent } from './components/hero/hero.component';
+import { RecomendedBlogsComponent } from './components/blog-datails/recomended-blogs/recomended-blogs.component';
+import { ProccessComponent } from './components/home/proccess/proccess.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -59,6 +61,8 @@ registerLocaleData(localeAr);
     JobsComponent,
     JobDetailsComponent,
     HeroComponent,
+    RecomendedBlogsComponent,
+    ProccessComponent,
   ],
   imports: [
     BrowserModule,

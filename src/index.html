@@ -54,19 +54,24 @@
       property="twitter:image"
       content="https://opengraph.b-cdn.net/production/images/5fe72193-f5b3-4ef4-bb7d-54d24ed23e5d.png?token=IJIj75z7xjN0SKgh5mHM2jyrzq-QbpudXGbsTyJSnzk&height=1080&width=1200&expires=33259990531"
     />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <!-- ✅ Preload Tajawal font to improve LCP -->
-    <link
+    <!-- <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
+    /> -->
+    <!-- <link rel="preload" href="font.woff2" as="font" crossorigin /> -->
+    <!-- <noscript>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
       />
-    </noscript>
+    </noscript> -->
 
     <!-- Meta Tags Generated with https://metatags.io -->
     <!-- <meta name="twitter:card" content="summary_large_image" />
@@ -107,16 +112,22 @@
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Google Tag Manager -->
     <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      window.deferGTM = function () {
-        const s = document.createElement("script");
-        s.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TRR33H4V";
-        s.async = true;
-        document.head.appendChild(s);
-      };
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TRR33H4V");
     </script>
-
+    <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     <!-- End Google Tag Manager -->
     <!-- End Google Tag Manager -->
     <!--<meta property="og:image" content="https://akela.mendelu.cz/~xmarek10/pic_trulli.jpg">-->
@@ -128,6 +139,8 @@
   <body>
     <!-- Google Tag Manager (noscript) -->
     <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-TRR33H4V"
@@ -136,6 +149,8 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
     <!-- End Google Tag Manager (noscript) -->
     <!-- End Google Tag Manager (noscript) -->
     <app-root></app-root>

@@ -55,13 +55,13 @@
       </div>
       <div class="col-md-5 text-end">
         <img src="assets/images/adasda.svg" class="w-50 logo" alt="POMAC" />
-        <p class="my-4">
+        <p class="my-4" style="line-height: 30px">
           بوماك استوديو شركات ناشئة يمكّن رواد الأعمال من تأسيس شركات تقنية في
           قطاعات واعدة، حيث يقدم استوديو بوماك مجموعة واسعة من الخدمات المدفوعة
           التي تحتاجها الشركات التقنية في رحلة التأسيس والتطوير
         </p>
         <ul class="titles">
-          <li>
+          <!-- <li>
             <a
               aria-labelledby="pomac"
               aria-label="pomac"
@@ -93,8 +93,8 @@
               </span>
               {{ setting.phone }}
             </a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a
               aria-labelledby="pomac"
               aria-label="pomac"
@@ -118,8 +118,8 @@
               </span>
               {{ setting.email }}
             </a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a
               aria-labelledby="pomac"
               aria-label="pomac"
@@ -155,7 +155,7 @@
               </span>
               {{ setting.address }}
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
 
@@ -198,7 +198,9 @@
             <a
               aria-labelledby="pomac"
               aria-label="pomac"
-              [routerLink]="['/jobs']"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="قريبا"
             >
               الوظائف</a
             >
@@ -216,7 +218,9 @@
             <a
               aria-labelledby="pomac"
               aria-label="pomac"
-              [routerLink]="['/blog']"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="قريبا"
               >المدونة</a
             >
           </li>
@@ -270,7 +274,7 @@
             : "Copyright @ 2023 POMAC. All rights reserved."
         }}
         <br />
-        <span style="font-size: 12px">V 13.7.25 beta test</span>
+        <span style="font-size: 12px">V 17.7.25</span>
       </p>
     </div>
   </div>

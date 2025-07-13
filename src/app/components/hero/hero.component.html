@@ -1,12 +1,12 @@
-<section class="hero">
+<section #heroElement class="hero">
   <div class="overlay position-relative">
-    <div class="titles">
-      <div class="container">
+    <div class="titles w-100">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <h1
               data-aos="fade-up"
-              data-aos-offset="150"
+              data-aos-offset="-50"
               data-aos-easing="ease-in-sine"
               data-aos-duration="600"
             >
@@ -39,10 +39,8 @@
                   </clipPath>
                 </defs>
               </svg>
-
               شركة ناجحة
             </h1>
-
             <p
               data-aos="fade-up"
               data-aos-duration="600"
@@ -62,8 +60,9 @@
               <button class="btn btn-primary heroBtn" (click)="openWhatsApp()">
                 إستشارة مجانية
               </button>
-              <p>مرر للاسفل</p>
+              <p>مرِّر للأسفل</p>
               <svg
+                (click)="onScroll()"
                 width="50"
                 height="85"
                 viewBox="0 0 50 85"

@@ -1,5 +1,8 @@
 import { Component, HostListener, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import * as AOS from 'aos';
+import { environment } from 'src/environments/environment';
 declare global {
   interface Window {
     deferGTM?: () => void;
@@ -21,23 +24,60 @@ export class AppComponent implements OnInit {
   isMobile: boolean = false;
   constructor(
     public translate: TranslateService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private router: Router
   ) {
     this.switchLanguage('ar');
     translate.setDefaultLang('ar');
   }
   ngOnInit(): void {
+    // AOS animation init
+    AOS.init({ once: true });
+    if (window.location.pathname === '') {
+      this.router.navigate(['/home']);
+    }
+    // Check user tracking preference
     const accepted = localStorage.getItem('trackingAccepted');
-
     if (accepted === 'true') {
       this.trackingAccepted = true;
-      this.pushTrackingEvent(); // وافق قبل كده
+      this.pushTrackingEvent();
     } else if (accepted === 'false') {
-      this.trackingAccepted = true; // رفض قبل كده، نخفي البانر
+      this.trackingAccepted = true;
     }
-
+    // Mobile checker
     this.checkMobile();
-    window.addEventListener('resize', this.checkMobile);
+    window.addEventListener('resize', this.checkMobile.bind(this));
+
+    // Version Check
+    const currentVersion = environment.appVersion;
+    const savedVersion = localStorage.getItem('appVersion');
+
+    if (savedVersion && savedVersion !== currentVersion) {
+      console.log('🔄 New version detected. Reloading...');
+
+      // Save new version
+      localStorage.setItem('appVersion', currentVersion);
+      
+      // Optional: clear service worker and caches
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          for (let name of names) caches.delete(name);
+        });
+      }
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((regs) => {
+          for (let reg of regs) reg.unregister();
+        });
+      }
+
+      // Force reload once
+      location.reload();
+    } else if (!savedVersion) {
+      // First time user
+      localStorage.setItem('appVersion', currentVersion);
+      console.log('🎉 First time user!');
+    }
   }
 
   acceptTracking() {

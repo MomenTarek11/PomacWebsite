@@ -20,15 +20,31 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((err) => {
-        if(err.status == 500){
-            Swal.fire('Oops...', 'An unexpected error has occurred!', 'error')
-          return
+        if (err.status === 404) {
+          this.router.navigate(['/home']);
+          Swal.fire(
+            'Not Found',
+            'The requested resource was not found.',
+            'warning'
+          );
+          return throwError(() => new Error('404 Not Found'));
+        }
+        if (err.status === 500) {
+          Swal.fire('Oops...', 'An unexpected error has occurred!', 'error');
+          return throwError(() => new Error('Internal Server Error'));
         }
         const error = err.error.messages || err.statusText;
-        for (var i in err.error.messages) {
-            Swal.fire('Oops...', err.error.messages[i], 'error')
+
+        if (err.error.messages && typeof err.error.messages === 'object') {
+          for (const i in err.error.messages) {
+            if (err.error.messages.hasOwnProperty(i)) {
+              Swal.fire('Oops...', err.error.messages[i], 'error');
+            }
+          }
+        } else {
+          Swal.fire('Oops...', error, 'error');
         }
-        return throwError(error);
+        return throwError(() => new Error(error));
       })
     );
   }

@@ -396,7 +396,8 @@
     </div>
   </div>
 </section> -->
-<app-hero></app-hero>
+<app-hero (scroll)="scrollToService()"></app-hero>
+<app-proccess></app-proccess>
 <!-- <section class="main-slider animate__animated animate__fadeIn">
     <div class="container">
         <div class="row">
@@ -455,7 +456,6 @@
                 <div class="ph-col-4"></div>
                 <div class="ph-col-8"></div>
                 <div class="ph-col-12"></div>
-
                 <div class="ph-col-12"></div>
               </div>
             </div>
@@ -476,7 +476,8 @@
           <div class="card-body">
             <div class="row">
               <div class="pl-0 col-3">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src="{{ baseURL }}/{{ service.icon }}"
                   class=""
                   alt="POMAC"
@@ -632,7 +633,8 @@
           data-aos-easing="ease-in-sine"
           data-aos-duration="600"
         >
-          <img loading="lazy"
+          <img
+            loading="lazy"
             [src]="'https://pomac.info/api/backend/public/' + item.image"
             alt=""
             style="object-fit: cover"
@@ -693,7 +695,7 @@
 </div>
 </div> -->
     </div>
-    <div class="text-center" *ngIf="sections?.length <=3">
+    <div class="text-center" *ngIf="sections?.length <= 3">
       <button
         (click)="addsections()"
         class="mt-4"
@@ -797,7 +799,8 @@
             </svg>
           </span>
           <div class="bg-image">
-            <img loading="lazy"
+            <img
+              loading="lazy"
               loading="lazy"
               src="{{ baseURL }}/{{ project.path.main_image }}"
               alt="POMAC"
@@ -826,7 +829,8 @@
             </p>
             <p style="text-align: start !important; font-weight: 600">
               بلد التشغيل :
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 src="assets/images/project-details/img_country.svg"
                 alt=""
                 style="width: 30px; height: 30px; margin-left: 10px"
