@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { forkJoin } from 'rxjs';
 var services = require('src/app/data/services.json');
 var projects = require('src/app/data/projects.json');
 
@@ -24,11 +25,11 @@ var projects = require('src/app/data/projects.json');
 export class HomeComponent implements OnInit {
   section_count = 3;
   show: boolean = false;
-  public home;
-  public services;
+  public faqs: any = [];
+  public services=[];
   typedStarted = false;
   typedIndex = 0;
-  public projects;
+  public projects = [];
   public testimonials: any = [];
   public sliderText = ['Attractive', 'Usable', 'Pretty'];
   public sliderTextArabic = [
@@ -54,6 +55,7 @@ export class HomeComponent implements OnInit {
   // typedIndex = 0;
   dir: any;
   sections: any = [];
+  totalSections: any=[];
   doSmth(index) {
     this.typedIndex = index;
     // console.log(index)
@@ -87,6 +89,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAllHomeData()
     this.route.queryParams.subscribe((params) => {
       this.dir = params['dir'];
     });
@@ -126,7 +129,7 @@ export class HomeComponent implements OnInit {
     // this.projects = projects;
     // this.testimonials  =  [];
     // this.testimonials = testimonials;
-    this.getTestimonials();
+    // this.getTestimonials();
     // this.getTestimonials()
     // نأخر الأنيميشن البسيط عشان نحسن LCP
     setTimeout(() => {
@@ -252,32 +255,52 @@ export class HomeComponent implements OnInit {
     dots: false,
   };
   // servesss
-  getTestimonials() {
-    this.spinner.show();
+ getAllHomeData() {
+  this.spinner.show();
 
-    this.service
-      .home()
-      .pipe(map((res) => res['data']))
-      .subscribe((home) => {
-        this.show = true;
-        this.home = home;
-        console.log(home, 'ssssssaafffffff');
+  forkJoin({
 
-        this.home?.faqs.forEach((element: any) => {
-          return (element.show = false);
-        });
-        this.home.faqs = this.home?.faqs.slice(0, 5);
-        this.sections = this.home?.sections.slice(0, this.section_count);
-        this.spinner.hide();
-      });
+    projects: this.service.homeProjects(),
+    services: this.service.homeServices(),
+    // testimonials: this.service.homeTestimonials(),
+    sections: this.service.homeSections(),
+    faqs: this.service.homeFaqs()
+  })
+  .pipe(map((res: any) => {
+    return {
 
-    // this.service.testimonials().pipe(map(res=>res['data'])).subscribe(testimonials=>{
-    //   this.testimonials = testimonials
-    // })
-  }
+      projects: res.projects['data'],
+      services: res.services['data'],
+      // testimonials: res.testimonials['data'],
+      sections: res.sections['data'],
+      faqs: res.faqs['data']
+    };
+  }))
+  .subscribe((result) => {
+
+    this.projects = result.projects;
+    this.services = result.services;
+    // this.testimonials = result.testimonials;
+    this.sections = result.sections.slice(0, this.section_count);
+this.totalSections = result.sections;
+    this.faqs = result.faqs.slice(0, 5);
+    this.faqs.forEach((faq) => faq.show = false);
+
+    this.show = true;
+    this.spinner.hide();
+
+    console.log('كل البيانات:', result);
+  }, (err) => {
+    this.spinner.hide();
+    console.error('حدث خطأ أثناء جلب البيانات:', err);
+  });
+}
   addsections() {
-    this.section_count = this.home?.sections.length;
-    this.sections = this.home?.sections.slice(0, this.section_count);
+
+ console.log('add sections' , this.sections , this.section_count ,this.totalSections);
+    this.section_count = this.totalSections.length;
+    this.sections = this.totalSections?.slice(0, this.section_count);
+
   }
   //
   goToProject(event, project) {
@@ -311,11 +334,11 @@ export class HomeComponent implements OnInit {
     console.log(item.show, item);
     if (item.show == true) {
       item.show = !item.show;
-      this.home?.faqs.forEach((element: any) => {
+      this.faqs.forEach((element: any) => {
         return (element.show = false);
       });
     } else {
-      this.home?.faqs.forEach((element: any) => {
+      this.faqs.forEach((element: any) => {
         return (element.show = false);
       });
       setTimeout(() => {

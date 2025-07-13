@@ -88,7 +88,7 @@
   }
 }
 .category-btn {
-  border: 1px solid #d2ffff;
+  border: 1px dashed #d2ffff;
   padding: 7px 10px;
   margin-left: 10px;
   margin-top: 20px;
@@ -104,4 +104,10 @@
     background-color: #d2ffff;
     color: #2d5ee6;
   }
+}
+.active {
+  background-color: #d2ffff !important;
+  color: #2d5ee6 !important;
+border: 1px dashed #2d5ee6 !important;
+  box-shadow: none !important;
 }

@@ -10,6 +10,7 @@ declare var AOS: any;
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
+
   blogs: any = [];
   show: boolean = false;
   // endpoint: '',
@@ -19,16 +20,18 @@ export class BlogComponent implements OnInit {
   lastPage: number = 1;
   total: number = 1;
   categories: any = [];
+  activeId: any=null;
   constructor(private blog: AppService, private router: Router) {}
 
   ngOnInit(): void {
     AOS.init();
-    this.getProjects(1);
+    this.getProjects(1 , null);
     this.getCategories();
   }
-  getProjects(page?: number) {
+  getProjects(page?: number , id?: any) {
+    // this.show = false;
     this.blog
-      .blogs(page)
+      .blogs(page , id)
       .pipe(map((res) => res['data']))
       .subscribe((projects) => {
         // console.log(projects);
@@ -61,7 +64,9 @@ export class BlogComponent implements OnInit {
   loadMore() {
     if (this.currentPage < this.lastPage) {
       this.currentPage += 1;
-      this.getProjects(this.currentPage);
+      console.log(this.currentPage, this.activeId , this.lastPage);
+
+      this.getProjects(this.currentPage , this.activeId);
     }
   }
   getCategories() {
@@ -70,4 +75,11 @@ export class BlogComponent implements OnInit {
       this.categories = res?.data;
     });
   }
+changeCategory(id: any) {
+  this.activeId = id;
+  this.blogs = [];
+this.getProjects(1, this.activeId);
+  // console.log(arg0);
+
+}
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -29,9 +29,25 @@ export class AppService {
   testimonials() {
     return this.http.get(`${environment.endpoint}/testimonials?status=show`);
   }
-  home() {
-    return this.http.get(`${environment.endpoint}/home`);
-  }
+homeProjects() {
+  return this.http.get(`${environment.endpoint}/home/projects`);
+}
+
+homeServices() {
+  return this.http.get(`${environment.endpoint}/home/services`);
+}
+
+homeTestimonials() {
+  return this.http.get(`${environment.endpoint}/home/testimonials`);
+}
+
+homeSections() {
+  return this.http.get(`${environment.endpoint}/home/sections`);
+}
+
+homeFaqs() {
+  return this.http.get(`${environment.endpoint}/home/faqs`);
+}
   employees() {
     return this.http.get(`${environment.endpoint}/employees?status=show`);
   }
@@ -52,9 +68,23 @@ export class AppService {
       `${environment.endpoint}/projects/importance?status=show`
     );
   }
-  blogs(page?: number) {
-    return this.http.get(`${environment.endpoint}/blogs?page=${page}`);
+  recommendedProjects(blog_id: any) {
+    return this.http.get(`${environment.endpoint}/blogs/recommended?blog_id=${blog_id}`);
   }
+  // /blogs/recommended?blog_id=7\
+ blogs(page?: number, id?: any) {
+  let params = new HttpParams();
+if (page !== null && page !== undefined) {
+    params = params.set('page', page.toString());
+  }
+
+
+  if (id !==null) {
+    params = params.set('category_id', id);
+  }
+
+  return this.http.get(`${environment.endpoint}/blogs`, { params });
+}
   blog_details(id: any) {
     return this.http.get(`${environment.endpoint}/blog/show?blog_id=${id}`);
   }

@@ -2,10 +2,10 @@
   <header
     class="desktop-header navbar-inverse"
     [ngClass]="{ 'navbar-inverse': isScrolled }"
-    [ngStyle]="{ 'background-color': onBlogDetailsPage ? 'transparent' : '' }"
+    [ngStyle]="{ 'background-color': onBlogDetailsPage && !isScrolled ? '#0000000f' :onBlogDetailsPage && isScrolled ? '#333' : '' }"
   >
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center d-flex">
         <div class="col-md-2">
           <!-- assets/images/logo.png -->
           <!-- src\assets\images\new-logo.webp -->
@@ -33,7 +33,7 @@
               class="menu-item"
               [ngClass]="{
                 active: url == 'home',
-                blogActive: onBlogDetailsPage
+
               }"
             >
               <!-- <a aria-labelledby="pomac" aria-label="pomac" [routerLink]='"."' [fragment]="link">{{link}}</a> -->

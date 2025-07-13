@@ -29,9 +29,11 @@ ul.main-list {
 }
 .navbar-inverse {
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.253);
+
+
 }
 header {
-  box-shadow: 0 3px 60px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 60px #0000000f;
   background-color: #ffffff;
   position: fixed;
   width: 100%;
@@ -88,7 +90,7 @@ header.desktop-header {
     }
   }
   img.logo {
-    width: 60%;
+    width: 65%;
     // filter: brightness(0) saturate(100%) invert(0%) sepia(15%) saturate(708%)
     //   hue-rotate(323deg) brightness(93%) contrast(77%);
     position: relative;
