@@ -20,11 +20,10 @@
   object-fit: contain;
   margin-bottom: 20px;
 }
-.headlines{
-  background-color: #2D5EE61A;
+.headlines {
+  background-color: #2d5ee61a;
   border-radius: 8px;
-  ul{
-
+  ul {
     li {
       list-style: "-";
       font-size: 15px;
@@ -32,16 +31,14 @@
       margin-bottom: 10px;
       font-weight: 500;
       padding: 0px 10px;
-      a{
+      a {
         color: #333;
         text-decoration: none;
-
       }
     }
   }
 }
-.relative_blogs{
-
+.relative_blogs {
   .overlay {
     position: absolute;
     top: 0;
@@ -115,5 +112,3 @@
     }
   }
 }
-
-
