@@ -39,6 +39,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeroComponent } from './components/hero/hero.component';
 import { RecomendedBlogsComponent } from './components/blog-datails/recomended-blogs/recomended-blogs.component';
 import { ProccessComponent } from './components/home/proccess/proccess.component';
+import { SwiperModule } from 'swiper/angular';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,6 +65,7 @@ registerLocaleData(localeAr);
     HeroComponent,
     RecomendedBlogsComponent,
     ProccessComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ registerLocaleData(localeAr);
     //   anchorScrolling: 'enabled',
     //   scrollOffset: [0, 100],
     // }),
+    SwiperModule,
     FormsModule,
     HttpClientModule,
     MatExpansionModule,

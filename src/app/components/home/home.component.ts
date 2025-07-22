@@ -330,8 +330,8 @@ export class HomeComponent implements OnInit {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 
-  scrollToService(offset: number = 100) {
-    const element = document.getElementById('Services');
+  scrollToService(offset: number = 50) {
+    const element = document.getElementById('proccess');
     if (element) {
       const y = element.getBoundingClientRect().top + window.scrollY - offset;
 

@@ -7,7 +7,7 @@ export const environment = {
   endpoint: 'https://pomac.info/api/backend/public/api',
   // endpoint: 'https://backend-beta-dev.pomac.info/public/api',
   baseURL: 'https://pomac.info/api/backend/public',
-  appVersion: '1.0.2', // غيره كل ما تعمل تحديث
+  appVersion: '1.0.3', // غيره كل ما تعمل تحديث
 };
 
 /*

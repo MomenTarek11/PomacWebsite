@@ -29,4 +29,7 @@ export class ProccessComponent {
     },
   ];
   baseURL: any;
+  openWhatsapp() {
+    window.open('https://api.whatsapp.com/send?phone=201094969284', '_blank');
+  }
 }

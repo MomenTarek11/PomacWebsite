@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
   url: string = '';
   trackingAccepted = false;
   isMobile: boolean = false;
+  notTrueVersion: boolean = false;
+  reloadNow: boolean = false;
   constructor(
     public translate: TranslateService,
     private elementRef: ElementRef,
@@ -31,12 +33,13 @@ export class AppComponent implements OnInit {
     translate.setDefaultLang('ar');
   }
   ngOnInit(): void {
-    // AOS animation init
     AOS.init({ once: true });
+
     if (window.location.pathname === '') {
       this.router.navigate(['/home']);
     }
-    // Check user tracking preference
+
+    // Tracking preference
     const accepted = localStorage.getItem('trackingAccepted');
     if (accepted === 'true') {
       this.trackingAccepted = true;
@@ -44,39 +47,34 @@ export class AppComponent implements OnInit {
     } else if (accepted === 'false') {
       this.trackingAccepted = true;
     }
+
     // Mobile checker
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile.bind(this));
 
-    // Version Check
+    // Version check
     const currentVersion = environment.appVersion;
     const savedVersion = localStorage.getItem('appVersion');
 
     if (savedVersion && savedVersion !== currentVersion) {
-      console.log('🔄 New version detected. Reloading...');
+      // ✅ OLD VERSION detected
+      this.notTrueVersion = true;
 
-      // Save new version
-      localStorage.setItem('appVersion', currentVersion);
-      
-      // Optional: clear service worker and caches
+      // clear caches (optional, but good)
       if ('caches' in window) {
-        caches.keys().then((names) => {
-          for (let name of names) caches.delete(name);
-        });
+        caches
+          .keys()
+          .then((names) => names.forEach((name) => caches.delete(name)));
       }
 
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then((regs) => {
-          for (let reg of regs) reg.unregister();
-        });
+        navigator.serviceWorker
+          .getRegistrations()
+          .then((regs) => regs.forEach((reg) => reg.unregister()));
       }
-
-      // Force reload once
-      location.reload();
     } else if (!savedVersion) {
-      // First time user
+      // ✅ First time user
       localStorage.setItem('appVersion', currentVersion);
-      console.log('🎉 First time user!');
     }
   }
 
@@ -157,4 +155,8 @@ export class AppComponent implements OnInit {
       this.showWhats = false;
     }
   };
+  reload() {
+    localStorage.setItem('appVersion', environment.appVersion);
+    window.location.reload();
+  }
 }

@@ -1,0 +1,179 @@
+.tech-swiper-section {
+  padding: 60px 0;
+  background-color: #fff;
+  direction: rtl;
+  position: relative;
+  transition: all 5s ease-in-out;
+  .tech-swiper {
+    padding: 40px;
+
+    .tech-card {
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      width: 288px;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .card-content {
+        text-align: right;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #000;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background-image: url("/assets/images/home/carousel/Component 1 (2) (1).webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        // background-size: cover;
+        transition: all 0.5s ease;
+        opacity: 0;
+        cursor: pointer;
+        h2 {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+      }
+      &:hover {
+        transform: scale(1.03);
+        .card-content {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  // Navigation arrows
+  .keyboard-controls {
+    position: absolute;
+    bottom: 1rem;
+    left: 4rem;
+    // z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      width: 62px;
+      height: 62px;
+      color: #333;
+      background: rgba(255, 255, 255, 1);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+
+      /* Keyboard key effect */
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+
+      svg {
+        width: 62px;
+        height: 62px;
+        fill: rgba(45, 94, 230, 1) !important;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        background: white;
+        transform: translateY(-2px);
+
+        svg {
+          transform: scale(1.1);
+        }
+      }
+
+      &:active {
+        transform: translateY(1px);
+
+        &::after {
+          height: 2px;
+        }
+      }
+
+      /* Disabled state (optional) */
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1440px) and (min-width: 1030px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 250px !important;
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 209px !important;
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 300px !important;
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 256px !important;
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 220px !important;
+      height: 400px !important;
+    }
+  }
+}
