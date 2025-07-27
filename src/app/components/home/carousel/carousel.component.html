@@ -10,14 +10,17 @@
           [slidesPerView]="1"
           [spaceBetween]="20"
           [pagination]="{ clickable: true }"
+          [autoplay]="{ delay: 1000, disableOnInteraction: false }"
           [breakpoints]="{
             '576': { slidesPerView: 1 },
             '768': { slidesPerView: 3 },
-            '1024': { slidesPerView: 3 },
+            '1024': { slidesPerView: 4 },
             '1200': { slidesPerView: 4 },
             '1400': { slidesPerView: 5 },
             '1600': { slidesPerView: 6 }
           }"
+          (mouseenter)="pauseAutoplay()"
+          (mouseleave)="resumeAutoplay()"
           class="tech-swiper"
         >
           <!-- PropTech Card -->

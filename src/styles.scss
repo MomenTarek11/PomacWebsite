@@ -3,7 +3,7 @@
 
 :root {
   --pomac-color: #2d5ee6;
-  --pomac-color-dark: #1d1d1d;
+  --pomac-color-dark: #242424;
   --pomac-color-light: #f9f9f9;
   --pomac-color-light-2: #f3f3f3;
   --pomac-color-secondary: #c9d2d8;
@@ -110,12 +110,12 @@ section {
     }
     p {
       color: var(--pomac-color-dark) !important;
-      opacity: 0.6 !important;
+      // opacity: 0.6 !important;
       max-width: 500px;
       margin: 0 auto;
-      font-size: 20px;
+      font-size: 18px;
       @media only screen and (max-width: 600px) {
-        font-size: 16px;
+        font-size: 18px;
         max-width: 90%;
       }
     }
@@ -140,7 +140,7 @@ section.services {
   // @media only screen and (max-width: 770px) {
 }
 section.process {
-  padding: 50px;
+  // padding: 50px;
   background-color: var(--pomac-color-dark);
   color: #ffffff;
   h2 {

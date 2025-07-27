@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, isDevMode } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeAr from '@angular/common/locales/ar';
 import * as Popper from '@popperjs/core';
@@ -41,6 +41,7 @@ import { RecomendedBlogsComponent } from './components/blog-datails/recomended-b
 import { ProccessComponent } from './components/home/proccess/proccess.component';
 import { SwiperModule } from 'swiper/angular';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -94,6 +95,12 @@ registerLocaleData(localeAr);
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [

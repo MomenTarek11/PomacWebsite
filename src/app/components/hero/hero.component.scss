@@ -72,7 +72,7 @@
         }
       }
       .heroBtn {
-        width: 162px;
+        // width: 162px;
         height: 56px;
         opacity: 1;
         border-radius: 16px;
@@ -135,7 +135,7 @@
     }
   }
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1400px) {
   .heroBtn {
     display: none;
   }

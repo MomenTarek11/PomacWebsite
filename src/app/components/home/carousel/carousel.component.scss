@@ -149,6 +149,9 @@
       height: 400px !important;
     }
   }
+  .keyboard-controls {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 576px) {
   .tech-swiper-section {
@@ -168,11 +171,29 @@
     }
   }
 }
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 225px !important;
+      height: 400px !important;
+    }
+  }
+}
 @media screen and (max-width: 320px) {
   .tech-swiper-section {
     .tech-card {
       //   margin-inline: 20px !important;
       width: 220px !important;
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .tech-swiper-section {
+    .tech-card {
+      //   margin-inline: 20px !important;
+      width: 230px !important;
       height: 400px !important;
     }
   }

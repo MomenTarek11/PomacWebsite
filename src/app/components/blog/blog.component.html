@@ -61,7 +61,8 @@
         </div>
       </div>
     </div>
-    <div class="row my-5" *ngIf="show">
+
+    <div class="row my-5" *ngIf="show" style="min-height: 50vh">
       <div class="col-lg-4" *ngFor="let project of blogs; let index = index">
         <div
           (click)="router_details(project)"
@@ -129,6 +130,14 @@
             </span>
           </div>
         </div>
+      </div>
+      <div
+        class="col-12 d-flex justify-content-center align-items-center"
+        *ngIf="empty"
+      >
+        <h1 class="fw-bold mt-5" style="font-size: 32px; align-items: center">
+          لا يوجد مقالات في هذا القسم
+        </h1>
       </div>
     </div>
     <div class="text-center my-5" *ngIf="currentPage < lastPage">

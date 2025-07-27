@@ -2,13 +2,12 @@
   <header
     class="desktop-header navbar-inverse"
     [ngClass]="{
-      'navbar-inverse': isScrolled,
       onHome: onHomePage,
     }"
   >
     <!-- [ngStyle]="{ 'background-color': onBlogDetailsPage ? 'transparent' : '' }" -->
     <div class="container">
-      <div class="row align-items-center d-flex">
+      <div class="row align-items-center d-flex top">
         <div class="col-md-2">
           <!-- assets/images/logo.png -->
           <!-- src\assets\images\new-logo.webp -->
@@ -169,11 +168,11 @@
               target="_blank"
             >
               <button
-                class="float-right cursor-pointer contact-us pointer"
+                class="float-right cursor-pointer contact-us pointer w-100"
                 [ngClass]="{ blog: onBlogDetailsPage }"
-                *ngIf="isDesktop"
+                *ngIf="showButton"
               >
-                استشارة مجانية
+                احجز إستشارتك مجانية
               </button>
             </a>
             <!-- <div class="_change-lang" [ngSwitch]="translate.currentLang">

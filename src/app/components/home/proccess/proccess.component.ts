@@ -8,22 +8,22 @@ import { Component } from '@angular/core';
 export class ProccessComponent {
   processes: any[] = [
     {
-      icon: 'assets/icons/proccess_four.webp',
+      icon: 'assets/icons/magnifying-glass_5008371 2 (1).webp',
       title: 'أبحاث ما قبل التأسيس :',
       description: 'نفهم جمهورك والسوق لضمان جاهزية فكرتك.',
     },
     {
-      icon: 'assets/icons/proccess_three.webp',
+      icon: 'assets/icons/rocket_13334937 2 (1).webp',
       title: 'بناء MVP :',
       description: 'نصمم ونطور منتجك الأولي بسرعة وبأعلى جودة.',
     },
     {
-      icon: 'assets/icons/process_two.webp',
+      icon: 'assets/icons/chart_2561257 2 (1).webp',
       title: 'التسويق والنمو :',
       description: 'نساعدك في جذب العملاء، بناء الوعي، وتحقيق نمو مستدام.',
     },
     {
-      icon: 'assets/icons/procces_one.webp',
+      icon: 'assets/icons/money_5027499 2 (1).webp',
       title: 'إعداد الجولات الاستثمارية :',
       description: 'نهيئك لجذب المستثمرين وتمويل شركتك.',
     },

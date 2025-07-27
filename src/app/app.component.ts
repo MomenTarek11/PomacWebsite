@@ -57,27 +57,33 @@ export class AppComponent implements OnInit {
     const savedVersion = localStorage.getItem('appVersion');
 
     if (savedVersion && savedVersion !== currentVersion) {
-      // ✅ OLD VERSION detected
+      // 🟥 OLD VERSION
       this.notTrueVersion = true;
 
-      // clear caches (optional, but good)
+      // ✅ Clear Cache
       if ('caches' in window) {
-        caches
-          .keys()
-          .then((names) => names.forEach((name) => caches.delete(name)));
+        caches.keys().then((names) => {
+          names.forEach((name) => caches.delete(name));
+        });
       }
 
+      // ✅ Unregister service workers (if existed)
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .getRegistrations()
-          .then((regs) => regs.forEach((reg) => reg.unregister()));
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          registrations.forEach((reg) => reg.unregister());
+        });
       }
-    } else if (!savedVersion) {
-      // ✅ First time user
+
+      // 🌀 Optional: reload automatically after delay
+      // setTimeout(() => {
+      //   localStorage.setItem('appVersion', currentVersion);
+      //   window.location.reload();
+      // }, 3000);
+    } else {
+      // ✅ First visit or correct version
       localStorage.setItem('appVersion', currentVersion);
     }
   }
-
   acceptTracking() {
     localStorage.setItem('trackingAccepted', 'true');
     this.trackingAccepted = true;

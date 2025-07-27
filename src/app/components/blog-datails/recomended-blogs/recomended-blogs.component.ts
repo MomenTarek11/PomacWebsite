@@ -29,9 +29,7 @@ export class RecomendedBlogsComponent {
   }
   ngOnInit() {
     this.service.recommendedProjects(this.blogId).subscribe((res: any) => {
-      this.recomendedBlogs = res?.data || []; // Ensure it's never undefined
-
-      // Emit true if there are blogs, false if empty
+      this.recomendedBlogs = res?.data || [];
       const hasRecommendations = this.recomendedBlogs.length > 0;
       this.thereIsRecomendedBlogs.emit(hasRecommendations);
     });

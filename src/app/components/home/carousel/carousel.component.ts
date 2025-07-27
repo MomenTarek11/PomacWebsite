@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import Swiper from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
+import SwiperCore, { Autoplay } from 'swiper';
+
+SwiperCore.use([Autoplay]);
 
 @Component({
   selector: 'app-carousel',
@@ -66,10 +69,17 @@ export class CarouselComponent {
     },
   ];
   slideNext() {
-    this.techSwiper.swiperRef.slideNext();
+    this.techSwiper.swiperRef.slidePrev();
   }
 
   slidePrev() {
-    this.techSwiper.swiperRef.slidePrev();
+    this.techSwiper.swiperRef.slideNext();
+  }
+  pauseAutoplay() {
+    this.techSwiper?.swiperRef?.autoplay?.stop();
+  }
+
+  resumeAutoplay() {
+    this.techSwiper?.swiperRef?.autoplay?.start();
   }
 }

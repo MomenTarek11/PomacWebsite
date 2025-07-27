@@ -4,7 +4,7 @@ ul.main-list {
   }
 
   // in larg screen
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 992px) {
     position: fixed;
     // top: 40px;
     // right: 0;
@@ -36,8 +36,9 @@ header {
   box-shadow: 0 3px 60px rgba(0, 0, 0, 0.06);
   background-color: #ffffff;
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 9999;
   a.lang {
     position: relative;
     // top: 10px;
@@ -178,20 +179,17 @@ header.desktop-header {
     clip-path: circle(100% at 50% 50%);
   }
   button.contact-us {
-    color: #000000;
+    color: #fff;
     overflow: hidden;
     transform: perspective(1px) translateZ(0);
     transition: all 0.2s ease-out;
-    background: none;
+    background: #2d5ee6;
     font-weight: 600;
     width: 150px;
     border-radius: 18px;
-    border: 1px solid #000000;
+    // border: 1px solid #000000;
     padding: 13px;
     position: relative;
-
-    &:hover {
-    }
   }
 }
 
@@ -403,19 +401,6 @@ header.mobile-header {
   animation: smoothScroll 5s forwards;
 }
 
-._change-lang {
-  // position: relative;
-  // bottom: 20px;
-  // left: 20px;
-  // z-index: 80;
-  // img{
-  //   width: 40px;
-  //   height: 40px;
-  //   border-radius: 50%;
-
-  // }
-}
-
 .mobile-header {
   .menu-item {
     a {
@@ -450,7 +435,6 @@ header.mobile-header {
 
   button {
     display: block;
-
     width: 100%;
     padding: 10px 0px !important;
     margin-bottom: 10px;
@@ -460,18 +444,7 @@ header.mobile-header {
     border: 1px solid #eee !important;
   }
 }
-//  between 992px and 1200px
-@media (min-width: 772px) and (max-width: 992px) {
-  .menu {
-    display: none;
-  }
-  // .desktop-header {
-  //     display: block !important;
-  // }
-  // .mobile-header {
-  //     display: none;
-  // }
-}
+
 @media screen and (max-width: 320px) {
   .brand {
     img {
@@ -551,4 +524,14 @@ header.mobile-header {
 }
 .onBlogDetails {
   background-color: #000000;
+}
+// @media only screen and (min-width: 1024) and (max-width: 1200px) {
+//   .align-items-center {
+//     width: 120% !important;
+//   }
+// }
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .top {
+    width: 175% !important;
+  }
 }

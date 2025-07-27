@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
   url: string;
   onBlogDetailsPage: boolean = false;
   isDesktop: boolean = false;
+  showButton: boolean = false;
   constructor(
     public translate: TranslateService,
     private router: Router,
@@ -43,7 +44,6 @@ export class HeaderComponent implements OnInit {
   ) {
     // this.switchLanguage('ar')
     console.log(this.onHomePage, 'haram');
-
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -91,6 +91,7 @@ export class HeaderComponent implements OnInit {
   }
   checkScreenSize() {
     this.isDesktop = window.innerWidth > 1024;
+    this.showButton = window.innerWidth > 1400;
   }
   toggleBtn() {
     // this.toggle
@@ -131,18 +132,6 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
-  // togglef() {
-  //   // this.showMenu = !this.showMenu
-  //   this.showMenu = !this.showMenu;
-  //   // toggle menu add click event
-  //   if (this.showMenu) {
-  //     // this.toggle.nativeElement.classList.add('open')
-  //   } else {
-  //     // this.toggle.nativeElement.classList.remove('open')
-  //   }
-
-  //   // this.toggle.nativeElement.addEventListener('click', this.togglef)
-  // }
   switchLanguage(language: string) {
     this.spinner.show();
     this.translate.use(language);
@@ -178,7 +167,7 @@ export class HeaderComponent implements OnInit {
       console.log('Closing menu due to scroll on', headerSelector);
       this.closeMenu();
     }
-    this.isScrolled = scrollY >= 80;
+    // this.isScrolled = scrollY >= 80;
     if (this.router.url === '/home') {
       this.onHomePage = scrollY <= 270;
     }

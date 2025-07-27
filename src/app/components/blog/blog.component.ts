@@ -10,7 +10,6 @@ declare var AOS: any;
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-
   blogs: any = [];
   show: boolean = false;
   // endpoint: '',
@@ -20,23 +19,28 @@ export class BlogComponent implements OnInit {
   lastPage: number = 1;
   total: number = 1;
   categories: any = [];
-  activeId: any=null;
+  activeId: any = null;
+  empty: boolean = false;
   constructor(private blog: AppService, private router: Router) {}
 
   ngOnInit(): void {
     AOS.init();
-    this.getProjects(1 , null);
+    this.getProjects(1, null);
     this.getCategories();
   }
-  getProjects(page?: number , id?: any) {
-    // this.show = false;
+  getProjects(page?: number, id?: any) {
+    this.show = false;
+    this.empty = false;
     this.blog
-      .blogs(page , id)
+      .blogs(page, id)
       .pipe(map((res) => res['data']))
       .subscribe((projects) => {
         // console.log(projects);
         this.blogs.push(...projects?.data); // projects?.data;
         this.show = true;
+        if (this.blogs.length == 0) {
+          this.empty = true;
+        }
         // console.log(projects);
         this.currentPage = projects.current_page;
         this.lastPage = projects.last_page;
@@ -63,9 +67,9 @@ export class BlogComponent implements OnInit {
   loadMore() {
     if (this.currentPage < this.lastPage) {
       this.currentPage += 1;
-      console.log(this.currentPage, this.activeId , this.lastPage);
+      console.log(this.currentPage, this.activeId, this.lastPage);
 
-      this.getProjects(this.currentPage , this.activeId);
+      this.getProjects(this.currentPage, this.activeId);
     }
   }
   getCategories() {
@@ -74,11 +78,10 @@ export class BlogComponent implements OnInit {
       this.categories = res?.data;
     });
   }
-changeCategory(id: any) {
-  this.activeId = id;
-  this.blogs = [];
-this.getProjects(1, this.activeId);
-  // console.log(arg0);
-
-}
+  changeCategory(id: any) {
+    this.activeId = id;
+    this.blogs = [];
+    this.getProjects(1, this.activeId);
+    // console.log(arg0);
+  }
 }
