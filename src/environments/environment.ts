@@ -4,10 +4,10 @@
 
 export const environment = {
   production: true,
-  // endpoint: 'https://pomac.info/api/backend/public/api',
-  endpoint: 'https://backend-beta-dev.pomac.info/public/api',
+  endpoint: 'https://pomac.info/api/backend/public/api',
+  // endpoint: 'https://backend-beta-dev.pomac.info/public/api',
   baseURL: 'https://pomac.info/api/backend/public',
-  appVersion: '1.0.4', // غيره كل ما تعمل تحديث
+  appVersion: '1.0.6', // غيره كل ما تعمل تحديث
 };
 
 /*

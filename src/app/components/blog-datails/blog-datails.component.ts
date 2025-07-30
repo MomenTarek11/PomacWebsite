@@ -19,13 +19,15 @@ declare var AOS: any;
   styleUrls: ['./blog-datails.component.scss'],
 })
 export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
-  baseURL = 'https://backend-beta-dev.pomac.info/public';
+  // baseURL = 'https://backend-beta-dev.pomac.info/public';
+  baseURL = environment.baseURL;
   id = '';
   show = false;
   blog_details: any;
   blogs: any[] = [];
   showRecommendedBlogs = true; // Default true (show)
   @ViewChild('blogContent') blogContent!: ElementRef;
+  isMobile = window.innerWidth < 768;
   // @Input() blog_details: any;
   constructor(
     private route: ActivatedRoute,
@@ -48,6 +50,9 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     this.processImages();
+    const nav = this.router.getCurrentNavigation();
+    const state = nav?.extras?.state;
+    console.log('Passed state:', state);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -64,10 +69,14 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
     const images = container.querySelectorAll('p img');
     images.forEach((img: HTMLImageElement) => {
       // Basic styling
-      img.style.maxWidth = '100%';
+      if (!this.isMobile) {
+        img.style.maxWidth = '600px';
+        img.style.height = '600px';
+      } else {
+        img.style.width = '100%';
+      }
       img.style.height = 'auto';
-      img.classList.add('img-fluid'); // Bootstrap responsive
-
+      img.style.objectFit = 'cover';
       // Optional enhancements
       img.setAttribute('loading', 'lazy');
       img.style.borderRadius = '12px';
@@ -110,5 +119,8 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
   handleRecomendedStatus(hasRecommendations: boolean) {
     this.showRecommendedBlogs = hasRecommendations;
     console.log('Recommended blogs available?', hasRecommendations);
+  }
+  openWhatsApp() {
+    window.open('https://api.whatsapp.com/send?phone=201094969284', '_blank');
   }
 }

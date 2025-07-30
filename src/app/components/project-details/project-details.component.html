@@ -45,7 +45,6 @@
                   display: -webkit-box;
                   -webkit-line-clamp: 7;
                   -webkit-box-orient: vertical;
-
                   overflow: hidden;
                 "
               >
@@ -55,66 +54,12 @@
                     : project.long_description_EN
                 }}
               </div>
-              <div
-                class="country_details mt-3 mb-3"
-                style="display: flex; align-items: center; flex-wrap: wrap"
-              >
-                <div class="mb-1 details">
-                  <img
-                    src="assets/images/project-details/img_country.svg"
-                    alt=""
-                  />
-                  <span>المملكه العربية السعودية</span>
-                </div>
-                <div class="mb-1 details" *ngIf="project?.section != null">
-                  <img src="assets/images/project-details/categ.svg" alt="" />
-                  <span> {{ project?.section.title }}</span>
-                </div>
-              </div>
-              <div class="project_download mb-4" style="text-align: start">
-                <a
-                  *ngIf="project?.path?.google_play != '#'"
-                  href="{{ project?.path?.google_play }}"
-                  target="_blank"
-                >
-                  <img
-                    src="assets/images/project-details/google_play.svg"
-                    alt=""
-                    style="width: 110px; margin-left: 10px"
-                /></a>
-
-                <a
-                  href="{{ project?.path?.app_store }}"
-                  target="_blank"
-                  *ngIf="project?.path?.app_store != '#'"
-                  ><img
-                    src="assets/images/project-details/apple_store.svg"
-                    alt=""
-                    style="width: 110px"
-                /></a>
-
-                <div
-                  style="
-                    font-size: 18px;
-                    font-weight: 500;
-                    margin-left: 5px;
-                    margin-top: 20px !important;
-                  "
-                  *ngIf="project?.path?.web != '#'"
-                >
-                  رابط الموقع
-                  <a
-                    style="
-                      font-size: 18px;
-                      font-weight: 500;
-                      text-decoration: none;
-                    "
-                    href="{{ project?.path?.web }}"
-                    target="_blank"
-                  >
-                    <!-- EXPLORE -->
-                    {{ project?.path?.web }}
-                  </a>
+              <div class="col-12 my-5" *ngIf="project?.info?.length > 0">
+                <h3>أهم النجاحات المحققة</h3>
+                <div class="info">
+                  <ul>
+                    <li *ngFor="let info of project?.info">{{ info }}</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -135,6 +80,73 @@
                   'url(' + baseURL + '/' + project?.path?.mockup + ')'
               }"
             ></div>
+          </div>
+          <div class="col-md-12 mt-5">
+            <div class="row">
+              <div class="col-md-3 d-flex flex-column gap-3">
+                <h5 data-aos="fade-up " class="text-center">بلد التشغيل</h5>
+                <div class="country_details">
+                  <div class="mb-1 details text-center">
+                    <img
+                      src="assets/images/project-details/img_country.svg"
+                      alt=""
+                    />
+                    <span>المملكه العربية السعودية</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex flex-column gap-3">
+                <h5 class="text-center">الصناعة / القطاع</h5>
+                <div
+                  class="mb-1 details text-center"
+                  *ngIf="project?.section != null"
+                >
+                  <img src="assets/images/project-details/categ.svg" alt="" />
+                  <span> {{ project?.section.title }}</span>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex flex-column gap-3">
+                <h5 class="text-center">رابط الموقع</h5>
+                <a
+                  style="
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    text-align: center;
+                  "
+                  href="{{ project?.path?.web }}"
+                  target="_blank"
+                >
+                  <!-- EXPLORE -->
+                  {{ project?.path?.web }}
+                </a>
+              </div>
+              <div class="col-md-3 d-flex flex-column gap-3">
+                <h5 class="text-center mb-0">تحميل التطبيق</h5>
+                <div class="project_download" style="text-align: center">
+                  <a
+                    *ngIf="project?.path?.google_play != '#'"
+                    href="{{ project?.path?.google_play }}"
+                    target="_blank"
+                  >
+                    <img
+                      src="assets/images/project-details/google_play.svg"
+                      alt=""
+                      style="width: 110px; margin-left: 10px"
+                  /></a>
+
+                  <a
+                    href="{{ project?.path?.app_store }}"
+                    target="_blank"
+                    *ngIf="project?.path?.app_store != '#'"
+                    ><img
+                      src="assets/images/project-details/apple_store.svg"
+                      alt=""
+                      style="width: 110px"
+                  /></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

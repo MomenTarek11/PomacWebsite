@@ -125,22 +125,3 @@
   </div>
 </div>
 <!-- يظهر فقط إذا النسخة قديمة -->
-<div *ngIf="notTrueVersion">
-  <section class="vh-100 d-flex justify-content-center align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 d-flex flex-column align-items-center gap-2">
-          <img src="assets/oops (1).webp" alt="" width="80" class="mb-3" />
-          <p class="text-center">
-            يبدو أن النسخة التي تستخدمها قديمة<br />
-            يرجى الضغط على الزر أدناه لإعادة تحميل الصفحة والحصول على آخر
-            التحديثات
-          </p>
-          <button class="btn btn-primary mt-3" (click)="reload()">
-            إعادة تحميل الصفحة
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>

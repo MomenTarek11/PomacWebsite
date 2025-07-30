@@ -167,7 +167,7 @@ export class ProjectDetailsComponent implements OnInit {
       .pipe(map((res) => res['data']))
       .subscribe((project) => {
         this.project = project;
-        console.log(project);
+        console.log(project?.info, 'momen');
         this.url = this.sanitizer.bypassSecurityTrustResourceUrl(
           'https://www.youtube.com/embed/' + project.path.vedio
         );

@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit {
   blogs: any = [];
   show: boolean = false;
   // endpoint: '',
-  baseURL: any = 'https://backend-beta-dev.pomac.info/public';
+  baseURL: any = environment.baseURL;
   color: any = '#FDFFD0';
   currentPage: number = 1;
   lastPage: number = 1;

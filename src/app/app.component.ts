@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   url: string = '';
   trackingAccepted = false;
   isMobile: boolean = false;
+  isReloading: boolean = false;
   notTrueVersion: boolean = false;
   reloadNow: boolean = false;
   constructor(
@@ -34,11 +35,9 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     AOS.init({ once: true });
-
     if (window.location.pathname === '') {
       this.router.navigate(['/home']);
     }
-
     // Tracking preference
     const accepted = localStorage.getItem('trackingAccepted');
     if (accepted === 'true') {
@@ -47,38 +46,31 @@ export class AppComponent implements OnInit {
     } else if (accepted === 'false') {
       this.trackingAccepted = true;
     }
-
     // Mobile checker
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile.bind(this));
-
     // Version check
     const currentVersion = environment.appVersion;
     const savedVersion = localStorage.getItem('appVersion');
 
     if (savedVersion && savedVersion !== currentVersion) {
-      // 🟥 OLD VERSION
       this.notTrueVersion = true;
+      this.isReloading = true; // ✅ عرض شاشة "يرجى الانتظار"
 
-      // ✅ Clear Cache
       if ('caches' in window) {
         caches.keys().then((names) => {
           names.forEach((name) => caches.delete(name));
         });
       }
-
-      // ✅ Unregister service workers (if existed)
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then((registrations) => {
           registrations.forEach((reg) => reg.unregister());
         });
       }
-
-      // 🌀 Optional: reload automatically after delay
-      // setTimeout(() => {
-      //   localStorage.setItem('appVersion', currentVersion);
-      //   window.location.reload();
-      // }, 3000);
+      setTimeout(() => {
+        localStorage.setItem('appVersion', currentVersion);
+        window.location.reload();
+      }, 500); // ✅ انتظر ثانيتين قبل إعادة التحميل
     } else {
       // ✅ First visit or correct version
       localStorage.setItem('appVersion', currentVersion);
@@ -92,14 +84,11 @@ export class AppComponent implements OnInit {
     }
     this.pushTrackingEvent();
   }
-
   rejectTracking() {
     localStorage.setItem('trackingAccepted', 'false');
     this.trackingAccepted = true;
-
     // ❌ بدون تفعيل أي تتبع
   }
-
   pushTrackingEvent() {
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
@@ -113,7 +102,6 @@ export class AppComponent implements OnInit {
       this.elementRef.nativeElement.querySelector('.whatsapp');
     const waButton =
       this.elementRef.nativeElement.querySelector('.container-wa a');
-
     if (whatsappElement && !whatsappElement.contains(event.target)) {
       // Also make sure we're not clicking the WhatsApp button itself
       if (!waButton?.contains(event.target)) {
@@ -121,7 +109,6 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
   switchLanguage(language: string) {
     this.translate.use(language);
     if (language !== 'ar' && document.documentElement.hasAttribute('dir')) {
@@ -134,16 +121,13 @@ export class AppComponent implements OnInit {
     }
     localStorage.setItem('lang', language);
   }
-
   sendDirect() {
     this.url = `https://api.whatsapp.com/send?phone=201094969284`;
     window.open(this.url, '_blank');
     this.showWhats = false;
   }
-
   toggleWhatsapp(event?: MouseEvent) {
     event?.stopPropagation(); // prevent bubbling
-
     if (this.isMobile == true) {
       console.log('mobile');
       this.sendDirect(); // open WhatsApp directly
@@ -154,7 +138,6 @@ export class AppComponent implements OnInit {
   ngOnDestroy() {
     window.removeEventListener('resize', this.checkMobile);
   }
-
   checkMobile = () => {
     this.isMobile = window.innerWidth <= 1024;
     if (this.isMobile) {

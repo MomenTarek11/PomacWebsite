@@ -39,7 +39,6 @@ export class HeaderComponent implements OnInit {
     public translate: TranslateService,
     private router: Router,
     private service: AppService,
-
     private spinner: NgxSpinnerService
   ) {
     // this.switchLanguage('ar')
