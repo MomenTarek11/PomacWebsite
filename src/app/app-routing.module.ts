@@ -18,12 +18,13 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'jobs', component: JobsComponent },
   { path: 'blog/:blog_id', component: BlogDatailsComponent },
+
   { path: 'jobs/:job_id', component: JobDetailsComponent },
   { path: 'our-work', component: OurWorkComponent },
   { path: 'our-services', component: ServicesComponent },
   { path: 'faq', component: FaqComponent },
   {
-    path: 'our-work/:project-id/:project-name',
+    path: 'our-work/:slug',
     component: ProjectDetailsComponent,
   },
   // 👇 هذا يجب أن يكون في النهاية

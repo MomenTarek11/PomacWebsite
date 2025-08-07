@@ -3,6 +3,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   OnChanges,
   OnInit,
   SimpleChanges,
@@ -13,6 +14,7 @@ import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
 import { environment } from 'src/environments/environment';
 declare var AOS: any;
+
 @Component({
   selector: 'app-blog-datails',
   templateUrl: './blog-datails.component.html',
@@ -20,8 +22,10 @@ declare var AOS: any;
 })
 export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
   // baseURL = 'https://backend-beta-dev.pomac.info/public';
+  @ViewChild('contentCol') contentCol!: ElementRef;
+  @ViewChild('sidebarCol') sidebarCol!: ElementRef;
   baseURL = environment.baseURL;
-  id = '';
+  id: any;
   show = false;
   blog_details: any;
   blogs: any[] = [];
@@ -33,26 +37,23 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
     private route: ActivatedRoute,
     private blog: AppService,
     private router: Router
-  ) {
-    const nav = this.router.getCurrentNavigation();
-    const state = nav?.extras?.state;
-    console.log('Passed state:', state);
+  ) {}
+  @HostListener('window:resize', [])
+  onResize() {
+    this.isMobile = window.innerWidth < 768;
   }
 
   ngOnInit(): void {
     AOS.init();
     this.route.params.subscribe((params) => {
-      const number = params['blog_id']?.match(/\d+/);
-      this.id = number ? number[0] : '';
-      this.getProjects();
+      console.log(params);
+      const slug = params.blog_id;
+      this.getProjectBySlug(params?.blog_id);
     });
   }
 
   ngAfterViewInit() {
     this.processImages();
-    const nav = this.router.getCurrentNavigation();
-    const state = nav?.extras?.state;
-    console.log('Passed state:', state);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -65,38 +66,68 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
   processImages() {
     if (!this.blogContent) return;
     const container = this.blogContent.nativeElement;
-
     const images = container.querySelectorAll('p img');
+    const paragraphs = container.querySelectorAll('p');
+
     images.forEach((img: HTMLImageElement) => {
       // Basic styling
       if (!this.isMobile) {
-        img.style.maxWidth = '600px';
-        img.style.height = '600px';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
       } else {
         img.style.width = '100%';
       }
       img.style.height = 'auto';
       img.style.objectFit = 'cover';
+
       // Optional enhancements
       img.setAttribute('loading', 'lazy');
       img.style.borderRadius = '12px';
       img.style.display = 'block';
       img.style.margin = '10px auto';
+
+      // ❌ Disable right-click
+      img.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+    });
+
+    paragraphs.forEach((p: HTMLParagraphElement) => {
+      p.style.textAlign = 'right';
+      p.style.fontSize = '18px';
     });
   }
-  getProjects() {
+
+  getProjectBySlug(slug) {
+    this.showRecommendedBlogs = false;
+    this.show = false;
     this.blog
-      .blog_details(this.id)
+      .blog_details(slug)
       .pipe(map((res) => res['data']))
       .subscribe((project) => {
+        // this.blog_details = project;
         this.blog_details = project;
         this.show = true;
+        console.log(this.blog_details, 'momen');
+        this.showRecommendedBlogs = true;
+        this.id = this.blog_details.id;
+        console.log(this.id, 'erhmona b2a');
 
         // ✅ wait DOM update then process images
         setTimeout(() => this.processImages(), 0);
+        setTimeout(() => {
+          if (
+            this.contentCol?.nativeElement &&
+            this.sidebarCol?.nativeElement
+          ) {
+            const contentHeight = this.contentCol.nativeElement.offsetHeight;
+            this.sidebarCol.nativeElement.style.height = contentHeight + 'px';
+          } else {
+            console.warn('Sidebar or Content element not found yet.');
+          }
+        }, 100);
       });
   }
-
   // getallProject() {
   //   // this.show = false;
   //   this.blog

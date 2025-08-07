@@ -15,7 +15,7 @@
 //   font-family: "Tajawal";
 //   font-style: normal;
 //   font-weight: 500;
-//   src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-500.woff2")
+//   src: url("assets/fonts/tajawal-v11-arabic\ \(1\)/tajawal-v11-arabic-500.woff2")menu-item
 //     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 // }
 
@@ -77,7 +77,7 @@ html {
 
     header.desktop-header ul li:not(:last-child) {
       padding-right: 0;
-      padding-left: 35px;
+      // padding-left: 35px;
     }
     section.services {
       @media (max-width: 375px) {

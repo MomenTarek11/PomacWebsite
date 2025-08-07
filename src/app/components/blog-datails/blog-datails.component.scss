@@ -28,20 +28,6 @@
 .headlines {
   background-color: #2d5ee61a;
   border-radius: 8px;
-  ul {
-    li {
-      list-style: "-";
-      font-size: 15px;
-      line-height: 30px;
-      margin-bottom: 10px;
-      font-weight: 500;
-      padding: 0px 10px;
-      a {
-        color: #333;
-        text-decoration: none;
-      }
-    }
-  }
 }
 .relative_blogs {
   .overlay {
@@ -83,13 +69,6 @@
       }
     }
 
-    .btn {
-      height: 50px;
-      margin-top: auto; /* Push button to bottom */
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
     img {
       width: 100%;
       height: 267px; /* Increased image height */
@@ -125,21 +104,24 @@
   margin: 30px 0px;
   gap: 20px;
   padding-block: 80px;
-  background-color: rgba(234, 239, 253, 1);
+  background-image: url("/assets/Frame 1000003834.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 16px;
   p {
     // font-size: 18px;
     font-weight: 500;
   }
   span {
-    color: rgba(45, 94, 230, 1);
+    color: #fff;
     font-size: 2.5rem !important;
   }
 
   @media screen and (max-width: 768px) {
     width: 90%;
     margin: auto;
-    margin-block: 40px;
+    margin-bottom: 40px;
     h1 {
       width: 70% !important;
       margin: auto;
@@ -151,5 +133,96 @@
       width: 70% !important;
       margin: auto;
     }
+  }
+}
+.wave-button {
+  width: 100%;
+  max-width: 250px;
+  padding: 15px 20px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.wave-button span {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 18px !important;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.wave-button .wave {
+  width: 100%;
+  height: 200px;
+  background-color: #444857;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: -80px;
+  transition: 0.4s;
+  z-index: 0;
+  pointer-events: none;
+}
+.wave-button:hover .wave {
+  top: -120px;
+}
+
+.wave-button .wave::before,
+.wave-button .wave::after {
+  width: 200%;
+  height: 200%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.wave-button .wave::before {
+  border-radius: 45%;
+  background-color: rgba(20, 20, 20, 1);
+  animation: wave 5s linear infinite;
+}
+
+.wave-button .wave::after {
+  border-radius: 40%;
+  background-color: rgba(20, 20, 20, 0.5);
+  animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .wave-button {
+    max-width: 90%;
+    padding: 12px 16px;
+  }
+
+  .wave-button span {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .wave-button .wave {
+    // height: 150px;
+  }
+}
+.desc {
+  color: #fff;
+  span {
+    font-size: 16px !important;
+    font-weight: bold;
   }
 }

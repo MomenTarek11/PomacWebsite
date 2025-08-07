@@ -6,10 +6,10 @@ export const environment = {
   production: true,
   endpoint: 'https://pomac.info/api/backend/public/api',
   // endpoint: 'https://backend-beta-dev.pomac.info/public/api',
+  // baseURL: 'https://backend-beta-dev.pomac.info/public',
   baseURL: 'https://pomac.info/api/backend/public',
-  appVersion: '1.0.6', // غيره كل ما تعمل تحديث
+  appVersion: '1.0.8', // غيره كل ما تعمل تحديث
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

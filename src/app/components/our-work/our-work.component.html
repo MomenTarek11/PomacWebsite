@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div class="row" *ngIf="show">
+    <div class="row" *ngIf="show" style="direction: rtl">
       <div
         class="col-lg-6 project"
         *ngFor="let project of projects; let index = index"
@@ -116,7 +116,6 @@
                 <div class="card"  *ngIf="!project.zba27" [routerLink]="['/project-details',project.id,project.name_EN]"
                 [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
                 data-aos-offset="120" data-aos-easing="ease-in-sine" data-aos-duration="600"
-
                 >
                     <div class="overlay pl-3 pr-3 " [ngStyle]="{'background-color': project.main_color}">
                         <h1 class="name fw-bold text-capitalize">

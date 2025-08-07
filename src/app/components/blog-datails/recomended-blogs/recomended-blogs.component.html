@@ -1,14 +1,19 @@
 <div class="col-lg-12 p-3">
-  <h4 class="my-4">مقالات قد تعجبك</h4>
-  <div class="row my-5 relative_blogs">
+  <h4 class="my-4" *ngIf="isMobile == 2">مقالات قد تعجبك</h4>
+  <div
+    class="row relative_blogs"
+    *ngIf="!showPlaceHolder"
+    [ngClass]="{ 'flex-column': isMobile == 1, 'my-5': isMobile == 2 }"
+  >
     <div
-      class="col-lg-4"
+      [ngClass]="{ 'col-md-4': isMobile == 2, 'col-md-12': isMobile == 1 }"
       *ngFor="let project of recomendedBlogs; let index = index"
     >
       <div
         (click)="router_details(project)"
         class="card mb-5"
         style="width: 100%; direction: rtl; position: relative; cursor: pointer"
+        *ngIf="isMobile == 2"
       >
         <span style="position: absolute; top: 20px; right: 20px">
           <svg
@@ -57,6 +62,91 @@
           <span class="date my-2 text-muted">
             {{ project.created_at | date : "mediumDate" }}
           </span>
+        </div>
+      </div>
+      <div
+        (click)="router_details(project)"
+        class="card d-flex flex-row"
+        style="
+          width: 100%;
+          max-height: 160px;
+          direction: rtl;
+          cursor: pointer;
+          overflow: hidden;
+          border-radius: 12px;
+        "
+        *ngIf="isMobile == 1"
+      >
+        <!-- صورة -->
+        <div style="flex: 0 0 35%; position: relative; align-content: center">
+          <img
+            [src]="baseURL + '/' + project.image"
+            alt="POMAC"
+            class="img-fluid w-100"
+            style="
+              object-fit: cover;
+              border-radius: 12px !important;
+              height: 90px;
+            "
+            (error)="onError($event)"
+          />
+          <!-- <div
+            class="overlay w-100 position-absolute start-0 d-flex align-items-center justify-content-center"
+            style="height: 90px"
+          >
+            <button class="btn btn-sm bg-white text-primary">اقرأ</button>
+          </div> -->
+        </div>
+
+        <!-- بيانات -->
+        <div
+          class="card-body p-2 d-flex flex-column justify-content-between"
+          style="flex: 1"
+        >
+          <p
+            class="category badge mb-1"
+            [style]="{
+              'background-color': project?.category?.color || '#d2ffff',
+              'font-size': '0.7rem',
+              'text-align': 'start',
+              width: 'fit-content'
+            }"
+          >
+            {{ project?.category?.name_AR }}
+          </p>
+          <h6
+            class="card-title fw-bold mb-1"
+            style="font-size: 0.9rem; text-align: start"
+          >
+            {{ project.title }}
+          </h6>
+          <span
+            class="text-muted"
+            style="font-size: 0.75rem; text-align: start"
+          >
+            {{ project.created_at | date : "mediumDate" }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5 justify-content-center" *ngIf="showPlaceHolder">
+    <div
+      class="col-lg-4"
+      *ngFor="let project of [].constructor(3); let index = index"
+    >
+      <div class="ph-item" style="border: none">
+        <div class="ph-col-12">
+          <div class="ph-picture" style="min-height: 300px"></div>
+          <div class="ph-row">
+            <div class="ph-col-2 empty big"></div>
+            <div class="ph-col-10 big"></div>
+            <div class="ph-col-8 empty"></div>
+            <div class="ph-col-4"></div>
+            <div class="ph-col-6 empty"></div>
+            <div class="ph-col-6"></div>
+            <div class="ph-col-12"></div>
+          </div>
         </div>
       </div>
     </div>

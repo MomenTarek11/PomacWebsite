@@ -111,3 +111,25 @@
   border: 1px dashed #2d5ee6 !important;
   box-shadow: none !important;
 }
+.category-scroll-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch; // smooth scroll on iOS
+  scrollbar-width: thin; // Firefox
+  scrollbar-color: #ccc transparent;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.category-btn {
+  white-space: nowrap;
+}

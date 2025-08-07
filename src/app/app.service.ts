@@ -86,8 +86,8 @@ export class AppService {
 
     return this.http.get(`${environment.endpoint}/blogs`, { params });
   }
-  blog_details(id: any) {
-    return this.http.get(`${environment.endpoint}/blog/show?blog_id=${id}`);
+  blog_details(slug: any) {
+    return this.http.get(`${environment.endpoint}/blog/show?slug=${slug}`);
   }
   job_details(id: any) {
     return this.http.get(`${environment.endpoint}/job/show?job_id=${id}`);
@@ -105,10 +105,8 @@ export class AppService {
     }
     return this.http.post(`${environment.endpoint}/cv/upload`, formData);
   }
-  project(project_id) {
-    return this.http.get(
-      `${environment.endpoint}/projects/show?project_id=${project_id}`
-    );
+  project(slug) {
+    return this.http.get(`${environment.endpoint}/projects/show?slug=${slug}`);
   }
   contact(form) {
     return this.http.post(`${environment.endpoint}/contact`, form);
