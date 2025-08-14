@@ -114,4 +114,7 @@ export class AppService {
   getCategories() {
     return this.http.get(`${environment.endpoint}/blogs-categories`);
   }
+  getChoosenBlogs() {
+    return this.http.get(`${environment.endpoint}/blogs/favorites`);
+  }
 }

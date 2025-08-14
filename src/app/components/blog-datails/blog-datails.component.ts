@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
 import { environment } from 'src/environments/environment';
+import { Meta, Title } from '@angular/platform-browser';
 declare var AOS: any;
 
 @Component({
@@ -36,7 +37,9 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private blog: AppService,
-    private router: Router
+    private router: Router,
+    private meta: Meta,
+    private title: Title
   ) {}
   @HostListener('window:resize', [])
   onResize() {
@@ -127,6 +130,22 @@ export class BlogDatailsComponent implements OnInit, OnChanges, AfterViewInit {
           }
         }, 100);
       });
+    this.blog.blog_details(slug).subscribe((project: any) => {
+      console.log(project);
+
+      this.title.setTitle(project.title);
+      this.meta.updateTag({ name: 'description', content: project.summary });
+      this.meta.updateTag({ property: 'og:title', content: project.title });
+      this.meta.updateTag({
+        property: 'og:description',
+        content: project.summary,
+      });
+      this.meta.updateTag({ property: 'og:image', content: project.image });
+      this.meta.updateTag({
+        property: 'og:url',
+        content: window.location.href,
+      });
+    });
   }
   // getallProject() {
   //   // this.show = false;

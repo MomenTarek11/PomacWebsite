@@ -81,19 +81,15 @@ export class BlogComponent implements OnInit {
     // Prefer meta_title, fallback to title
     const sourceTitle = item.meta_title?.trim() || item.title?.trim();
     if (!sourceTitle) return;
-
     // Generate slug
     const slug = sourceTitle
       .toLowerCase()
       .replace(/[^a-z0-9\u0600-\u06FF\s-]/g, '') // keeps Arabic characters
       .replace(/\s+/g, '-') // spaces to dashes
       .replace(/-+/g, '-'); // collapse repeated dashes
-
     this.router.navigate(['blog', slug]);
   }
-
   isLoading = false;
-
   loadMore() {
     if (this.currentPage < this.lastPage && !this.isLoading) {
       this.isLoading = true;
