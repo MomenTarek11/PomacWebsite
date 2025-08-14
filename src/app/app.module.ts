@@ -43,6 +43,7 @@ import { SwiperModule } from 'swiper/angular';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ChoosenBlogsComponent } from './components/home/choosen-blogs/choosen-blogs.component';
+import { ProjectsComponent } from './components/home/projects/projects.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -69,6 +70,7 @@ registerLocaleData(localeAr);
     ProccessComponent,
     CarouselComponent,
     ChoosenBlogsComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

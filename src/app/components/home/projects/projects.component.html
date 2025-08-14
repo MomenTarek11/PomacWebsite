@@ -1,0 +1,141 @@
+<section
+  #projectsContainer
+  style="min-height: 100vh"
+  class="projects"
+  style="overflow: hidden !important"
+  id="projects"
+>
+  <div class="head">
+    <h1 class="fw-bold">
+      <!-- {{ translate.currentLang == 'ar' ? 'المشاريع' : 'Projects' }} -->
+      <!-- projects02 : remove  the text under projects title from "We help your business to scale and transform through our services. " & change the title to be "Our work " > أعمالنا  -->
+      <!-- {{ translate.currentLang == "ar" ? "أعمالنا" : "Our work" }} -->
+      أعمالنا
+    </h1>
+    <!-- <p>
+      نجح استوديو الشركات الناشئة بوماك في  تنفيذ العديد من الشركات في قطاعات  تقنية واعدة مثل تقنيات التعليم والتجارة الإلكترونية والبرمجيات كخدمة والخدمة عبر البرمجيات
+    </p> -->
+  </div>
+  <!-- src/assets/zabah.mp4 -->
+
+  <!-- <a aria-labelledby="pomac" aria-label="pomac"  href="javascript:void(0)" target="_blank" class="">
+        <video class="w-100 inner"   id="video_player">
+            <source src="assets/zabah.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </a> -->
+
+  <div class="container">
+    <div class="row" *ngIf="!show">
+      <div
+        class="col-lg-6 project"
+        *ngFor="let item of [].constructor(4); let i = index"
+      >
+        <div class="ph-item" style="border: none">
+          <div class="ph-col-12">
+            <div class="ph-picture" style="min-height: 300px"></div>
+            <div class="ph-row">
+              <div class="ph-col-2 empty big"></div>
+              <div class="ph-col-10 big"></div>
+              <div class="ph-col-8 empty"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-6"></div>
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row cards-wrapper" *ngIf="show">
+      <div
+        class="col-lg-12 project project-card"
+        *ngFor="let project of projects.slice(0, 3); let index = index"
+      >
+        <div
+          #projectCard
+          class="card mb-4"
+          [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'"
+          data-aos-offset="120"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+          [routerLink]="['/our-work', project.slug]"
+        >
+          <div class="row g-0 align-items-center">
+            <!-- Left Column - Content -->
+            <div class="col-md-5 p-3 text-right">
+              <h5 class="card-title mt-3 name fw-bold text-capitalize">
+                {{ project.name_AR }}
+              </h5>
+              <p class="card-text mb-5" style="direction: rtl">
+                {{
+                  project.short_description_AR.length > 50
+                    ? project.short_description_AR.substring(0, 200) + "..."
+                    : project.short_description_AR
+                }}
+              </p>
+              <p class="fw-semibold d-flex flex-column mb-5">
+                <span class="text-muted">بلد التشغيل </span>
+                <span>
+                  <span style="font-weight: 500">المملكه العربية السعودية</span>
+                  <img
+                    loading="lazy"
+                    src="assets/images/project-details/img_country.svg"
+                    alt=""
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      margin-left: 10px;
+                      border-radius: 10px;
+                    "
+                  />
+                </span>
+              </p>
+              <p class="fw-semibold d-flex flex-column mt-3">
+                <span class="text-muted mb-2">الصناعة / القطاع</span>
+                <span>
+                  <span style="font-weight: 500">{{
+                    project?.section?.title
+                  }}</span>
+                </span>
+              </p>
+            </div>
+
+            <!-- Right Column - Image -->
+            <div class="col-md-7">
+              <img
+                loading="lazy"
+                [src]="baseURL + '/' + project.path.main_image"
+                alt="POMAC"
+                class="img-fluid rounded-end project_image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-4 mt-3" *ngIf="projects.length > 0">
+      <a aria-labelledby="pomac" aria-label="pomac" [routerLink]="'/our-work'">
+        <button
+          data-aos="zoom-in-up"
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="400"
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #0f0f0f;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            padding: 10px 80px;
+            margin: auto;
+            font-size: 25px;
+          "
+        >
+          عرض المزيد
+        </button>
+      </a>
+    </div>
+  </div>
+</section>

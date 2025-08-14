@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
   public services = [];
   typedStarted = false;
   typedIndex = 0;
-  public projects = [];
   public testimonials: any = [];
   public sliderText = ['Attractive', 'Usable', 'Pretty'];
   public sliderTextArabic = [
@@ -260,7 +259,6 @@ export class HomeComponent implements OnInit {
   getAllHomeData() {
     this.spinner.show();
     forkJoin({
-      projects: this.service.homeProjects(),
       services: this.service.homeServices(),
       // testimonials: this.service.homeTestimonials(),
       sections: this.service.homeSections(),
@@ -269,7 +267,7 @@ export class HomeComponent implements OnInit {
       .pipe(
         map((res: any) => {
           return {
-            projects: res.projects['data'],
+            // projects: res.projects['data'],
             services: res.services['data'],
             // testimonials: res.testimonials['data'],
             sections: res.sections['data'],
@@ -279,7 +277,6 @@ export class HomeComponent implements OnInit {
       )
       .subscribe(
         (result) => {
-          this.projects = result.projects;
           this.services = result.services;
           // this.testimonials = result.testimonials;
           this.sections = result.sections.slice(0, this.section_count);
