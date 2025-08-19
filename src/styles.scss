@@ -128,7 +128,6 @@ section.services {
       margin-left: 0px !important;
     }
   }
-  padding-bottom: 150px;
   h4 {
     color: var(--pomac-color-dark);
     font-size: 20px;
@@ -397,4 +396,8 @@ section.idea {
   min-height: 48px; /* أو حسب التصميم */
   display: flex;
   align-items: center;
+}
+[data-aos][data-aos][data-aos-easing="ease-in-sine"],
+body[data-aos-easing="ease-in-sine"] [data-aos] {
+  transition-timing-function: none !important;
 }

@@ -3,30 +3,86 @@
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
+
+  display: block; /* يمنع المسافة البيضاء تحت الصورة */
+
+  @media screen and (max-width: 437px) {
+    height: 200px !important;
+  }
 }
 .card {
-  border-left: 0.2px solid rgba(212, 212, 212, 1);
-  border-block: 0.2px solid rgba(212, 212, 212, 1);
+  border: none !important;
+}
+.projects-pin-wrapper {
+  position: relative;
+  min-height: 100vh; /* ✨ يضمن وجود مساحة ثابتة */
+  // min-height: 300vh; // جرب تزودها
+}
+.container {
+  padding-block: 140px !important;
+  // background-color: darkcyan !important;
 }
 .projects {
   position: relative;
-  min-height: 100vh;
-
+  height: 100vh;
+  padding: 0 !important ;
+  top: 0 !important;
   .cards-wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 60vh;
+    @media screen and (max-width: 437px) {
+      height: 70vh;
+    }
     overflow: hidden;
     .project-card,
     .head {
-      position: absolute;
-      top: 0;
-      left: 0;
+      // height: 437px !important;
+      border-radius: 10px !important;
+      will-change: transform, filter; /* ✨ يحسن البيرفورمانس */
+      @media screen and (max-width: 437px) {
+        height: 485px !important;
+      }
+
+      // position: absolute;
+      // // top: 0;
+      // // left: 0;
       width: 100%;
       height: 100%;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      // background: white;
+      // border-radius: 15px;
+      // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
   }
+}
+.project-card {
+  position: absolute;
+  width: 100%;
+  // transition: all 0.3s ease-in-out;
+}
+
+// .project-card:nth-child(2) {
+//   filter: blur(4px);
+//   transform: scale(0.97);
+// }
+
+// .project-card:nth-child(3) {
+//   filter: blur(6px);
+//   transform: scale(0.94);
+// }
+.card-text,
+.fw-semibold {
+  @media screen and (max-width: 437px) {
+    font-size: 14px !important;
+  }
+}
+#projectsContainer {
+  box-sizing: border-box;
+}
+
+#projectsContainer * {
+  box-sizing: border-box;
 }

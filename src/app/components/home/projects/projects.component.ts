@@ -24,10 +24,17 @@ export class ProjectsComponent implements AfterViewInit {
   projects: any[] = [];
   show = false;
 
-  constructor(private service: AppService) {}
+  constructor(private service: AppService) {
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+  }
 
   ngAfterViewInit(): void {
     this.getAllProjects();
+    setTimeout(() => ScrollTrigger.refresh(), 100);
+    window.addEventListener('resize', () => ScrollTrigger.refresh());
+    // ScrollTrigger.refresh();
   }
 
   getAllProjects() {
@@ -36,28 +43,107 @@ export class ProjectsComponent implements AfterViewInit {
       this.projects = data?.data;
 
       setTimeout(() => {
-        const cards = gsap.utils.toArray('.project-card');
-        const scrollDistance = this.projects.length * 50;
+        const cards: any = gsap.utils.toArray('.project-card');
+        const container = this.projectsContainer.nativeElement;
+
+        // خلي الكروت فوق بعض
         gsap.set(cards, {
-          zIndex: (i, target, targets) => targets.length - i,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: (i, el, arr) => arr.length - i,
         });
+        const isMobile = window.innerWidth < 480; // موبايل
+        const containerHeight = cards.length * (isMobile ? 450 : 300);
+        gsap.set(container, { height: containerHeight });
+        // gsap.set(cards, { force3D: true });
+        // ✨ الحالة الابتدائية
+        if (cards[0]) {
+          gsap.set(cards[0], {
+            y: 0,
+            scale: 1,
+            filter: 'blur(0px)',
+            opacity: 1,
+          });
+        }
+        if (cards[1]) {
+          gsap.set(cards[1], {
+            y: isMobile ? 400 : 50, // أكتر في الموبايل
+            scale: 0.97,
+            filter: 'blur(1px)',
+            opacity: 1,
+          });
+        }
+        if (cards[2]) {
+          gsap.set(cards[2], {
+            y: isMobile ? 450 : 100, // أكتر في الموبايل
+            scale: 0.94,
+            filter: 'blur(2px)',
+            opacity: 1,
+          });
+        }
+        // الباقي يتخفى
+        cards.slice(3).forEach((card: any) => gsap.set(card, { opacity: 0 }));
 
-        gsap.to(cards.slice(0, -1), {
-          yPercent: -150,
-          opacity: 0.5,
-          ease: 'none',
-          stagger: 0.5,
+        const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: this.projectsContainer.nativeElement,
-            start: 'top top+=200',
-            end: `+=${scrollDistance}%`,
-            scrub: true,
-            pin: true,
+            trigger: container,
+            start: '0 top',
+            end: '+=400%',
+            scrub: 2,
 
-            markers: true,
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: 1, // ✨ يمنع القفزة
+            invalidateOnRefresh: true,
+            // markers: true,
           },
         });
-      });
+        // ✨ من الأول للتاني
+        if (cards[0] && cards[1]) {
+          tl.to(cards[0], { y: -600, duration: 1 }, 0);
+          tl.to(
+            cards[1],
+            { y: 0, scale: 1, filter: 'blur(0px)', duration: 1 },
+            0
+          );
+        }
+        // ✨ من التاني للتالت
+        if (cards[1] && cards[2]) {
+          tl.to(cards[1], { y: -700, duration: 1 }, 1);
+          tl.to(
+            cards[2],
+            { y: 0, scale: 1, filter: 'blur(0px)', duration: 1 },
+            1
+          );
+        }
+
+        // ✨ لما يخلص الكارت التالت يظهر الزرار
+        tl.to('.show-more-btn', { opacity: 1, ease: 'power2.out' });
+
+        // Refresh on images loaded
+        const images =
+          document.querySelectorAll<HTMLImageElement>('.project_image');
+        let loaded = 0;
+        images.forEach((img) => {
+          if (img.complete) {
+            loaded++;
+          } else {
+            img.onload = () => {
+              loaded++;
+              if (loaded === images.length) ScrollTrigger.refresh();
+            };
+            img.onerror = () => {
+              loaded++;
+              if (loaded === images.length) ScrollTrigger.refresh();
+            };
+          }
+        });
+        if (loaded === images.length) {
+          ScrollTrigger.refresh();
+        }
+      }, 0);
     });
   }
 }
