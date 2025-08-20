@@ -1,73 +1,29 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
-
-# dependencies
-/node_modules
-
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# misc
-/.angular/cache
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-dist/pomac-new.zip
-dist/pomac-new.zip
-pomac-2020.zips
-src/assets/
-
-pomac-2020
-# تجاهل مجلدات البيلد
+# Angular build output
 dist/
 build/
 
-# تجاهل الـ assets كله
-# assets/
+# Environment files
+src/environments/
 
-# تجاهل الملفات المضغوطة والتقيلة
+# Node
+node_modules/
+
+# Assets (تقيلة مش عايزها تترفع)
+src/assets/
+
+# Archives and compressed files
 *.zip
 *.rar
 *.7z
 *.tar
 *.gz
-*.mp4
-*.mp3
-*.avi
-*.mov
 *.iso
 
-# تجاهل أي حاجة أكبر من 100MB (GitHub مش هيسمح بيها أصلا)
+# Media heavy files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.*
+*.zip
