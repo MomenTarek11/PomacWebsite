@@ -48,4 +48,26 @@ Thumbs.db
 dist/pomac-new.zip
 dist/pomac-new.zip
 pomac-2020.zips
-assets
+src/assets/
+
+pomac-2020
+# تجاهل مجلدات البيلد
+dist/
+build/
+
+# تجاهل الـ assets كله
+# assets/
+
+# تجاهل الملفات المضغوطة والتقيلة
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.mp4
+*.mp3
+*.avi
+*.mov
+*.iso
+
+# تجاهل أي حاجة أكبر من 100MB (GitHub مش هيسمح بيها أصلا)
