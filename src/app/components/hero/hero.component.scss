@@ -46,15 +46,14 @@
         color: rgba(153, 153, 153, 1);
         font-size: 18px;
       }
-
       svg {
         margin-top: 20px;
         cursor: pointer;
         rect {
           transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out; /* إضافة transition للـ fill */
           fill: transparent; /* تأكد أن الخلفية شفافة بالافتراضي */
+          animation: changeBackground 1.5s infinite ease-in-out;
         }
-
         path {
           animation: arrowPointing 1.5s infinite ease-in-out;
           transform-origin: center 60%;
@@ -81,6 +80,18 @@
     }
   }
 }
+@keyframes changeBackground {
+  0% {
+    fill: transparent;
+  }
+  50% {
+    stroke: #94f9f9;
+    fill: #94f9f943; /* لون شبه شفاف */
+  }
+  100% {
+    fill: transparent;
+  }
+}
 @keyframes bounceScroll {
   0% {
     transform: translateY(0);
@@ -98,10 +109,11 @@
 @keyframes arrowPointing {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(-5px) rotate(0deg);
   }
   50% {
     transform: translateY(5px); /* حركة تشبه الإشارة */
+    fill: #94f9f9;
   }
 }
 .draw-arrow path {

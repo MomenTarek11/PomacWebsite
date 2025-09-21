@@ -357,7 +357,7 @@ header.mobile-header {
 }
 
 // responsive //
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .desktop-header {
     display: block !important;
   }
@@ -530,8 +530,8 @@ header.mobile-header {
 //     width: 120% !important;
 //   }
 // }
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
-  .top {
-    width: 175% !important;
-  }
-}
+// @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+//   .top {
+//     width: 175% !important;
+//   }
+// }

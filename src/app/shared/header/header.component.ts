@@ -74,8 +74,8 @@ export class HeaderComponent implements OnInit {
       .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects || event.url;
         this.onHomePage =
-          url === '/home' || url === '/home#' || url.startsWith('/blog/');
-        this.onBlogDetailsPage = url.startsWith('/blog/');
+          url === '/home' || url === '/home#' ;
+        // this.onBlogDetailsPage = url.startsWith('/blog/');
         const urll = window.location.href.split('/');
         this.url = urll[3];
         console.log('onHomePage:', this.onHomePage);
@@ -170,9 +170,9 @@ export class HeaderComponent implements OnInit {
     if (this.router.url === '/home') {
       this.onHomePage = scrollY <= 270;
     }
-    if (this.router.url.startsWith('/blog/')) {
-      this.onHomePage = scrollY <= 90;
-    }
+    // if (this.router.url.startsWith('/blog/')) {
+    //   this.onHomePage = scrollY <= 90;
+    // }
   }
 
   scrollToClassName(className: string) {

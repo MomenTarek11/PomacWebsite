@@ -21,11 +21,10 @@ declare var AOS: any;
 export class ProjectDetailsComponent implements OnInit {
   //   public services;
   //   public team;
-
   projects;
   public technologies;
   url;
-  project_id = this.route.snapshot.paramMap.get('project-id');
+  project_id: any;
   product_name = this.route.snapshot.paramMap.get('project-name');
   project;
   public baseURL = environment.baseURL;
@@ -60,9 +59,18 @@ export class ProjectDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this.getProject(this.project_id);
-    this.getProjects(this.project_id);
-    console.log(services);
+    this.route.paramMap.subscribe((params) => {
+      this.project_id = params.get('slug');
+      this.product_name = params.get('project-name');
+
+      // Reset data while loading new project
+      this.project = null;
+      this.projects = null;
+
+      // Load new project data
+      this.getProject(this.project_id);
+      this.getProjects(this.project_id);
+    });
   }
 
   labtop: any = {
@@ -188,7 +196,7 @@ export class ProjectDetailsComponent implements OnInit {
         console.log(this.projects, 'this.projects');
       });
   }
-  viewProject(id, name) {
+  viewProject(slug) {
     // this.router.navigate(['/project-details',id,name]).then(() => {
     //   // window.location.reload();
     // });
@@ -196,8 +204,10 @@ export class ProjectDetailsComponent implements OnInit {
     //    id:id,
     //    name:name
     // }})
-    window.open(`https://pomac.info/our-work/${id}/${name}`, '_self', '');
+    // window.open(`https://pomac.info/our-work/${slug}`, '_self', '');
     // this.router.navigate(["/home"])
     // window.location.reload()
+    this.router.navigate(['our-work', slug]);
+    this.getProject(this.project_id);
   }
 }

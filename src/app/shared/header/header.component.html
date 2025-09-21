@@ -26,7 +26,8 @@
             [ngClass]="{ onHome: onHomePage }"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
           <!-- {{route}} -->
           <ul class="p-0 m-0 list-unstyled d-flex menu-list main-list">
             <li
@@ -81,7 +82,37 @@
                 {{ "HOME.our_work" | translate }}
               </a>
             </li>
-
+            <li
+              class="menu-item"
+              [ngClass]="{
+                active: url == 'blog',
+              }"
+            >
+              <span
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                class="menu-link fw-bold position-relative mx-3"
+                style="cursor: pointer"
+                [ngStyle]="{ color: onHomePage ? '#fff' : '' }"
+                [routerLink]="'/blog'"
+              >
+                المدونة
+                <!-- <span style="font-size: 10px; color: rgb(211, 20, 20)"
+                  >(قريبا)</span -->
+                <img
+                  src="assets/new1-ezgif.com-gif-maker (1).gif"
+                  alt="soon"
+                  style="
+                    position: absolute;
+                    top: 0px;
+                    right: 45px;
+                    margin-left: 10px;
+                  "
+                  width="60"
+                  height="60"
+                />
+              </span>
+            </li>
             <li class="menu-item" [ngClass]="{ active: url == 'faq' }">
               <a
                 aria-labelledby="pomac"
@@ -93,26 +124,8 @@
                 الأسئلة الشائعة
               </a>
             </li>
-            <li
-              class="menu-item"
-              [ngClass]="{
-                active: url == 'blog',
-           
-              }"
-            >
-              <span
-                aria-labelledby="pomac"
-                aria-label="pomac"
-                class="menu-link fw-bold soon"
-                [ngStyle]="{ color: onHomePage ? '#fff' : '' }"
-              >
-                المدونة
-                <span style="font-size: 10px; color: rgb(211, 20, 20)"
-                  >(قريبا)</span
-                >
-              </span>
-            </li>
-            <li class="menu-item">
+
+            <!-- <li class="menu-item">
               <span
                 aria-labelledby="pomac"
                 aria-label="pomac"
@@ -124,7 +137,7 @@
                   >(قريبا)</span
                 >
               </span>
-            </li>
+            </li> -->
 
             <li class="menu-item" [ngClass]="{ active: url == 'jobs' }">
               <span
@@ -147,6 +160,8 @@
                     </li> -->
           </ul>
         </div>
+        <div class="col-md-1"></div>
+
         <div class="col-md-2">
           <!-- <a aria-labelledby="pomac" aria-label="pomac"  [routerLink]="'/our-work'" (click)="toggle.click()"  href="javascript:void(0)" >
                 <button class="btn btn-primary">
@@ -257,6 +272,37 @@
                 <!-- Our Work -->
               </a>
             </li>
+            <li
+              class="menu-item"
+              [ngClass]="{
+                active: url == 'blog',
+              }"
+            >
+              <span
+                aria-labelledby="pomac"
+                aria-label="pomac"
+                class="menu-link fw-bold position-relative mx-3 text-white"
+                style="cursor: pointer"
+                (click)="closeMenu()"
+                [routerLink]="'/blog'"
+              >
+                المدونة
+                <!-- <span style="font-size: 10px; color: rgb(211, 20, 20)"
+                  >(قريبا)</span -->
+                <img
+                  src="assets/new1-ezgif.com-gif-maker (1).gif"
+                  alt="soon"
+                  style="
+                    position: absolute;
+                    top: 0px;
+                    right: 70px;
+                    margin-left: 10px;
+                  "
+                  width="60"
+                  height="60"
+                />
+              </span>
+            </li>
             <li class="menu-item" [ngClass]="{ active: url == 'faq' }">
               <a
                 aria-labelledby="pomac"
@@ -268,18 +314,8 @@
                 الأسئلة الشائعة
               </a>
             </li>
-            <li class="menu-item" [ngClass]="{ active: url == 'blog' }">
-              <a
-                aria-labelledby="pomac"
-                aria-label="pomac"
-                (click)="closeMenu()"
-                class="menu-link"
-              >
-                <!-- [ngClass]="{ blogActive: onBlogDetailsPage }" -->
-                المدونة
-              </a>
-            </li>
-            <li class="menu-item">
+
+            <!-- <li class="menu-item">
               <span
                 aria-labelledby="pomac"
                 aria-label="pomac"
@@ -287,7 +323,7 @@
               >
                 المصطلحات
               </span>
-            </li>
+            </li> -->
 
             <li class="menu-item" [ngClass]="{ active: url == 'jobs' }">
               <a aria-labelledby="pomac" aria-label="pomac" class="menu-link">

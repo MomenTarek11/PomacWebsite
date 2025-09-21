@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AppService } from 'src/app/app.service';
@@ -35,19 +35,41 @@ export class BlogComponent implements OnInit {
       .blogs(page, id)
       .pipe(map((res) => res['data']))
       .subscribe((projects) => {
-        // console.log(projects);
-        this.blogs.push(...projects?.data); // projects?.data;
+        this.blogs.push(...projects?.data);
         this.show = true;
+        this.isLoading = false;
         if (this.blogs.length == 0) {
           this.empty = true;
         }
-        // console.log(projects);
         this.currentPage = projects.current_page;
         this.lastPage = projects.last_page;
         this.total = projects.total;
-        console.log(this.currentPage, this.lastPage, this.total);
       });
   }
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const threshold = 100;
+    const position = window.innerHeight + window.scrollY;
+    const height = document.body.scrollHeight;
+
+    if (position >= height - threshold && this.currentPage < this.lastPage) {
+      this.loadMore();
+    }
+  }
+  onScrollDiv(event: any) {
+    const element = event.target;
+    const threshold = 100;
+
+    if (
+      element.scrollHeight - element.scrollTop <=
+      element.clientHeight + threshold
+    ) {
+      if (this.currentPage < this.lastPage) {
+        this.loadMore();
+      }
+    }
+  }
+
   onError(event: any) {
     event.target.src = 'assets/No-Image-Placeholder.svg';
   }
@@ -56,22 +78,26 @@ export class BlogComponent implements OnInit {
       'assets/images/error-placeholder-image-2e1q6z01rfep95v0.svg';
   }
   router_details(item: any) {
-    // النص الأصلي مع المسافات
-    let originalText = item?.id + ' ' + item.title;
-    // استخدام replace لإزالة المسافات واستبدالها بـ -
-    let formattedText = originalText.replace(/\s+/g, '-');
-    this.router.navigate(['blog', formattedText], {
-      state: { page: 'detail' },
-    });
+    // Prefer meta_title, fallback to title
+    const sourceTitle = item.meta_title?.trim() || item.title?.trim();
+    if (!sourceTitle) return;
+    // Generate slug
+    const slug = sourceTitle
+      .toLowerCase()
+      .replace(/[^a-z0-9\u0600-\u06FF\s-]/g, '') // keeps Arabic characters
+      .replace(/\s+/g, '-') // spaces to dashes
+      .replace(/-+/g, '-'); // collapse repeated dashes
+    this.router.navigate(['blog', slug]);
   }
+  isLoading = false;
   loadMore() {
-    if (this.currentPage < this.lastPage) {
+    if (this.currentPage < this.lastPage && !this.isLoading) {
+      this.isLoading = true;
       this.currentPage += 1;
-      console.log(this.currentPage, this.activeId, this.lastPage);
-
       this.getProjects(this.currentPage, this.activeId);
     }
   }
+
   getCategories() {
     this.blog.getCategories().subscribe((res: any) => {
       console.log(res);
